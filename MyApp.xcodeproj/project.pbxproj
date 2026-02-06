@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1B2C3D400000001 /* MyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000010 /* MyAppApp.swift */; };
+		A1B2C3D400000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000011 /* ContentView.swift */; };
+		A1B2C3D400000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000012 /* Assets.xcassets */; };
+		A1B2C3D400000004 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000013 /* Preview Assets.xcassets */; };
+		B1000001 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000001 /* AppConstants.swift */; };
+		B1000002 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000002 /* AppTheme.swift */; };
+		B1000003 /* ElectricalUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000003 /* ElectricalUnit.swift */; };
+		B1000004 /* CalculationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000004 /* CalculationCategory.swift */; };
+		B1000005 /* CalculationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000005 /* CalculationRecord.swift */; };
+		B1000006 /* OhmLawEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000006 /* OhmLawEngine.swift */; };
+		B1000007 /* PowerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000007 /* PowerEngine.swift */; };
+		B1000008 /* CableSectionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000008 /* CableSectionEngine.swift */; };
+		B1000009 /* VoltageDropEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000009 /* VoltageDropEngine.swift */; };
+		B100000A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100000A /* HomeViewModel.swift */; };
+		B100000B /* OhmLawViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100000B /* OhmLawViewModel.swift */; };
+		B100000C /* PowerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100000C /* PowerViewModel.swift */; };
+		B100000D /* CableSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100000D /* CableSectionViewModel.swift */; };
+		B100000E /* VoltageDropViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100000E /* VoltageDropViewModel.swift */; };
+		B100000F /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100000F /* HistoryViewModel.swift */; };
+		B1000010 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000010 /* HomeView.swift */; };
+		B1000011 /* CategoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000011 /* CategoryCardView.swift */; };
+		B1000012 /* OhmLawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000012 /* OhmLawView.swift */; };
+		B1000013 /* PowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000013 /* PowerView.swift */; };
+		B1000014 /* CableSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000014 /* CableSectionView.swift */; };
+		B1000015 /* VoltageDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000015 /* VoltageDropView.swift */; };
+		B1000016 /* HistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000016 /* HistoryListView.swift */; };
+		B1000017 /* HistoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000017 /* HistoryRowView.swift */; };
+		B1000018 /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000018 /* InputFieldView.swift */; };
+		B1000019 /* ResultCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000019 /* ResultCardView.swift */; };
+		B100001A /* CalculateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100001A /* CalculateButton.swift */; };
+		B100001B /* UnitPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100001B /* UnitPickerView.swift */; };
+		B100001C /* Double+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100001C /* Double+Formatting.swift */; };
+		B100001D /* View+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100001D /* View+HideKeyboard.swift */; };
+		B100001E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C100001E /* Localizable.xcstrings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A1B2C3D400000010 /* MyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppApp.swift; sourceTree = "<group>"; };
+		A1B2C3D400000011 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A1B2C3D400000012 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1B2C3D400000013 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A1B2C3D400000020 /* MyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1000001 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		C1000002 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		C1000003 /* ElectricalUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricalUnit.swift; sourceTree = "<group>"; };
+		C1000004 /* CalculationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationCategory.swift; sourceTree = "<group>"; };
+		C1000005 /* CalculationRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationRecord.swift; sourceTree = "<group>"; };
+		C1000006 /* OhmLawEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OhmLawEngine.swift; sourceTree = "<group>"; };
+		C1000007 /* PowerEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerEngine.swift; sourceTree = "<group>"; };
+		C1000008 /* CableSectionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CableSectionEngine.swift; sourceTree = "<group>"; };
+		C1000009 /* VoltageDropEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoltageDropEngine.swift; sourceTree = "<group>"; };
+		C100000A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C100000B /* OhmLawViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OhmLawViewModel.swift; sourceTree = "<group>"; };
+		C100000C /* PowerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerViewModel.swift; sourceTree = "<group>"; };
+		C100000D /* CableSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CableSectionViewModel.swift; sourceTree = "<group>"; };
+		C100000E /* VoltageDropViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoltageDropViewModel.swift; sourceTree = "<group>"; };
+		C100000F /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		C1000010 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C1000011 /* CategoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCardView.swift; sourceTree = "<group>"; };
+		C1000012 /* OhmLawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OhmLawView.swift; sourceTree = "<group>"; };
+		C1000013 /* PowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerView.swift; sourceTree = "<group>"; };
+		C1000014 /* CableSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CableSectionView.swift; sourceTree = "<group>"; };
+		C1000015 /* VoltageDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoltageDropView.swift; sourceTree = "<group>"; };
+		C1000016 /* HistoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListView.swift; sourceTree = "<group>"; };
+		C1000017 /* HistoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRowView.swift; sourceTree = "<group>"; };
+		C1000018 /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
+		C1000019 /* ResultCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCardView.swift; sourceTree = "<group>"; };
+		C100001A /* CalculateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateButton.swift; sourceTree = "<group>"; };
+		C100001B /* UnitPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitPickerView.swift; sourceTree = "<group>"; };
+		C100001C /* Double+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Formatting.swift"; sourceTree = "<group>"; };
+		C100001D /* View+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+HideKeyboard.swift"; sourceTree = "<group>"; };
+		C100001E /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1B2C3D400000030 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1B2C3D400000040 = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D400000041 /* MyApp */,
+				A1B2C3D400000042 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1B2C3D400000041 /* MyApp */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D400000010 /* MyAppApp.swift */,
+				A1B2C3D400000011 /* ContentView.swift */,
+				D1000001 /* App */,
+				D1000002 /* Models */,
+				D1000003 /* Engines */,
+				D1000004 /* ViewModels */,
+				D1000005 /* Views */,
+				D100000C /* Components */,
+				D100000D /* Extensions */,
+				D100000E /* Resources */,
+				A1B2C3D400000012 /* Assets.xcassets */,
+				A1B2C3D400000043 /* Preview Content */,
+			);
+			path = MyApp;
+			sourceTree = "<group>";
+		};
+		A1B2C3D400000042 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D400000020 /* MyApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1B2C3D400000043 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D400000013 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D1000001 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C1000001 /* AppConstants.swift */,
+				C1000002 /* AppTheme.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D1000002 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C1000003 /* ElectricalUnit.swift */,
+				C1000004 /* CalculationCategory.swift */,
+				C1000005 /* CalculationRecord.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D1000003 /* Engines */ = {
+			isa = PBXGroup;
+			children = (
+				C1000006 /* OhmLawEngine.swift */,
+				C1000007 /* PowerEngine.swift */,
+				C1000008 /* CableSectionEngine.swift */,
+				C1000009 /* VoltageDropEngine.swift */,
+			);
+			path = Engines;
+			sourceTree = "<group>";
+		};
+		D1000004 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C100000A /* HomeViewModel.swift */,
+				C100000B /* OhmLawViewModel.swift */,
+				C100000C /* PowerViewModel.swift */,
+				C100000D /* CableSectionViewModel.swift */,
+				C100000E /* VoltageDropViewModel.swift */,
+				C100000F /* HistoryViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D1000005 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D1000006 /* Home */,
+				D1000007 /* OhmLaw */,
+				D1000008 /* Power */,
+				D1000009 /* CableSection */,
+				D100000A /* VoltageDrop */,
+				D100000B /* History */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D1000006 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C1000010 /* HomeView.swift */,
+				C1000011 /* CategoryCardView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D1000007 /* OhmLaw */ = {
+			isa = PBXGroup;
+			children = (
+				C1000012 /* OhmLawView.swift */,
+			);
+			path = OhmLaw;
+			sourceTree = "<group>";
+		};
+		D1000008 /* Power */ = {
+			isa = PBXGroup;
+			children = (
+				C1000013 /* PowerView.swift */,
+			);
+			path = Power;
+			sourceTree = "<group>";
+		};
+		D1000009 /* CableSection */ = {
+			isa = PBXGroup;
+			children = (
+				C1000014 /* CableSectionView.swift */,
+			);
+			path = CableSection;
+			sourceTree = "<group>";
+		};
+		D100000A /* VoltageDrop */ = {
+			isa = PBXGroup;
+			children = (
+				C1000015 /* VoltageDropView.swift */,
+			);
+			path = VoltageDrop;
+			sourceTree = "<group>";
+		};
+		D100000B /* History */ = {
+			isa = PBXGroup;
+			children = (
+				C1000016 /* HistoryListView.swift */,
+				C1000017 /* HistoryRowView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		D100000C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C1000018 /* InputFieldView.swift */,
+				C1000019 /* ResultCardView.swift */,
+				C100001A /* CalculateButton.swift */,
+				C100001B /* UnitPickerView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D100000E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C100001E /* Localizable.xcstrings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D100000D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C100001C /* Double+Formatting.swift */,
+				C100001D /* View+HideKeyboard.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1B2C3D400000050 /* MyApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1B2C3D400000070 /* Build configuration list for PBXNativeTarget "MyApp" */;
+			buildPhases = (
+				A1B2C3D400000060 /* Sources */,
+				A1B2C3D400000030 /* Frameworks */,
+				A1B2C3D400000061 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyApp;
+			productName = MyApp;
+			productReference = A1B2C3D400000020 /* MyApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1B2C3D400000080 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					A1B2C3D400000050 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = A1B2C3D400000090 /* Build configuration list for PBXProject "MyApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				tr,
+			);
+			mainGroup = A1B2C3D400000040;
+			productRefGroup = A1B2C3D400000042 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1B2C3D400000050 /* MyApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1B2C3D400000061 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D400000004 /* Preview Assets.xcassets in Resources */,
+				A1B2C3D400000003 /* Assets.xcassets in Resources */,
+				B100001E /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1B2C3D400000060 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D400000002 /* ContentView.swift in Sources */,
+				A1B2C3D400000001 /* MyAppApp.swift in Sources */,
+				B1000001 /* AppConstants.swift in Sources */,
+				B1000002 /* AppTheme.swift in Sources */,
+				B1000003 /* ElectricalUnit.swift in Sources */,
+				B1000004 /* CalculationCategory.swift in Sources */,
+				B1000005 /* CalculationRecord.swift in Sources */,
+				B1000006 /* OhmLawEngine.swift in Sources */,
+				B1000007 /* PowerEngine.swift in Sources */,
+				B1000008 /* CableSectionEngine.swift in Sources */,
+				B1000009 /* VoltageDropEngine.swift in Sources */,
+				B100000A /* HomeViewModel.swift in Sources */,
+				B100000B /* OhmLawViewModel.swift in Sources */,
+				B100000C /* PowerViewModel.swift in Sources */,
+				B100000D /* CableSectionViewModel.swift in Sources */,
+				B100000E /* VoltageDropViewModel.swift in Sources */,
+				B100000F /* HistoryViewModel.swift in Sources */,
+				B1000010 /* HomeView.swift in Sources */,
+				B1000011 /* CategoryCardView.swift in Sources */,
+				B1000012 /* OhmLawView.swift in Sources */,
+				B1000013 /* PowerView.swift in Sources */,
+				B1000014 /* CableSectionView.swift in Sources */,
+				B1000015 /* VoltageDropView.swift in Sources */,
+				B1000016 /* HistoryListView.swift in Sources */,
+				B1000017 /* HistoryRowView.swift in Sources */,
+				B1000018 /* InputFieldView.swift in Sources */,
+				B1000019 /* ResultCardView.swift in Sources */,
+				B100001A /* CalculateButton.swift in Sources */,
+				B100001B /* UnitPickerView.swift in Sources */,
+				B100001C /* Double+Formatting.swift in Sources */,
+				B100001D /* View+HideKeyboard.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A1B2C3D4000000A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A1B2C3D4000000A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1B2C3D4000000B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MyApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.MyApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1B2C3D4000000B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MyApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.MyApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1B2C3D400000070 /* Build configuration list for PBXNativeTarget "MyApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3D4000000B0 /* Debug */,
+				A1B2C3D4000000B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1B2C3D400000090 /* Build configuration list for PBXProject "MyApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3D4000000A0 /* Debug */,
+				A1B2C3D4000000A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1B2C3D400000080 /* Project object */;
+}
