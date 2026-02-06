@@ -41,6 +41,21 @@
 		B100001C /* Double+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100001C /* Double+Formatting.swift */; };
 		B100001D /* View+HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100001D /* View+HideKeyboard.swift */; };
 		B100001E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = C100001E /* Localizable.xcstrings */; };
+		B1000020 /* CompensationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000020 /* CompensationEngine.swift */; };
+		B1000021 /* TransformerEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000021 /* TransformerEngine.swift */; };
+		B1000022 /* GroundingEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000022 /* GroundingEngine.swift */; };
+		B1000023 /* UnitConverterEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000023 /* UnitConverterEngine.swift */; };
+		B1000024 /* CompensationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000024 /* CompensationViewModel.swift */; };
+		B1000025 /* TransformerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000025 /* TransformerViewModel.swift */; };
+		B1000026 /* GroundingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000026 /* GroundingViewModel.swift */; };
+		B1000027 /* UnitConverterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000027 /* UnitConverterViewModel.swift */; };
+		B1000028 /* FormulaReferenceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000028 /* FormulaReferenceViewModel.swift */; };
+		B1000029 /* CompensationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000029 /* CompensationView.swift */; };
+		B100002A /* TransformerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100002A /* TransformerView.swift */; };
+		B100002B /* GroundingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100002B /* GroundingView.swift */; };
+		B100002C /* UnitConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100002C /* UnitConverterView.swift */; };
+		B100002D /* FormulaReferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100002D /* FormulaReferenceView.swift */; };
+		B100002E /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100002E /* SearchBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +94,21 @@
 		C100001C /* Double+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Formatting.swift"; sourceTree = "<group>"; };
 		C100001D /* View+HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+HideKeyboard.swift"; sourceTree = "<group>"; };
 		C100001E /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		C1000020 /* CompensationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompensationEngine.swift; sourceTree = "<group>"; };
+		C1000021 /* TransformerEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerEngine.swift; sourceTree = "<group>"; };
+		C1000022 /* GroundingEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundingEngine.swift; sourceTree = "<group>"; };
+		C1000023 /* UnitConverterEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConverterEngine.swift; sourceTree = "<group>"; };
+		C1000024 /* CompensationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompensationViewModel.swift; sourceTree = "<group>"; };
+		C1000025 /* TransformerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerViewModel.swift; sourceTree = "<group>"; };
+		C1000026 /* GroundingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundingViewModel.swift; sourceTree = "<group>"; };
+		C1000027 /* UnitConverterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConverterViewModel.swift; sourceTree = "<group>"; };
+		C1000028 /* FormulaReferenceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaReferenceViewModel.swift; sourceTree = "<group>"; };
+		C1000029 /* CompensationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompensationView.swift; sourceTree = "<group>"; };
+		C100002A /* TransformerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerView.swift; sourceTree = "<group>"; };
+		C100002B /* GroundingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundingView.swift; sourceTree = "<group>"; };
+		C100002C /* UnitConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConverterView.swift; sourceTree = "<group>"; };
+		C100002D /* FormulaReferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaReferenceView.swift; sourceTree = "<group>"; };
+		C100002E /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +191,10 @@
 				C1000007 /* PowerEngine.swift */,
 				C1000008 /* CableSectionEngine.swift */,
 				C1000009 /* VoltageDropEngine.swift */,
+				C1000020 /* CompensationEngine.swift */,
+				C1000021 /* TransformerEngine.swift */,
+				C1000022 /* GroundingEngine.swift */,
+				C1000023 /* UnitConverterEngine.swift */,
 			);
 			path = Engines;
 			sourceTree = "<group>";
@@ -174,6 +208,11 @@
 				C100000D /* CableSectionViewModel.swift */,
 				C100000E /* VoltageDropViewModel.swift */,
 				C100000F /* HistoryViewModel.swift */,
+				C1000024 /* CompensationViewModel.swift */,
+				C1000025 /* TransformerViewModel.swift */,
+				C1000026 /* GroundingViewModel.swift */,
+				C1000027 /* UnitConverterViewModel.swift */,
+				C1000028 /* FormulaReferenceViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -187,6 +226,11 @@
 				D1000009 /* CableSection */,
 				D100000A /* VoltageDrop */,
 				D100000B /* History */,
+				D100000F /* Compensation */,
+				D1000010 /* Transformer */,
+				D1000011 /* Grounding */,
+				D1000012 /* UnitConverter */,
+				D1000013 /* FormulaReference */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -248,8 +292,49 @@
 				C1000019 /* ResultCardView.swift */,
 				C100001A /* CalculateButton.swift */,
 				C100001B /* UnitPickerView.swift */,
+				C100002E /* SearchBarView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		D100000F /* Compensation */ = {
+			isa = PBXGroup;
+			children = (
+				C1000029 /* CompensationView.swift */,
+			);
+			path = Compensation;
+			sourceTree = "<group>";
+		};
+		D1000010 /* Transformer */ = {
+			isa = PBXGroup;
+			children = (
+				C100002A /* TransformerView.swift */,
+			);
+			path = Transformer;
+			sourceTree = "<group>";
+		};
+		D1000011 /* Grounding */ = {
+			isa = PBXGroup;
+			children = (
+				C100002B /* GroundingView.swift */,
+			);
+			path = Grounding;
+			sourceTree = "<group>";
+		};
+		D1000012 /* UnitConverter */ = {
+			isa = PBXGroup;
+			children = (
+				C100002C /* UnitConverterView.swift */,
+			);
+			path = UnitConverter;
+			sourceTree = "<group>";
+		};
+		D1000013 /* FormulaReference */ = {
+			isa = PBXGroup;
+			children = (
+				C100002D /* FormulaReferenceView.swift */,
+			);
+			path = FormulaReference;
 			sourceTree = "<group>";
 		};
 		D100000E /* Resources */ = {
@@ -372,6 +457,21 @@
 				B100001B /* UnitPickerView.swift in Sources */,
 				B100001C /* Double+Formatting.swift in Sources */,
 				B100001D /* View+HideKeyboard.swift in Sources */,
+				B1000020 /* CompensationEngine.swift in Sources */,
+				B1000021 /* TransformerEngine.swift in Sources */,
+				B1000022 /* GroundingEngine.swift in Sources */,
+				B1000023 /* UnitConverterEngine.swift in Sources */,
+				B1000024 /* CompensationViewModel.swift in Sources */,
+				B1000025 /* TransformerViewModel.swift in Sources */,
+				B1000026 /* GroundingViewModel.swift in Sources */,
+				B1000027 /* UnitConverterViewModel.swift in Sources */,
+				B1000028 /* FormulaReferenceViewModel.swift in Sources */,
+				B1000029 /* CompensationView.swift in Sources */,
+				B100002A /* TransformerView.swift in Sources */,
+				B100002B /* GroundingView.swift in Sources */,
+				B100002C /* UnitConverterView.swift in Sources */,
+				B100002D /* FormulaReferenceView.swift in Sources */,
+				B100002E /* SearchBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

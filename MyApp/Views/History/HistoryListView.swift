@@ -16,13 +16,35 @@ struct HistoryListView: View {
                     description: Text(String(localized: "history.emptyDescription"))
                 )
             } else {
-                List {
-                    ForEach(records) { record in
-                        HistoryRowView(record: record)
+                VStack(spacing: 0) {
+                    Picker(String(localized: "history.filter"), selection: $viewModel.filter) {
+                        ForEach(HistoryFilter.allCases, id: \.self) { filter in
+                            Text(filter.title).tag(filter)
+                        }
                     }
-                    .onDelete { indexSet in
-                        for index in indexSet {
-                            viewModel.deleteRecord(records[index], modelContext: modelContext)
+                    .pickerStyle(.segmented)
+                    .padding()
+
+                    let filtered = viewModel.filteredRecords(records)
+                    if filtered.isEmpty {
+                        ContentUnavailableView(
+                            String(localized: "history.noFavorites"),
+                            systemImage: "star.slash",
+                            description: Text(String(localized: "history.noFavoritesDescription"))
+                        )
+                    } else {
+                        List {
+                            ForEach(filtered) { record in
+                                HistoryRowView(record: record) {
+                                    viewModel.toggleFavorite(record)
+                                }
+                            }
+                            .onDelete { indexSet in
+                                let filteredList = filtered
+                                for index in indexSet {
+                                    viewModel.deleteRecord(filteredList[index], modelContext: modelContext)
+                                }
+                            }
                         }
                     }
                 }

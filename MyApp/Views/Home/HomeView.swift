@@ -10,15 +10,24 @@ struct HomeView: View {
 
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns, spacing: AppTheme.Spacing.large) {
-                ForEach(viewModel.categories) { category in
-                    NavigationLink(value: category) {
-                        CategoryCardView(category: category)
+            VStack(spacing: AppTheme.Spacing.large) {
+                SearchBarView(
+                    text: $viewModel.searchText,
+                    placeholder: String(localized: "search.placeholder")
+                )
+                .padding(.horizontal)
+
+                LazyVGrid(columns: columns, spacing: AppTheme.Spacing.large) {
+                    ForEach(viewModel.filteredCategories) { category in
+                        NavigationLink(value: category) {
+                            CategoryCardView(category: category)
+                        }
+                        .buttonStyle(.plain)
                     }
-                    .buttonStyle(.plain)
                 }
+                .padding(.horizontal)
             }
-            .padding()
+            .padding(.vertical)
         }
         .navigationTitle(String(localized: "app.title"))
     }

@@ -20,5 +20,10 @@ enum AppTheme {
         static let power = Color.orange
         static let cableSection = Color.green
         static let voltageDrop = Color.purple
+        static let compensation = Color.red
+        static let transformer = Color.brown
+        static let grounding = Color.teal
+        static let unitConverter = Color.indigo
+        static let formulaReference = Color.mint
     }
 }

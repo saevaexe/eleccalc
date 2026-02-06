@@ -28,10 +28,17 @@ enum PowerSolveFor: String, CaseIterable, Hashable {
 
 @Observable
 final class PowerViewModel {
-    var solveFor: PowerSolveFor = .apparentPower
+    var solveFor: PowerSolveFor = .apparentPower {
+        didSet {
+            if oldValue != solveFor {
+                result = nil
+                hasCalculated = false
+            }
+        }
+    }
     var voltageText: String = ""
     var currentText: String = ""
-    var powerFactorText: String = ""
+    var powerFactorText: String = "0,85"
     var activePowerText: String = ""
     var isThreePhase: Bool = false
 
@@ -69,6 +76,7 @@ final class PowerViewModel {
                 result = PowerEngine.activePower(apparentPower: s, powerFactor: pf)
                 formulaUsed = "P = S × cosφ"
             }
+            if let r = result { activePowerText = formatForInput(r) }
         case .reactivePower:
             guard let v = parseDouble(voltageText), let i = parseDouble(currentText), let pf = parseDouble(powerFactorText) else { return }
             let s = isThreePhase
@@ -84,6 +92,7 @@ final class PowerViewModel {
             guard s > 0 else { return }
             result = PowerEngine.powerFactor(activePower: p, apparentPower: s)
             formulaUsed = "cosφ = P / S"
+            if let r = result { powerFactorText = formatForInput(r) }
         }
         hasCalculated = true
     }
@@ -102,7 +111,7 @@ final class PowerViewModel {
     func clear() {
         voltageText = ""
         currentText = ""
-        powerFactorText = ""
+        powerFactorText = "0,85"
         activePowerText = ""
         result = nil
         hasCalculated = false
@@ -110,5 +119,9 @@ final class PowerViewModel {
 
     private func parseDouble(_ text: String) -> Double? {
         Double(text.replacingOccurrences(of: ",", with: "."))
+    }
+
+    private func formatForInput(_ value: Double) -> String {
+        String(value).replacingOccurrences(of: ".", with: ",")
     }
 }

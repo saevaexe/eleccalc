@@ -2,6 +2,7 @@ import SwiftUI
 
 struct HistoryRowView: View {
     let record: CalculationRecord
+    var onToggleFavorite: (() -> Void)?
 
     var body: some View {
         HStack(spacing: AppTheme.Spacing.regular) {
@@ -22,9 +23,19 @@ struct HistoryRowView: View {
                     .foregroundStyle(.tertiary)
             }
             Spacer()
-            Text(record.timestamp, style: .relative)
-                .font(.caption2)
-                .foregroundStyle(.tertiary)
+            VStack(alignment: .trailing, spacing: AppTheme.Spacing.small) {
+                Button {
+                    onToggleFavorite?()
+                } label: {
+                    Image(systemName: record.isFavorite ? "star.fill" : "star")
+                        .foregroundStyle(record.isFavorite ? .yellow : .gray)
+                }
+                .buttonStyle(.plain)
+
+                Text(record.timestamp, style: .relative)
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
+            }
         }
         .padding(.vertical, AppTheme.Spacing.small)
     }

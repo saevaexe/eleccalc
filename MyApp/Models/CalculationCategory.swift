@@ -5,42 +5,67 @@ enum CalculationCategory: String, Codable, CaseIterable, Identifiable, Hashable 
     case power
     case cableSection
     case voltageDrop
+    case compensation
+    case transformer
+    case grounding
+    case unitConverter
+    case formulaReference
 
     var id: String { rawValue }
 
     var title: String {
         switch self {
-        case .ohmLaw:       return String(localized: "category.ohmLaw")
-        case .power:        return String(localized: "category.power")
-        case .cableSection: return String(localized: "category.cableSection")
-        case .voltageDrop:  return String(localized: "category.voltageDrop")
+        case .ohmLaw:           return String(localized: "category.ohmLaw")
+        case .power:            return String(localized: "category.power")
+        case .cableSection:     return String(localized: "category.cableSection")
+        case .voltageDrop:      return String(localized: "category.voltageDrop")
+        case .compensation:     return String(localized: "category.compensation")
+        case .transformer:      return String(localized: "category.transformer")
+        case .grounding:        return String(localized: "category.grounding")
+        case .unitConverter:    return String(localized: "category.unitConverter")
+        case .formulaReference: return String(localized: "category.formulaReference")
         }
     }
 
     var subtitle: String {
         switch self {
-        case .ohmLaw:       return String(localized: "category.ohmLaw.subtitle")
-        case .power:        return String(localized: "category.power.subtitle")
-        case .cableSection: return String(localized: "category.cableSection.subtitle")
-        case .voltageDrop:  return String(localized: "category.voltageDrop.subtitle")
+        case .ohmLaw:           return String(localized: "category.ohmLaw.subtitle")
+        case .power:            return String(localized: "category.power.subtitle")
+        case .cableSection:     return String(localized: "category.cableSection.subtitle")
+        case .voltageDrop:      return String(localized: "category.voltageDrop.subtitle")
+        case .compensation:     return String(localized: "category.compensation.subtitle")
+        case .transformer:      return String(localized: "category.transformer.subtitle")
+        case .grounding:        return String(localized: "category.grounding.subtitle")
+        case .unitConverter:    return String(localized: "category.unitConverter.subtitle")
+        case .formulaReference: return String(localized: "category.formulaReference.subtitle")
         }
     }
 
     var iconName: String {
         switch self {
-        case .ohmLaw:       return "bolt.circle.fill"
-        case .power:        return "powerplug.fill"
-        case .cableSection: return "cable.connector"
-        case .voltageDrop:  return "arrow.down.right.circle.fill"
+        case .ohmLaw:           return "bolt.circle.fill"
+        case .power:            return "powerplug.fill"
+        case .cableSection:     return "cable.connector"
+        case .voltageDrop:      return "arrow.down.right.circle.fill"
+        case .compensation:     return "gauge.with.dots.needle.33percent"
+        case .transformer:      return "square.stack.3d.up.fill"
+        case .grounding:        return "arrow.down.to.line"
+        case .unitConverter:    return "arrow.left.arrow.right.circle.fill"
+        case .formulaReference: return "book.fill"
         }
     }
 
     var color: Color {
         switch self {
-        case .ohmLaw:       return AppTheme.CategoryColor.ohmLaw
-        case .power:        return AppTheme.CategoryColor.power
-        case .cableSection: return AppTheme.CategoryColor.cableSection
-        case .voltageDrop:  return AppTheme.CategoryColor.voltageDrop
+        case .ohmLaw:           return AppTheme.CategoryColor.ohmLaw
+        case .power:            return AppTheme.CategoryColor.power
+        case .cableSection:     return AppTheme.CategoryColor.cableSection
+        case .voltageDrop:      return AppTheme.CategoryColor.voltageDrop
+        case .compensation:     return AppTheme.CategoryColor.compensation
+        case .transformer:      return AppTheme.CategoryColor.transformer
+        case .grounding:        return AppTheme.CategoryColor.grounding
+        case .unitConverter:    return AppTheme.CategoryColor.unitConverter
+        case .formulaReference: return AppTheme.CategoryColor.formulaReference
         }
     }
 }

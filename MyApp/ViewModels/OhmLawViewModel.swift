@@ -28,7 +28,14 @@ enum OhmLawSolveFor: String, CaseIterable, Hashable {
 
 @Observable
 final class OhmLawViewModel {
-    var solveFor: OhmLawSolveFor = .voltage
+    var solveFor: OhmLawSolveFor = .voltage {
+        didSet {
+            if oldValue != solveFor {
+                result = nil
+                hasCalculated = false
+            }
+        }
+    }
     var voltageText: String = ""
     var currentText: String = ""
     var resistanceText: String = ""
@@ -54,14 +61,17 @@ final class OhmLawViewModel {
             guard let i = parseDouble(currentText), let r = parseDouble(resistanceText) else { return }
             result = OhmLawEngine.voltage(current: i, resistance: r)
             formulaUsed = "V = I × R"
+            if let r = result { voltageText = formatForInput(r) }
         case .current:
             guard let v = parseDouble(voltageText), let r = parseDouble(resistanceText), r > 0 else { return }
             result = OhmLawEngine.current(voltage: v, resistance: r)
             formulaUsed = "I = V / R"
+            if let r = result { currentText = formatForInput(r) }
         case .resistance:
             guard let v = parseDouble(voltageText), let i = parseDouble(currentText), i > 0 else { return }
             result = OhmLawEngine.resistance(voltage: v, current: i)
             formulaUsed = "R = V / I"
+            if let r = result { resistanceText = formatForInput(r) }
         case .power:
             guard let v = parseDouble(voltageText), let i = parseDouble(currentText) else { return }
             result = OhmLawEngine.power(voltage: v, current: i)
@@ -93,6 +103,10 @@ final class OhmLawViewModel {
     private func parseDouble(_ text: String) -> Double? {
         let cleaned = text.replacingOccurrences(of: ",", with: ".")
         return Double(cleaned)
+    }
+
+    private func formatForInput(_ value: Double) -> String {
+        String(value).replacingOccurrences(of: ".", with: ",")
     }
 
     private func buildInputSummary() -> String {

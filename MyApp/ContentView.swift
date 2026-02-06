@@ -25,10 +25,15 @@ struct ContentView: View {
     @ViewBuilder
     private func destinationView(for category: CalculationCategory) -> some View {
         switch category {
-        case .ohmLaw:       OhmLawView()
-        case .power:        PowerView()
-        case .cableSection: CableSectionView()
-        case .voltageDrop:  VoltageDropView()
+        case .ohmLaw:           OhmLawView()
+        case .power:            PowerView()
+        case .cableSection:     CableSectionView()
+        case .voltageDrop:      VoltageDropView()
+        case .compensation:     CompensationView()
+        case .transformer:      TransformerView()
+        case .grounding:        GroundingView()
+        case .unitConverter:    UnitConverterView()
+        case .formulaReference: FormulaReferenceView()
         }
     }
 }
