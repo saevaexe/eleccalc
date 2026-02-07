@@ -1728,6 +1728,40 @@
         }
       }
     },
+    "formula.correctedAmpacity" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corrected Ampacity"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Düzeltilmiş Ampasitesi"
+          }
+        }
+      }
+    },
+    "formula.correctedAmpacity.desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Base ampacity corrected for temperature and grouping"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sıcaklık ve gruplandırma için düzeltilmiş taban ampasitesi"
+          }
+        }
+      }
+    },
     "formula.current" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1860,6 +1894,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hedef aydınlık için gerekli armatür sayısı"
+          }
+        }
+      }
+    },
+    "formula.group.breakerSelection" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Breaker Selection"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kesici Seçimi"
+          }
+        }
+      }
+    },
+    "formula.group.cableAmpacity" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cable Ampacity"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kablo Ampasitesi"
           }
         }
       }
@@ -2030,6 +2098,74 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Trafo"
+          }
+        }
+      }
+    },
+    "formula.groupFactor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grouping Factor"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gruplandırma Faktörü"
+          }
+        }
+      }
+    },
+    "formula.groupFactor.desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Correction factor for grouped cables per IEC 60364-5-52"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IEC 60364-5-52'ye göre gruplandırılmış kablolar için düzeltme faktörü"
+          }
+        }
+      }
+    },
+    "formula.loadCurrent" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Load Current"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yük Akımı"
+          }
+        }
+      }
+    },
+    "formula.loadCurrent.desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Current drawn by the load from power, voltage and power factor"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Güç, gerilim ve güç faktöründen yükün çektiği akım"
           }
         }
       }
@@ -2268,6 +2404,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Üç fazlı AC devre aktif gücü"
+          }
+        }
+      }
+    },
+    "formula.protectionRule" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Protection Coordination"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koruma Koordinasyonu"
+          }
+        }
+      }
+    },
+    "formula.protectionRule.desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Load current ≤ breaker rating ≤ cable ampacity per IEC 60364-4-43"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IEC 60364-4-43'e göre yük akımı ≤ kesici anma ≤ kablo ampasitesi"
           }
         }
       }
@@ -2523,6 +2693,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Motor kalkış akımı"
+          }
+        }
+      }
+    },
+    "formula.tempFactor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temperature Factor"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sıcaklık Faktörü"
+          }
+        }
+      }
+    },
+    "formula.tempFactor.desc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Correction factor for ambient temperature per IEC 60364-5-52"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IEC 60364-5-52'ye göre ortam sıcaklığı için düzeltme faktörü"
           }
         }
       }

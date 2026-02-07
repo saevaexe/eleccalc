@@ -202,6 +202,43 @@ final class FormulaReferenceViewModel {
                 ),
             ]
         ),
+        FormulaGroup(
+            title: String(localized: "formula.group.cableAmpacity"),
+            icon: "flame.fill",
+            formulas: [
+                FormulaItem(
+                    name: String(localized: "formula.correctedAmpacity"),
+                    formula: "Iz = Ib × Kt × Kg",
+                    description: String(localized: "formula.correctedAmpacity.desc")
+                ),
+                FormulaItem(
+                    name: String(localized: "formula.tempFactor"),
+                    formula: "Kt (IEC 60364-5-52)",
+                    description: String(localized: "formula.tempFactor.desc")
+                ),
+                FormulaItem(
+                    name: String(localized: "formula.groupFactor"),
+                    formula: "Kg (IEC 60364-5-52)",
+                    description: String(localized: "formula.groupFactor.desc")
+                ),
+            ]
+        ),
+        FormulaGroup(
+            title: String(localized: "formula.group.breakerSelection"),
+            icon: "shield.checkered",
+            formulas: [
+                FormulaItem(
+                    name: String(localized: "formula.protectionRule"),
+                    formula: "Ib ≤ In ≤ Iz",
+                    description: String(localized: "formula.protectionRule.desc")
+                ),
+                FormulaItem(
+                    name: String(localized: "formula.loadCurrent"),
+                    formula: "Ib = P / (√3 × U × cosφ)",
+                    description: String(localized: "formula.loadCurrent.desc")
+                ),
+            ]
+        ),
     ]
 
     var searchText: String = ""
