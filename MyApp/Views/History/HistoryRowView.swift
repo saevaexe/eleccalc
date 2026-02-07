@@ -31,6 +31,9 @@ struct HistoryRowView: View {
                         .foregroundStyle(record.isFavorite ? .yellow : .gray)
                 }
                 .buttonStyle(.plain)
+                .accessibilityLabel(record.isFavorite
+                    ? String(localized: "accessibility.removeFavorite")
+                    : String(localized: "accessibility.addFavorite"))
 
                 Text(record.timestamp, style: .relative)
                     .font(.caption2)
@@ -38,5 +41,7 @@ struct HistoryRowView: View {
             }
         }
         .padding(.vertical, AppTheme.Spacing.small)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(record.title). \(record.resultSummary)")
     }
 }

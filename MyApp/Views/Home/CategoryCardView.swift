@@ -2,6 +2,10 @@ import SwiftUI
 
 struct CategoryCardView: View {
     let category: CalculationCategory
+    var animationDelay: Double = 0
+
+    @Environment(\.colorScheme) private var colorScheme
+    @State private var isAppearing = false
 
     var body: some View {
         VStack(spacing: AppTheme.Spacing.regular) {
@@ -19,6 +23,19 @@ struct CategoryCardView: View {
         }
         .frame(maxWidth: .infinity, minHeight: 140)
         .padding()
-        .background(category.color.opacity(0.1), in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.large))
+        .background(
+            category.color.opacity(colorScheme == .dark ? 0.15 : 0.1),
+            in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.large)
+        )
+        .scaleEffect(isAppearing ? 1.0 : 0.92)
+        .opacity(isAppearing ? 1.0 : 0)
+        .onAppear {
+            withAnimation(.spring(response: 0.4, dampingFraction: 0.75).delay(animationDelay)) {
+                isAppearing = true
+            }
+        }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(category.title). \(category.subtitle)")
+        .accessibilityAddTraits(.isButton)
     }
 }

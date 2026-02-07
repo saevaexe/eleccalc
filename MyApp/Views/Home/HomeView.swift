@@ -2,11 +2,12 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var viewModel = HomeViewModel()
+    @Environment(\.horizontalSizeClass) private var sizeClass
 
-    private let columns = [
-        GridItem(.flexible(), spacing: AppTheme.Spacing.large),
-        GridItem(.flexible(), spacing: AppTheme.Spacing.large)
-    ]
+    private var columns: [GridItem] {
+        let count = sizeClass == .regular ? 3 : 2
+        return Array(repeating: GridItem(.flexible(), spacing: AppTheme.Spacing.large), count: count)
+    }
 
     var body: some View {
         ScrollView {
@@ -18,9 +19,12 @@ struct HomeView: View {
                 .padding(.horizontal)
 
                 LazyVGrid(columns: columns, spacing: AppTheme.Spacing.large) {
-                    ForEach(viewModel.filteredCategories) { category in
+                    ForEach(Array(viewModel.filteredCategories.enumerated()), id: \.element.id) { index, category in
                         NavigationLink(value: category) {
-                            CategoryCardView(category: category)
+                            CategoryCardView(
+                                category: category,
+                                animationDelay: Double(index) * 0.05
+                            )
                         }
                         .buttonStyle(.plain)
                     }

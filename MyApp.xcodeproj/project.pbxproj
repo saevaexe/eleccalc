@@ -7,6 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1000030 /* OhmLawEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000030 /* OhmLawEngineTests.swift */; };
+		B1000031 /* PowerEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000031 /* PowerEngineTests.swift */; };
+		B1000032 /* CableSectionEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000032 /* CableSectionEngineTests.swift */; };
+		B1000033 /* VoltageDropEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000033 /* VoltageDropEngineTests.swift */; };
+		B1000034 /* CompensationEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000034 /* CompensationEngineTests.swift */; };
+		B1000035 /* TransformerEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000035 /* TransformerEngineTests.swift */; };
+		B1000036 /* GroundingEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000036 /* GroundingEngineTests.swift */; };
+		B1000037 /* UnitConverterEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000037 /* UnitConverterEngineTests.swift */; };
+		B1000040 /* ShortCircuitEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000040 /* ShortCircuitEngine.swift */; };
+		B1000041 /* MotorCalcEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000041 /* MotorCalcEngine.swift */; };
+		B1000042 /* LightingEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000042 /* LightingEngine.swift */; };
+		B1000043 /* EnergyConsumptionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000043 /* EnergyConsumptionEngine.swift */; };
+		B1000044 /* ShortCircuitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000044 /* ShortCircuitViewModel.swift */; };
+		B1000045 /* MotorCalcViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000045 /* MotorCalcViewModel.swift */; };
+		B1000046 /* LightingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000046 /* LightingViewModel.swift */; };
+		B1000047 /* EnergyConsumptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000047 /* EnergyConsumptionViewModel.swift */; };
+		B1000048 /* ShortCircuitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000048 /* ShortCircuitView.swift */; };
+		B1000049 /* MotorCalcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000049 /* MotorCalcView.swift */; };
+		B100004A /* LightingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100004A /* LightingView.swift */; };
+		B100004B /* EnergyConsumptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100004B /* EnergyConsumptionView.swift */; };
+		B1000050 /* ShortCircuitEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000050 /* ShortCircuitEngineTests.swift */; };
+		B1000051 /* MotorCalcEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000051 /* MotorCalcEngineTests.swift */; };
+		B1000052 /* LightingEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000052 /* LightingEngineTests.swift */; };
+		B1000053 /* EnergyConsumptionEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000053 /* EnergyConsumptionEngineTests.swift */; };
+		B1000060 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000060 /* OnboardingViewModel.swift */; };
+		B1000061 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000061 /* OnboardingView.swift */; };
 		A1B2C3D400000001 /* MyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000010 /* MyAppApp.swift */; };
 		A1B2C3D400000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000011 /* ContentView.swift */; };
 		A1B2C3D400000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000012 /* Assets.xcassets */; };
@@ -109,6 +135,33 @@
 		C100002C /* UnitConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConverterView.swift; sourceTree = "<group>"; };
 		C100002D /* FormulaReferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaReferenceView.swift; sourceTree = "<group>"; };
 		C100002E /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		C1000030 /* OhmLawEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OhmLawEngineTests.swift; sourceTree = "<group>"; };
+		C1000031 /* PowerEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerEngineTests.swift; sourceTree = "<group>"; };
+		C1000032 /* CableSectionEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CableSectionEngineTests.swift; sourceTree = "<group>"; };
+		C1000033 /* VoltageDropEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoltageDropEngineTests.swift; sourceTree = "<group>"; };
+		C1000034 /* CompensationEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompensationEngineTests.swift; sourceTree = "<group>"; };
+		C1000035 /* TransformerEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerEngineTests.swift; sourceTree = "<group>"; };
+		C1000036 /* GroundingEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundingEngineTests.swift; sourceTree = "<group>"; };
+		C1000037 /* UnitConverterEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConverterEngineTests.swift; sourceTree = "<group>"; };
+		C1000040 /* ShortCircuitEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortCircuitEngine.swift; sourceTree = "<group>"; };
+		C1000041 /* MotorCalcEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorCalcEngine.swift; sourceTree = "<group>"; };
+		C1000042 /* LightingEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightingEngine.swift; sourceTree = "<group>"; };
+		C1000043 /* EnergyConsumptionEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyConsumptionEngine.swift; sourceTree = "<group>"; };
+		C1000044 /* ShortCircuitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortCircuitViewModel.swift; sourceTree = "<group>"; };
+		C1000045 /* MotorCalcViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorCalcViewModel.swift; sourceTree = "<group>"; };
+		C1000046 /* LightingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightingViewModel.swift; sourceTree = "<group>"; };
+		C1000047 /* EnergyConsumptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyConsumptionViewModel.swift; sourceTree = "<group>"; };
+		C1000048 /* ShortCircuitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortCircuitView.swift; sourceTree = "<group>"; };
+		C1000049 /* MotorCalcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorCalcView.swift; sourceTree = "<group>"; };
+		C100004A /* LightingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightingView.swift; sourceTree = "<group>"; };
+		C100004B /* EnergyConsumptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyConsumptionView.swift; sourceTree = "<group>"; };
+		C1000050 /* ShortCircuitEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortCircuitEngineTests.swift; sourceTree = "<group>"; };
+		C1000051 /* MotorCalcEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorCalcEngineTests.swift; sourceTree = "<group>"; };
+		C1000052 /* LightingEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightingEngineTests.swift; sourceTree = "<group>"; };
+		C1000053 /* EnergyConsumptionEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyConsumptionEngineTests.swift; sourceTree = "<group>"; };
+		C1000060 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		C1000061 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		T1000001 /* MyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,13 +172,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		T1000030 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXContainerItemProxy section */
+		T1000040 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1B2C3D400000080 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1B2C3D400000050;
+			remoteInfo = MyApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXTargetDependency section */
+		T1000041 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1B2C3D400000050 /* MyApp */;
+			targetProxy = T1000040 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXGroup section */
 		A1B2C3D400000040 = {
 			isa = PBXGroup;
 			children = (
 				A1B2C3D400000041 /* MyApp */,
+				T1000020 /* MyAppTests */,
 				A1B2C3D400000042 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -153,8 +232,28 @@
 			isa = PBXGroup;
 			children = (
 				A1B2C3D400000020 /* MyApp.app */,
+				T1000001 /* MyAppTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		T1000020 /* MyAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				C1000030 /* OhmLawEngineTests.swift */,
+				C1000031 /* PowerEngineTests.swift */,
+				C1000032 /* CableSectionEngineTests.swift */,
+				C1000033 /* VoltageDropEngineTests.swift */,
+				C1000034 /* CompensationEngineTests.swift */,
+				C1000035 /* TransformerEngineTests.swift */,
+				C1000036 /* GroundingEngineTests.swift */,
+				C1000037 /* UnitConverterEngineTests.swift */,
+				C1000050 /* ShortCircuitEngineTests.swift */,
+				C1000051 /* MotorCalcEngineTests.swift */,
+				C1000052 /* LightingEngineTests.swift */,
+				C1000053 /* EnergyConsumptionEngineTests.swift */,
+			);
+			path = MyAppTests;
 			sourceTree = "<group>";
 		};
 		A1B2C3D400000043 /* Preview Content */ = {
@@ -195,6 +294,10 @@
 				C1000021 /* TransformerEngine.swift */,
 				C1000022 /* GroundingEngine.swift */,
 				C1000023 /* UnitConverterEngine.swift */,
+				C1000040 /* ShortCircuitEngine.swift */,
+				C1000041 /* MotorCalcEngine.swift */,
+				C1000042 /* LightingEngine.swift */,
+				C1000043 /* EnergyConsumptionEngine.swift */,
 			);
 			path = Engines;
 			sourceTree = "<group>";
@@ -213,6 +316,11 @@
 				C1000026 /* GroundingViewModel.swift */,
 				C1000027 /* UnitConverterViewModel.swift */,
 				C1000028 /* FormulaReferenceViewModel.swift */,
+				C1000044 /* ShortCircuitViewModel.swift */,
+				C1000045 /* MotorCalcViewModel.swift */,
+				C1000046 /* LightingViewModel.swift */,
+				C1000047 /* EnergyConsumptionViewModel.swift */,
+				C1000060 /* OnboardingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -231,6 +339,11 @@
 				D1000011 /* Grounding */,
 				D1000012 /* UnitConverter */,
 				D1000013 /* FormulaReference */,
+				D1000015 /* ShortCircuit */,
+				D1000016 /* MotorCalc */,
+				D1000017 /* Lighting */,
+				D1000018 /* EnergyConsumption */,
+				D1000019 /* Onboarding */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,6 +450,46 @@
 			path = FormulaReference;
 			sourceTree = "<group>";
 		};
+		D1000015 /* ShortCircuit */ = {
+			isa = PBXGroup;
+			children = (
+				C1000048 /* ShortCircuitView.swift */,
+			);
+			path = ShortCircuit;
+			sourceTree = "<group>";
+		};
+		D1000016 /* MotorCalc */ = {
+			isa = PBXGroup;
+			children = (
+				C1000049 /* MotorCalcView.swift */,
+			);
+			path = MotorCalc;
+			sourceTree = "<group>";
+		};
+		D1000017 /* Lighting */ = {
+			isa = PBXGroup;
+			children = (
+				C100004A /* LightingView.swift */,
+			);
+			path = Lighting;
+			sourceTree = "<group>";
+		};
+		D1000018 /* EnergyConsumption */ = {
+			isa = PBXGroup;
+			children = (
+				C100004B /* EnergyConsumptionView.swift */,
+			);
+			path = EnergyConsumption;
+			sourceTree = "<group>";
+		};
+		D1000019 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				C1000061 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		D100000E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +527,24 @@
 			productReference = A1B2C3D400000020 /* MyApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		T1000010 /* MyAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = T1000050 /* Build configuration list for PBXNativeTarget "MyAppTests" */;
+			buildPhases = (
+				T1000031 /* Sources */,
+				T1000030 /* Frameworks */,
+				T1000032 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				T1000041 /* PBXTargetDependency */,
+			);
+			name = MyAppTests;
+			productName = MyAppTests;
+			productReference = T1000001 /* MyAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -386,6 +557,10 @@
 				TargetAttributes = {
 					A1B2C3D400000050 = {
 						CreatedOnToolsVersion = 16.0;
+					};
+					T1000010 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = A1B2C3D400000050;
 					};
 				};
 			};
@@ -404,6 +579,7 @@
 			projectRoot = "";
 			targets = (
 				A1B2C3D400000050 /* MyApp */,
+				T1000010 /* MyAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -419,9 +595,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		T1000032 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		T1000031 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1000030 /* OhmLawEngineTests.swift in Sources */,
+				B1000031 /* PowerEngineTests.swift in Sources */,
+				B1000032 /* CableSectionEngineTests.swift in Sources */,
+				B1000033 /* VoltageDropEngineTests.swift in Sources */,
+				B1000034 /* CompensationEngineTests.swift in Sources */,
+				B1000035 /* TransformerEngineTests.swift in Sources */,
+				B1000036 /* GroundingEngineTests.swift in Sources */,
+				B1000037 /* UnitConverterEngineTests.swift in Sources */,
+				B1000050 /* ShortCircuitEngineTests.swift in Sources */,
+				B1000051 /* MotorCalcEngineTests.swift in Sources */,
+				B1000052 /* LightingEngineTests.swift in Sources */,
+				B1000053 /* EnergyConsumptionEngineTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A1B2C3D400000060 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -472,6 +674,20 @@
 				B100002C /* UnitConverterView.swift in Sources */,
 				B100002D /* FormulaReferenceView.swift in Sources */,
 				B100002E /* SearchBarView.swift in Sources */,
+				B1000040 /* ShortCircuitEngine.swift in Sources */,
+				B1000041 /* MotorCalcEngine.swift in Sources */,
+				B1000042 /* LightingEngine.swift in Sources */,
+				B1000043 /* EnergyConsumptionEngine.swift in Sources */,
+				B1000044 /* ShortCircuitViewModel.swift in Sources */,
+				B1000045 /* MotorCalcViewModel.swift in Sources */,
+				B1000046 /* LightingViewModel.swift in Sources */,
+				B1000047 /* EnergyConsumptionViewModel.swift in Sources */,
+				B1000048 /* ShortCircuitView.swift in Sources */,
+				B1000049 /* MotorCalcView.swift in Sources */,
+				B100004A /* LightingView.swift in Sources */,
+				B100004B /* EnergyConsumptionView.swift in Sources */,
+				B1000060 /* OnboardingViewModel.swift in Sources */,
+				B1000061 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +829,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ElecCalc;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Osman Seven";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -620,8 +839,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.MyApp;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.osmanseven.eleccalc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -639,6 +858,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MyApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ElecCalc;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Osman Seven";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -648,12 +870,48 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.MyApp;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.osmanseven.eleccalc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		T1000060 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.osmanseven.eleccalc.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyApp";
+			};
+			name = Debug;
+		};
+		T1000061 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.osmanseven.eleccalc.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyApp";
 			};
 			name = Release;
 		};
@@ -674,6 +932,15 @@
 			buildConfigurations = (
 				A1B2C3D4000000A0 /* Debug */,
 				A1B2C3D4000000A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		T1000050 /* Build configuration list for PBXNativeTarget "MyAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				T1000060 /* Debug */,
+				T1000061 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

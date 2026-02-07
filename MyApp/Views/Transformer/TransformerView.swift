@@ -49,7 +49,9 @@ struct TransformerView: View {
                     title: String(localized: "action.calculate"),
                     isEnabled: viewModel.canCalculate
                 ) {
-                    viewModel.calculate()
+                    withAnimation(.spring(response: 0.5, dampingFraction: 0.8)) {
+                        viewModel.calculate()
+                    }
                     if viewModel.loadingRate != nil {
                         viewModel.saveToHistory(modelContext: modelContext)
                     }
@@ -94,6 +96,8 @@ struct TransformerView: View {
                 }
             }
             .padding()
+            .frame(maxWidth: 600)
+            .frame(maxWidth: .infinity)
         }
         .hideKeyboardOnTap()
         .navigationTitle(String(localized: "category.transformer"))

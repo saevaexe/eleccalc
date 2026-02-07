@@ -14,5 +14,9 @@ struct CalculateButton: View {
         }
         .buttonStyle(.borderedProminent)
         .disabled(!isEnabled)
+        .accessibilityLabel(title)
+        .accessibilityHint(isEnabled
+            ? String(localized: "accessibility.tapToCalculate")
+            : String(localized: "accessibility.fillFieldsFirst"))
     }
 }

@@ -13,6 +13,7 @@ struct ResultCardView: View {
             Text(value)
                 .font(.system(size: 48, weight: .bold, design: .rounded))
                 .foregroundStyle(.primary)
+                .contentTransition(.numericText())
             Text(unit)
                 .font(.title3)
                 .foregroundStyle(.secondary)
@@ -24,5 +25,9 @@ struct ResultCardView: View {
         .padding()
         .frame(maxWidth: .infinity)
         .background(.regularMaterial, in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.large))
+        .transition(.scale(scale: 0.9).combined(with: .opacity))
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(title): \(value) \(unit)")
+        .accessibilityHint(formula)
     }
 }

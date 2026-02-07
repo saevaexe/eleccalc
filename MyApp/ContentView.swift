@@ -31,9 +31,13 @@ struct ContentView: View {
         case .voltageDrop:      VoltageDropView()
         case .compensation:     CompensationView()
         case .transformer:      TransformerView()
-        case .grounding:        GroundingView()
-        case .unitConverter:    UnitConverterView()
-        case .formulaReference: FormulaReferenceView()
+        case .grounding:         GroundingView()
+        case .shortCircuit:      ShortCircuitView()
+        case .motorCalc:         MotorCalcView()
+        case .lighting:          LightingView()
+        case .energyConsumption: EnergyConsumptionView()
+        case .unitConverter:     UnitConverterView()
+        case .formulaReference:  FormulaReferenceView()
         }
     }
 }

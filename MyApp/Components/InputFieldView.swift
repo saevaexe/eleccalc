@@ -18,6 +18,8 @@ struct InputFieldView: View {
                     .textFieldStyle(.roundedBorder)
                     .disabled(isDisabled)
                     .opacity(isDisabled ? 0.5 : 1.0)
+                    .accessibilityLabel(label)
+                    .accessibilityValue(text.isEmpty ? String(localized: "accessibility.empty") : "\(text) \(unit)")
                 Text(unit)
                     .font(.callout)
                     .foregroundStyle(.secondary)

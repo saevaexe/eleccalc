@@ -11,6 +11,7 @@ struct SearchBarView: View {
             TextField(placeholder, text: $text)
                 .textFieldStyle(.plain)
                 .autocorrectionDisabled()
+                .accessibilityLabel(String(localized: "accessibility.searchField"))
             if !text.isEmpty {
                 Button {
                     text = ""
@@ -18,6 +19,7 @@ struct SearchBarView: View {
                     Image(systemName: "xmark.circle.fill")
                         .foregroundStyle(.secondary)
                 }
+                .accessibilityLabel(String(localized: "accessibility.clearSearch"))
             }
         }
         .padding(AppTheme.Spacing.medium)

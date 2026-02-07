@@ -55,7 +55,9 @@ struct UnitConverterView: View {
                     title: String(localized: "action.convert"),
                     isEnabled: viewModel.canCalculate
                 ) {
-                    viewModel.calculate()
+                    withAnimation(.spring(response: 0.5, dampingFraction: 0.8)) {
+                        viewModel.calculate()
+                    }
                     if viewModel.result != nil {
                         viewModel.saveToHistory(modelContext: modelContext)
                     }
@@ -71,6 +73,8 @@ struct UnitConverterView: View {
                 }
             }
             .padding()
+            .frame(maxWidth: 600)
+            .frame(maxWidth: .infinity)
         }
         .hideKeyboardOnTap()
         .navigationTitle(String(localized: "category.unitConverter"))

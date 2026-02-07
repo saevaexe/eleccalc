@@ -128,6 +128,80 @@ final class FormulaReferenceViewModel {
                 ),
             ]
         ),
+        FormulaGroup(
+            title: String(localized: "formula.group.shortCircuit"),
+            icon: "bolt.trianglebadge.exclamationmark",
+            formulas: [
+                FormulaItem(
+                    name: String(localized: "formula.shortCircuitCurrent"),
+                    formula: "Isc = U / (√3 × Zk)",
+                    description: String(localized: "formula.shortCircuitCurrent.desc")
+                ),
+                FormulaItem(
+                    name: String(localized: "formula.transformerImpedance"),
+                    formula: "Zt = (Uk%/100) × (U²/Sn)",
+                    description: String(localized: "formula.transformerImpedance.desc")
+                ),
+                FormulaItem(
+                    name: String(localized: "formula.peakCurrent"),
+                    formula: "ip = κ × √2 × Isc",
+                    description: String(localized: "formula.peakCurrent.desc")
+                ),
+            ]
+        ),
+        FormulaGroup(
+            title: String(localized: "formula.group.motorCalc"),
+            icon: "gearshape.2.fill",
+            formulas: [
+                FormulaItem(
+                    name: String(localized: "formula.nominalCurrent"),
+                    formula: "In = P / (√3 × U × cosφ × η)",
+                    description: String(localized: "formula.nominalCurrent.desc")
+                ),
+                FormulaItem(
+                    name: String(localized: "formula.startingCurrent"),
+                    formula: "Istart = kLR × In",
+                    description: String(localized: "formula.startingCurrent.desc")
+                ),
+                FormulaItem(
+                    name: String(localized: "formula.torque"),
+                    formula: "T = P / (2π × n/60)",
+                    description: String(localized: "formula.torque.desc")
+                ),
+            ]
+        ),
+        FormulaGroup(
+            title: String(localized: "formula.group.lighting"),
+            icon: "lightbulb.fill",
+            formulas: [
+                FormulaItem(
+                    name: String(localized: "formula.fixtureCount"),
+                    formula: "n = (E × A) / (Φ × CU × MF)",
+                    description: String(localized: "formula.fixtureCount.desc")
+                ),
+                FormulaItem(
+                    name: String(localized: "formula.powerDensity"),
+                    formula: "W/m² = (n × W) / A",
+                    description: String(localized: "formula.powerDensity.desc")
+                ),
+            ]
+        ),
+        FormulaGroup(
+            title: String(localized: "formula.group.energyConsumption"),
+            icon: "chart.bar.fill",
+            formulas: [
+                FormulaItem(
+                    name: String(localized: "formula.energyConsumption"),
+                    formula: "kWh = P(kW) × t(h)",
+                    description: String(localized: "formula.energyConsumption.desc")
+                ),
+                FormulaItem(
+                    name: String(localized: "formula.co2Emission"),
+                    formula: "CO₂ = kWh × 0.47",
+                    description: String(localized: "formula.co2Emission.desc")
+                ),
+            ]
+        ),
     ]
 
     var searchText: String = ""

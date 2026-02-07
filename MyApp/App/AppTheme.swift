@@ -24,6 +24,10 @@ enum AppTheme {
         static let transformer = Color.brown
         static let grounding = Color.teal
         static let unitConverter = Color.indigo
+        static let shortCircuit = Color.red
+        static let motorCalc = Color.cyan
+        static let lighting = Color.yellow
+        static let energyConsumption = Color.pink
         static let formulaReference = Color.mint
     }
 }

@@ -31,7 +31,9 @@ struct VoltageDropView: View {
                     title: String(localized: "action.calculate"),
                     isEnabled: viewModel.canCalculate
                 ) {
-                    viewModel.calculate()
+                    withAnimation(.spring(response: 0.5, dampingFraction: 0.8)) {
+                        viewModel.calculate()
+                    }
                     if viewModel.voltageDrop != nil {
                         viewModel.saveToHistory(modelContext: modelContext)
                     }
@@ -59,6 +61,8 @@ struct VoltageDropView: View {
                 }
             }
             .padding()
+            .frame(maxWidth: 600)
+            .frame(maxWidth: .infinity)
         }
         .hideKeyboardOnTap()
         .navigationTitle(String(localized: "category.voltageDrop"))
