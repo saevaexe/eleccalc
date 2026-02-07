@@ -10,6 +10,11 @@ final class MotorCalcViewModel {
     var startingFactorText: String = "6"
     var rpmText: String = "1500"
 
+    var selectedIEClass: IEClass? = nil {
+        didSet { updateEfficiencyFromIEC() }
+    }
+    var showEfficiencyTable: Bool = false
+
     var nominalCurrent: Double?
     var startingCurrent: Double?
     var torque: Double?
@@ -61,10 +66,19 @@ final class MotorCalcViewModel {
         efficiencyText = "0,9"
         startingFactorText = "6"
         rpmText = "1500"
+        selectedIEClass = nil
+        showEfficiencyTable = false
         nominalCurrent = nil
         startingCurrent = nil
         torque = nil
         hasCalculated = false
+    }
+
+    func updateEfficiencyFromIEC() {
+        guard let ieClass = selectedIEClass,
+              let power = parseDouble(motorPowerText), power > 0 else { return }
+        let eff = MotorCalcEngine.iecEfficiency(powerKW: power, ieClass: ieClass)
+        efficiencyText = String(format: "%.3f", eff).replacingOccurrences(of: ".", with: ",")
     }
 
     private func parseDouble(_ text: String) -> Double? {

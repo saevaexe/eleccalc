@@ -1431,6 +1431,57 @@
         }
       }
     },
+    "motor.efficiencyTable" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IEC Efficiency Table"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IEC Verim Tablosu"
+          }
+        }
+      }
+    },
+    "motor.ieClass" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IE Class"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IE Sınıfı"
+          }
+        }
+      }
+    },
+    "motor.selectIEClass" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Efficiency auto-filled from IEC 60034-30-1"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verim IEC 60034-30-1'e göre otomatik dolduruldu"
+          }
+        }
+      }
+    },
     "formula.apparentPower" : {
       "extractionState" : "manual",
       "localizations" : {

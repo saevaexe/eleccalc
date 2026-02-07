@@ -34,4 +34,18 @@ final class MotorCalcEngineTests: XCTestCase {
         XCTAssertFalse(MotorCalcEngine.standardPowers.isEmpty)
         XCTAssertEqual(MotorCalcEngine.standardPowers.first, 0.37)
     }
+
+    // MARK: - IEC Efficiency Table
+
+    func testIECEfficiencyLookup() {
+        // 11 kW + IE3 → 0.912
+        let eff = MotorCalcEngine.iecEfficiency(powerKW: 11, ieClass: .ie3)
+        XCTAssertEqual(eff, 0.912, accuracy: 1e-6)
+    }
+
+    func testIECEfficiencyNearestPower() {
+        // 10 kW → en yakın 11 kW satırı, IE3 = 0.912
+        let eff = MotorCalcEngine.iecEfficiency(powerKW: 10, ieClass: .ie3)
+        XCTAssertEqual(eff, 0.912, accuracy: 1e-6)
+    }
 }

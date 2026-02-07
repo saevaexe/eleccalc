@@ -29,6 +29,39 @@ struct MotorCalcView: View {
                         text: $viewModel.efficiencyText,
                         unit: ""
                     )
+
+                    // IE Sınıfı Picker
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(String(localized: "motor.ieClass"))
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                        Picker(String(localized: "motor.ieClass"), selection: $viewModel.selectedIEClass) {
+                            Text("-").tag(IEClass?.none)
+                            ForEach(IEClass.allCases) { ie in
+                                Text(ie.title).tag(IEClass?.some(ie))
+                            }
+                        }
+                        .pickerStyle(.segmented)
+                        .onChange(of: viewModel.motorPowerText) {
+                            viewModel.updateEfficiencyFromIEC()
+                        }
+
+                        if viewModel.selectedIEClass != nil {
+                            Text(String(localized: "motor.selectIEClass"))
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+
+                    // IEC Verim Tablosu
+                    DisclosureGroup(
+                        String(localized: "motor.efficiencyTable"),
+                        isExpanded: $viewModel.showEfficiencyTable
+                    ) {
+                        iecTableView
+                    }
+                    .tint(.accent)
+
                     InputFieldView(
                         label: String(localized: "field.startingFactor"),
                         text: $viewModel.startingFactorText,
@@ -93,5 +126,48 @@ struct MotorCalcView: View {
                 Button(String(localized: "action.clear"), action: viewModel.clear)
             }
         }
+    }
+
+    // MARK: - IEC Efficiency Table
+
+    private var iecTableView: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            VStack(spacing: 0) {
+                // Header
+                HStack(spacing: 0) {
+                    Text("kW")
+                        .frame(width: 56, alignment: .leading)
+                        .fontWeight(.semibold)
+                    ForEach(IEClass.allCases) { ie in
+                        Text(ie.title)
+                            .frame(width: 56, alignment: .trailing)
+                            .fontWeight(.semibold)
+                    }
+                }
+                .font(.caption)
+                .padding(.vertical, 6)
+                .padding(.horizontal, 8)
+                .background(Color(.systemGray5))
+
+                // Rows
+                ForEach(MotorCalcEngine.iecEfficiencyTable, id: \.powerKW) { entry in
+                    HStack(spacing: 0) {
+                        Text(entry.powerKW.formatted(.number.precision(.fractionLength(0...2))))
+                            .frame(width: 56, alignment: .leading)
+                        ForEach(IEClass.allCases) { ie in
+                            let pct = entry.efficiency(for: ie) * 100.0
+                            Text(pct.formatted(.number.precision(.fractionLength(1))))
+                                .frame(width: 56, alignment: .trailing)
+                                .foregroundStyle(viewModel.selectedIEClass == ie ? .accent : .primary)
+                                .fontWeight(viewModel.selectedIEClass == ie ? .semibold : .regular)
+                        }
+                    }
+                    .font(.caption)
+                    .padding(.vertical, 4)
+                    .padding(.horizontal, 8)
+                }
+            }
+        }
+        .padding(.top, 8)
     }
 }
