@@ -6,6 +6,7 @@ enum PowerSolveFor: String, CaseIterable, Hashable {
     case activePower
     case reactivePower
     case powerFactor
+    case fromKVA
 
     var title: String {
         switch self {
@@ -13,15 +14,17 @@ enum PowerSolveFor: String, CaseIterable, Hashable {
         case .activePower:    return String(localized: "power.active")
         case .reactivePower:  return String(localized: "power.reactive")
         case .powerFactor:    return String(localized: "power.factor")
+        case .fromKVA:        return String(localized: "power.fromKVA")
         }
     }
 
-    var unit: ElectricalUnit {
+    var unit: String {
         switch self {
-        case .apparentPower:  return .voltAmpere
-        case .activePower:    return .watt
-        case .reactivePower:  return .kVAR
-        case .powerFactor:    return .percent
+        case .apparentPower:  return "VA"
+        case .activePower:    return "W"
+        case .reactivePower:  return "VAR"
+        case .powerFactor:    return ""
+        case .fromKVA:        return ""
         }
     }
 }
@@ -32,6 +35,9 @@ final class PowerViewModel {
         didSet {
             if oldValue != solveFor {
                 result = nil
+                kvaActivePower = nil
+                kvaReactivePower = nil
+                kvaCurrent = nil
                 hasCalculated = false
             }
         }
@@ -40,11 +46,17 @@ final class PowerViewModel {
     var currentText: String = ""
     var powerFactorText: String = "0,85"
     var activePowerText: String = ""
+    var apparentPowerText: String = ""
     var isThreePhase: Bool = false
 
     var result: Double?
     var formulaUsed: String = ""
     var hasCalculated: Bool = false
+
+    // kVA → sonuçlar
+    var kvaActivePower: Double?
+    var kvaReactivePower: Double?
+    var kvaCurrent: Double?
 
     var canCalculate: Bool {
         switch solveFor {
@@ -52,6 +64,7 @@ final class PowerViewModel {
         case .activePower:    return parseDouble(voltageText) != nil && parseDouble(currentText) != nil && parseDouble(powerFactorText) != nil
         case .reactivePower:  return parseDouble(voltageText) != nil && parseDouble(currentText) != nil && parseDouble(powerFactorText) != nil
         case .powerFactor:    return parseDouble(activePowerText) != nil && parseDouble(voltageText) != nil && parseDouble(currentText) != nil
+        case .fromKVA:        return parseDouble(apparentPowerText) != nil && parseDouble(voltageText) != nil && parseDouble(powerFactorText) != nil
         }
     }
 
@@ -93,18 +106,35 @@ final class PowerViewModel {
             result = PowerEngine.powerFactor(activePower: p, apparentPower: s)
             formulaUsed = "cosφ = P / S"
             if let r = result { powerFactorText = formatForInput(r) }
+        case .fromKVA:
+            guard let sKVA = parseDouble(apparentPowerText), let v = parseDouble(voltageText), let pf = parseDouble(powerFactorText) else { return }
+            let sVA = sKVA * 1000.0
+            kvaActivePower = PowerEngine.activePower(apparentPower: sVA, powerFactor: pf) / 1000.0  // kW
+            kvaReactivePower = PowerEngine.reactivePower(apparentPower: sVA, powerFactor: pf) / 1000.0  // kVAR
+            kvaCurrent = v > 0 ? sVA / (sqrt(3.0) * v) : nil  // 3 faz akım
+            formulaUsed = "P = S × cosφ, Q = S × sinφ, I = S / (√3 × V)"
         }
         hasCalculated = true
     }
 
     func saveToHistory(modelContext: ModelContext) {
-        guard let result else { return }
-        let record = CalculationRecord(
-            category: .power,
-            title: "\(solveFor.title)",
-            inputSummary: "V=\(voltageText), I=\(currentText)",
-            resultSummary: "\(solveFor.title) = \(result.formatted2) \(solveFor.unit.symbol)"
-        )
+        let record: CalculationRecord
+        if solveFor == .fromKVA, let p = kvaActivePower {
+            record = CalculationRecord(
+                category: .power,
+                title: "\(solveFor.title)",
+                inputSummary: "S=\(apparentPowerText)kVA, V=\(voltageText)V",
+                resultSummary: "P = \(p.formatted2) kW"
+            )
+        } else {
+            guard let result else { return }
+            record = CalculationRecord(
+                category: .power,
+                title: "\(solveFor.title)",
+                inputSummary: "V=\(voltageText), I=\(currentText)",
+                resultSummary: "\(solveFor.title) = \(result.formatted2) \(solveFor.unit)"
+            )
+        }
         modelContext.insert(record)
     }
 
@@ -113,7 +143,11 @@ final class PowerViewModel {
         currentText = ""
         powerFactorText = "0,85"
         activePowerText = ""
+        apparentPowerText = ""
         result = nil
+        kvaActivePower = nil
+        kvaReactivePower = nil
+        kvaCurrent = nil
         hasCalculated = false
     }
 
