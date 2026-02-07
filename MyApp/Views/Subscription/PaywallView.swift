@@ -19,6 +19,8 @@ struct PaywallView: View {
                     restoreButton
                 }
                 .padding()
+                .frame(maxWidth: 600)
+                .frame(maxWidth: .infinity)
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

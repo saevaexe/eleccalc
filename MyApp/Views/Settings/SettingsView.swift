@@ -34,7 +34,7 @@ struct SettingsView: View {
 
             // MARK: - Geri Bildirim
             Section(String(localized: "settings.feedback")) {
-                Link(destination: URL(string: "mailto:eleccalc@example.com?subject=ElecCalc%20Feedback")!) {
+                Link(destination: URL(string: "mailto:osman.seven97@icloud.com?subject=ElecCalc%20Feedback")!) {
                     Label(String(localized: "settings.sendFeedback"), systemImage: "envelope")
                 }
 

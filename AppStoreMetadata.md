@@ -86,10 +86,10 @@ Güvenilir sonuçlara hızla ihtiyaç duyan elektrik mühendisleri için tasarla
 **TR:** 15 elektrik hesaplayıcısı, abonelik sistemi, hesaplama geçmişi ve formül referansı ile ilk sürüm.
 
 ## Privacy Policy URL
-(Gerekli — App Store Connect'te yayınlanmadan önce hazırlanmalı)
+https://saevaexe.github.io/eleccalc/privacy-policy.html
 
 ## Support URL
-(Gerekli — e-posta veya web sayfası)
+https://saevaexe.github.io/eleccalc/support.html
 
 ## Age Rating
 4+ (Hesaplayıcı uygulaması, hassas içerik yok)
