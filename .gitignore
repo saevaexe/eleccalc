@@ -3,12 +3,17 @@ build/
 DerivedData/
 *.xcodeproj/xcuserdata/
 *.xcworkspace/xcuserdata/
-*.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+*.xcodeproj/project.xcworkspace/
 
 # macOS
 .DS_Store
 *.swp
 *~
+
+# Build artifacts
+*.ipa
+*.dSYM.zip
+*.dSYM
 
 # CocoaPods
 Pods/
