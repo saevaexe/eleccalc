@@ -19,6 +19,13 @@ struct ContentView: View {
             .tabItem {
                 Label(String(localized: "tab.history"), systemImage: "clock.arrow.circlepath")
             }
+
+            NavigationStack {
+                SettingsView()
+            }
+            .tabItem {
+                Label(String(localized: "tab.settings"), systemImage: "gearshape")
+            }
         }
     }
 

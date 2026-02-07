@@ -44,6 +44,7 @@
 		B100006A /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100006A /* SubscriptionManager.swift */; };
 		B100006B /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100006B /* PaywallView.swift */; };
 		B100006C /* ProBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100006C /* ProBadgeView.swift */; };
+		B100006E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100006E /* SettingsView.swift */; };
 		A1B2C3D400000001 /* MyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000010 /* MyAppApp.swift */; };
 		A1B2C3D400000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000011 /* ContentView.swift */; };
 		A1B2C3D400000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000012 /* Assets.xcassets */; };
@@ -184,6 +185,7 @@
 		C100006B /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
 		C100006C /* ProBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProBadgeView.swift; sourceTree = "<group>"; };
 		C100006D /* ElecCalcProducts.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = ElecCalcProducts.storekit; sourceTree = "<group>"; };
+		C100006E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		T1000001 /* MyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -378,6 +380,7 @@
 				D100001A /* CableAmpacity */,
 				D100001B /* BreakerSelection */,
 				D100001C /* Subscription */,
+				D100001D /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -547,6 +550,14 @@
 				C100006B /* PaywallView.swift */,
 			);
 			path = Subscription;
+			sourceTree = "<group>";
+		};
+		D100001D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C100006E /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		D100000E /* Resources */ = {
@@ -758,6 +769,7 @@
 				B100006A /* SubscriptionManager.swift in Sources */,
 				B100006B /* PaywallView.swift in Sources */,
 				B100006C /* ProBadgeView.swift in Sources */,
+				B100006E /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
