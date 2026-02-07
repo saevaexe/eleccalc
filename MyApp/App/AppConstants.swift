@@ -34,4 +34,9 @@ enum AppConstants {
             5, 10, 15, 20, 25, 30, 40, 50, 60, 75, 100, 125, 150, 200, 250, 300
         ]
     }
+
+    enum Subscription {
+        static let monthlyProductID = "com.eleccalc.pro.monthly"
+        static let yearlyProductID = "com.eleccalc.pro.yearly"
+    }
 }

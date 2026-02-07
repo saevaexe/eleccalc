@@ -19,6 +19,15 @@ enum CalculationCategory: String, Codable, CaseIterable, Identifiable, Hashable 
 
     var id: String { rawValue }
 
+    var isPremium: Bool {
+        switch self {
+        case .ohmLaw, .power, .cableSection, .unitConverter, .formulaReference:
+            return false
+        default:
+            return true
+        }
+    }
+
     var title: String {
         switch self {
         case .ohmLaw:            return String(localized: "category.ohmLaw")

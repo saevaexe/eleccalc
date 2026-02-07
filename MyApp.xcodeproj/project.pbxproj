@@ -41,6 +41,9 @@
 		B1000067 /* BreakerSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000067 /* BreakerSelectionView.swift */; };
 		B1000068 /* CableAmpacityEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000068 /* CableAmpacityEngineTests.swift */; };
 		B1000069 /* BreakerSelectionEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000069 /* BreakerSelectionEngineTests.swift */; };
+		B100006A /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100006A /* SubscriptionManager.swift */; };
+		B100006B /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100006B /* PaywallView.swift */; };
+		B100006C /* ProBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100006C /* ProBadgeView.swift */; };
 		A1B2C3D400000001 /* MyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000010 /* MyAppApp.swift */; };
 		A1B2C3D400000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000011 /* ContentView.swift */; };
 		A1B2C3D400000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000012 /* Assets.xcassets */; };
@@ -177,6 +180,10 @@
 		C1000067 /* BreakerSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakerSelectionView.swift; sourceTree = "<group>"; };
 		C1000068 /* CableAmpacityEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CableAmpacityEngineTests.swift; sourceTree = "<group>"; };
 		C1000069 /* BreakerSelectionEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakerSelectionEngineTests.swift; sourceTree = "<group>"; };
+		C100006A /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
+		C100006B /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		C100006C /* ProBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProBadgeView.swift; sourceTree = "<group>"; };
+		C100006D /* ElecCalcProducts.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = ElecCalcProducts.storekit; sourceTree = "<group>"; };
 		T1000001 /* MyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -238,6 +245,7 @@
 				D100000C /* Components */,
 				D100000D /* Extensions */,
 				D100000E /* Resources */,
+				C100006D /* ElecCalcProducts.storekit */,
 				A1B2C3D400000012 /* Assets.xcassets */,
 				A1B2C3D400000043 /* Preview Content */,
 			);
@@ -287,6 +295,7 @@
 			children = (
 				C1000001 /* AppConstants.swift */,
 				C1000002 /* AppTheme.swift */,
+				C100006A /* SubscriptionManager.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -368,6 +377,7 @@
 				D1000019 /* Onboarding */,
 				D100001A /* CableAmpacity */,
 				D100001B /* BreakerSelection */,
+				D100001C /* Subscription */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -430,6 +440,7 @@
 				C100001A /* CalculateButton.swift */,
 				C100001B /* UnitPickerView.swift */,
 				C100002E /* SearchBarView.swift */,
+				C100006C /* ProBadgeView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -528,6 +539,14 @@
 				C1000067 /* BreakerSelectionView.swift */,
 			);
 			path = BreakerSelection;
+			sourceTree = "<group>";
+		};
+		D100001C /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				C100006B /* PaywallView.swift */,
+			);
+			path = Subscription;
 			sourceTree = "<group>";
 		};
 		D100000E /* Resources */ = {
@@ -736,6 +755,9 @@
 				B1000065 /* BreakerSelectionEngine.swift in Sources */,
 				B1000066 /* BreakerSelectionViewModel.swift in Sources */,
 				B1000067 /* BreakerSelectionView.swift in Sources */,
+				B100006A /* SubscriptionManager.swift in Sources */,
+				B100006B /* PaywallView.swift in Sources */,
+				B100006C /* ProBadgeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
