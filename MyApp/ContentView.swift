@@ -36,6 +36,8 @@ struct ContentView: View {
         case .motorCalc:         MotorCalcView()
         case .lighting:          LightingView()
         case .energyConsumption: EnergyConsumptionView()
+        case .cableAmpacity:    CableAmpacityView()
+        case .breakerSelection: BreakerSelectionView()
         case .unitConverter:     UnitConverterView()
         case .formulaReference:  FormulaReferenceView()
         }

@@ -28,6 +28,8 @@ enum AppTheme {
         static let motorCalc = Color.cyan
         static let lighting = Color.yellow
         static let energyConsumption = Color.pink
+        static let cableAmpacity = Color.gray
+        static let breakerSelection = Color(.systemOrange)
         static let formulaReference = Color.mint
     }
 }

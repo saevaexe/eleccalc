@@ -1,6 +1,7 @@
 import Foundation
 
-enum ConductorMaterial: String, CaseIterable, Hashable {
+enum ConductorMaterial: String, CaseIterable, Hashable, Identifiable {
+    var id: String { rawValue }
     case copper
     case aluminum
 

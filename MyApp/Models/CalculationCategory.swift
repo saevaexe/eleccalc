@@ -12,6 +12,8 @@ enum CalculationCategory: String, Codable, CaseIterable, Identifiable, Hashable 
     case motorCalc
     case lighting
     case energyConsumption
+    case cableAmpacity
+    case breakerSelection
     case unitConverter
     case formulaReference
 
@@ -30,6 +32,8 @@ enum CalculationCategory: String, Codable, CaseIterable, Identifiable, Hashable 
         case .motorCalc:         return String(localized: "category.motorCalc")
         case .lighting:          return String(localized: "category.lighting")
         case .energyConsumption: return String(localized: "category.energyConsumption")
+        case .cableAmpacity:    return String(localized: "category.cableAmpacity")
+        case .breakerSelection: return String(localized: "category.breakerSelection")
         case .unitConverter:     return String(localized: "category.unitConverter")
         case .formulaReference:  return String(localized: "category.formulaReference")
         }
@@ -48,6 +52,8 @@ enum CalculationCategory: String, Codable, CaseIterable, Identifiable, Hashable 
         case .motorCalc:         return String(localized: "category.motorCalc.subtitle")
         case .lighting:          return String(localized: "category.lighting.subtitle")
         case .energyConsumption: return String(localized: "category.energyConsumption.subtitle")
+        case .cableAmpacity:    return String(localized: "category.cableAmpacity.subtitle")
+        case .breakerSelection: return String(localized: "category.breakerSelection.subtitle")
         case .unitConverter:     return String(localized: "category.unitConverter.subtitle")
         case .formulaReference:  return String(localized: "category.formulaReference.subtitle")
         }
@@ -66,6 +72,8 @@ enum CalculationCategory: String, Codable, CaseIterable, Identifiable, Hashable 
         case .motorCalc:         return "gearshape.2.fill"
         case .lighting:          return "lightbulb.fill"
         case .energyConsumption: return "chart.bar.fill"
+        case .cableAmpacity:    return "flame.fill"
+        case .breakerSelection: return "shield.checkered"
         case .unitConverter:     return "arrow.left.arrow.right.circle.fill"
         case .formulaReference:  return "book.fill"
         }
@@ -84,6 +92,8 @@ enum CalculationCategory: String, Codable, CaseIterable, Identifiable, Hashable 
         case .motorCalc:         return AppTheme.CategoryColor.motorCalc
         case .lighting:          return AppTheme.CategoryColor.lighting
         case .energyConsumption: return AppTheme.CategoryColor.energyConsumption
+        case .cableAmpacity:    return AppTheme.CategoryColor.cableAmpacity
+        case .breakerSelection: return AppTheme.CategoryColor.breakerSelection
         case .unitConverter:     return AppTheme.CategoryColor.unitConverter
         case .formulaReference:  return AppTheme.CategoryColor.formulaReference
         }
