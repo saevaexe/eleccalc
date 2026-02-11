@@ -1,5 +1,5 @@
 import XCTest
-@testable import MyApp
+@testable import ElecCalc
 
 final class PowerEngineTests: XCTestCase {
 

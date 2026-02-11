@@ -38,8 +38,19 @@ struct SettingsView: View {
                     Label(String(localized: "settings.sendFeedback"), systemImage: "envelope")
                 }
 
-                Link(destination: URL(string: "https://apps.apple.com/app/id0000000000?action=write-review")!) {
+                Link(destination: URL(string: "https://apps.apple.com/app/id6758902534?action=write-review")!) {
                     Label(String(localized: "settings.rateApp"), systemImage: "star.bubble")
+                }
+            }
+
+            // MARK: - Yasal
+            Section(String(localized: "settings.legal")) {
+                Link(destination: URL(string: "https://saevaexe.github.io/eleccalc/privacy-policy.html")!) {
+                    Label(String(localized: "settings.privacyPolicy"), systemImage: "lock.shield")
+                }
+
+                Link(destination: URL(string: "https://saevaexe.github.io/eleccalc/terms.html")!) {
+                    Label(String(localized: "settings.termsOfUse"), systemImage: "doc.text")
                 }
             }
 

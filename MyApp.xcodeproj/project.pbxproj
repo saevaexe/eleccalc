@@ -7,44 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B1000030 /* OhmLawEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000030 /* OhmLawEngineTests.swift */; };
-		B1000031 /* PowerEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000031 /* PowerEngineTests.swift */; };
-		B1000032 /* CableSectionEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000032 /* CableSectionEngineTests.swift */; };
-		B1000033 /* VoltageDropEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000033 /* VoltageDropEngineTests.swift */; };
-		B1000034 /* CompensationEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000034 /* CompensationEngineTests.swift */; };
-		B1000035 /* TransformerEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000035 /* TransformerEngineTests.swift */; };
-		B1000036 /* GroundingEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000036 /* GroundingEngineTests.swift */; };
-		B1000037 /* UnitConverterEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000037 /* UnitConverterEngineTests.swift */; };
-		B1000040 /* ShortCircuitEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000040 /* ShortCircuitEngine.swift */; };
-		B1000041 /* MotorCalcEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000041 /* MotorCalcEngine.swift */; };
-		B1000042 /* LightingEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000042 /* LightingEngine.swift */; };
-		B1000043 /* EnergyConsumptionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000043 /* EnergyConsumptionEngine.swift */; };
-		B1000044 /* ShortCircuitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000044 /* ShortCircuitViewModel.swift */; };
-		B1000045 /* MotorCalcViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000045 /* MotorCalcViewModel.swift */; };
-		B1000046 /* LightingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000046 /* LightingViewModel.swift */; };
-		B1000047 /* EnergyConsumptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000047 /* EnergyConsumptionViewModel.swift */; };
-		B1000048 /* ShortCircuitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000048 /* ShortCircuitView.swift */; };
-		B1000049 /* MotorCalcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000049 /* MotorCalcView.swift */; };
-		B100004A /* LightingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100004A /* LightingView.swift */; };
-		B100004B /* EnergyConsumptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100004B /* EnergyConsumptionView.swift */; };
-		B1000050 /* ShortCircuitEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000050 /* ShortCircuitEngineTests.swift */; };
-		B1000051 /* MotorCalcEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000051 /* MotorCalcEngineTests.swift */; };
-		B1000052 /* LightingEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000052 /* LightingEngineTests.swift */; };
-		B1000053 /* EnergyConsumptionEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000053 /* EnergyConsumptionEngineTests.swift */; };
-		B1000060 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000060 /* OnboardingViewModel.swift */; };
-		B1000061 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000061 /* OnboardingView.swift */; };
-		B1000062 /* CableAmpacityEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000062 /* CableAmpacityEngine.swift */; };
-		B1000063 /* CableAmpacityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000063 /* CableAmpacityViewModel.swift */; };
-		B1000064 /* CableAmpacityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000064 /* CableAmpacityView.swift */; };
-		B1000065 /* BreakerSelectionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000065 /* BreakerSelectionEngine.swift */; };
-		B1000066 /* BreakerSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000066 /* BreakerSelectionViewModel.swift */; };
-		B1000067 /* BreakerSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000067 /* BreakerSelectionView.swift */; };
-		B1000068 /* CableAmpacityEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000068 /* CableAmpacityEngineTests.swift */; };
-		B1000069 /* BreakerSelectionEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000069 /* BreakerSelectionEngineTests.swift */; };
-		B100006A /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100006A /* SubscriptionManager.swift */; };
-		B100006B /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100006B /* PaywallView.swift */; };
-		B100006C /* ProBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100006C /* ProBadgeView.swift */; };
-		B100006E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100006E /* SettingsView.swift */; };
 		A1B2C3D400000001 /* MyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000010 /* MyAppApp.swift */; };
 		A1B2C3D400000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000011 /* ContentView.swift */; };
 		A1B2C3D400000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D400000012 /* Assets.xcassets */; };
@@ -94,14 +56,62 @@
 		B100002C /* UnitConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100002C /* UnitConverterView.swift */; };
 		B100002D /* FormulaReferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100002D /* FormulaReferenceView.swift */; };
 		B100002E /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100002E /* SearchBarView.swift */; };
+		B1000030 /* OhmLawEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000030 /* OhmLawEngineTests.swift */; };
+		B1000031 /* PowerEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000031 /* PowerEngineTests.swift */; };
+		B1000032 /* CableSectionEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000032 /* CableSectionEngineTests.swift */; };
+		B1000033 /* VoltageDropEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000033 /* VoltageDropEngineTests.swift */; };
+		B1000034 /* CompensationEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000034 /* CompensationEngineTests.swift */; };
+		B1000035 /* TransformerEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000035 /* TransformerEngineTests.swift */; };
+		B1000036 /* GroundingEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000036 /* GroundingEngineTests.swift */; };
+		B1000037 /* UnitConverterEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000037 /* UnitConverterEngineTests.swift */; };
+		B1000040 /* ShortCircuitEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000040 /* ShortCircuitEngine.swift */; };
+		B1000041 /* MotorCalcEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000041 /* MotorCalcEngine.swift */; };
+		B1000042 /* LightingEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000042 /* LightingEngine.swift */; };
+		B1000043 /* EnergyConsumptionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000043 /* EnergyConsumptionEngine.swift */; };
+		B1000044 /* ShortCircuitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000044 /* ShortCircuitViewModel.swift */; };
+		B1000045 /* MotorCalcViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000045 /* MotorCalcViewModel.swift */; };
+		B1000046 /* LightingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000046 /* LightingViewModel.swift */; };
+		B1000047 /* EnergyConsumptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000047 /* EnergyConsumptionViewModel.swift */; };
+		B1000048 /* ShortCircuitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000048 /* ShortCircuitView.swift */; };
+		B1000049 /* MotorCalcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000049 /* MotorCalcView.swift */; };
+		B100004A /* LightingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100004A /* LightingView.swift */; };
+		B100004B /* EnergyConsumptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100004B /* EnergyConsumptionView.swift */; };
+		B1000050 /* ShortCircuitEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000050 /* ShortCircuitEngineTests.swift */; };
+		B1000051 /* MotorCalcEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000051 /* MotorCalcEngineTests.swift */; };
+		B1000052 /* LightingEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000052 /* LightingEngineTests.swift */; };
+		B1000053 /* EnergyConsumptionEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000053 /* EnergyConsumptionEngineTests.swift */; };
+		B1000060 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000060 /* OnboardingViewModel.swift */; };
+		B1000061 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000061 /* OnboardingView.swift */; };
+		B1000062 /* CableAmpacityEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000062 /* CableAmpacityEngine.swift */; };
+		B1000063 /* CableAmpacityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000063 /* CableAmpacityViewModel.swift */; };
+		B1000064 /* CableAmpacityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000064 /* CableAmpacityView.swift */; };
+		B1000065 /* BreakerSelectionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000065 /* BreakerSelectionEngine.swift */; };
+		B1000066 /* BreakerSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000066 /* BreakerSelectionViewModel.swift */; };
+		B1000067 /* BreakerSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000067 /* BreakerSelectionView.swift */; };
+		B1000068 /* CableAmpacityEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000068 /* CableAmpacityEngineTests.swift */; };
+		B1000069 /* BreakerSelectionEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000069 /* BreakerSelectionEngineTests.swift */; };
+		B100006A /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100006A /* SubscriptionManager.swift */; };
+		B100006B /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100006B /* PaywallView.swift */; };
+		B100006C /* ProBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100006C /* ProBadgeView.swift */; };
+		B100006E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C100006E /* SettingsView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		T1000040 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1B2C3D400000080 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1B2C3D400000050;
+			remoteInfo = MyApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A1B2C3D400000010 /* MyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppApp.swift; sourceTree = "<group>"; };
 		A1B2C3D400000011 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A1B2C3D400000012 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1B2C3D400000013 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A1B2C3D400000020 /* MyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B2C3D400000020 /* .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = .app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1000001 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		C1000002 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		C1000003 /* ElectricalUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricalUnit.swift; sourceTree = "<group>"; };
@@ -206,24 +216,6 @@
 		};
 /* End PBXFrameworksBuildPhase section */
 
-/* Begin PBXContainerItemProxy section */
-		T1000040 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A1B2C3D400000080 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A1B2C3D400000050;
-			remoteInfo = MyApp;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXTargetDependency section */
-		T1000041 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A1B2C3D400000050 /* MyApp */;
-			targetProxy = T1000040 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXGroup section */
 		A1B2C3D400000040 = {
 			isa = PBXGroup;
@@ -257,31 +249,10 @@
 		A1B2C3D400000042 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A1B2C3D400000020 /* MyApp.app */,
+				A1B2C3D400000020 /* .app */,
 				T1000001 /* MyAppTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		T1000020 /* MyAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				C1000030 /* OhmLawEngineTests.swift */,
-				C1000031 /* PowerEngineTests.swift */,
-				C1000032 /* CableSectionEngineTests.swift */,
-				C1000033 /* VoltageDropEngineTests.swift */,
-				C1000034 /* CompensationEngineTests.swift */,
-				C1000035 /* TransformerEngineTests.swift */,
-				C1000036 /* GroundingEngineTests.swift */,
-				C1000037 /* UnitConverterEngineTests.swift */,
-				C1000050 /* ShortCircuitEngineTests.swift */,
-				C1000051 /* MotorCalcEngineTests.swift */,
-				C1000052 /* LightingEngineTests.swift */,
-				C1000053 /* EnergyConsumptionEngineTests.swift */,
-				C1000068 /* CableAmpacityEngineTests.swift */,
-				C1000069 /* BreakerSelectionEngineTests.swift */,
-			);
-			path = MyAppTests;
 			sourceTree = "<group>";
 		};
 		A1B2C3D400000043 /* Preview Content */ = {
@@ -448,6 +419,23 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		D100000D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C100001C /* Double+Formatting.swift */,
+				C100001D /* View+HideKeyboard.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D100000E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C100001E /* Localizable.xcstrings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		D100000F /* Compensation */ = {
 			isa = PBXGroup;
 			children = (
@@ -560,29 +548,33 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		D100000E /* Resources */ = {
+		T1000020 /* MyAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				C100001E /* Localizable.xcstrings */,
+				C1000030 /* OhmLawEngineTests.swift */,
+				C1000031 /* PowerEngineTests.swift */,
+				C1000032 /* CableSectionEngineTests.swift */,
+				C1000033 /* VoltageDropEngineTests.swift */,
+				C1000034 /* CompensationEngineTests.swift */,
+				C1000035 /* TransformerEngineTests.swift */,
+				C1000036 /* GroundingEngineTests.swift */,
+				C1000037 /* UnitConverterEngineTests.swift */,
+				C1000050 /* ShortCircuitEngineTests.swift */,
+				C1000051 /* MotorCalcEngineTests.swift */,
+				C1000052 /* LightingEngineTests.swift */,
+				C1000053 /* EnergyConsumptionEngineTests.swift */,
+				C1000068 /* CableAmpacityEngineTests.swift */,
+				C1000069 /* BreakerSelectionEngineTests.swift */,
 			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		D100000D /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				C100001C /* Double+Formatting.swift */,
-				C100001D /* View+HideKeyboard.swift */,
-			);
-			path = Extensions;
+			path = MyAppTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A1B2C3D400000050 /* MyApp */ = {
+		A1B2C3D400000050 /* ElecCalc */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A1B2C3D400000070 /* Build configuration list for PBXNativeTarget "MyApp" */;
+			buildConfigurationList = A1B2C3D400000070 /* Build configuration list for PBXNativeTarget "ElecCalc" */;
 			buildPhases = (
 				A1B2C3D400000060 /* Sources */,
 				A1B2C3D400000030 /* Frameworks */,
@@ -592,9 +584,9 @@
 			);
 			dependencies = (
 			);
-			name = MyApp;
+			name = ElecCalc;
 			productName = MyApp;
-			productReference = A1B2C3D400000020 /* MyApp.app */;
+			productReference = A1B2C3D400000020 /* .app */;
 			productType = "com.apple.product-type.application";
 		};
 		T1000010 /* MyAppTests */ = {
@@ -648,7 +640,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A1B2C3D400000050 /* MyApp */,
+				A1B2C3D400000050 /* ElecCalc */,
 				T1000010 /* MyAppTests */,
 			);
 		};
@@ -675,27 +667,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		T1000031 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B1000030 /* OhmLawEngineTests.swift in Sources */,
-				B1000031 /* PowerEngineTests.swift in Sources */,
-				B1000032 /* CableSectionEngineTests.swift in Sources */,
-				B1000033 /* VoltageDropEngineTests.swift in Sources */,
-				B1000034 /* CompensationEngineTests.swift in Sources */,
-				B1000035 /* TransformerEngineTests.swift in Sources */,
-				B1000036 /* GroundingEngineTests.swift in Sources */,
-				B1000037 /* UnitConverterEngineTests.swift in Sources */,
-				B1000050 /* ShortCircuitEngineTests.swift in Sources */,
-				B1000051 /* MotorCalcEngineTests.swift in Sources */,
-				B1000052 /* LightingEngineTests.swift in Sources */,
-				B1000053 /* EnergyConsumptionEngineTests.swift in Sources */,
-				B1000068 /* CableAmpacityEngineTests.swift in Sources */,
-				B1000069 /* BreakerSelectionEngineTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A1B2C3D400000060 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -773,7 +744,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		T1000031 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1000030 /* OhmLawEngineTests.swift in Sources */,
+				B1000031 /* PowerEngineTests.swift in Sources */,
+				B1000032 /* CableSectionEngineTests.swift in Sources */,
+				B1000033 /* VoltageDropEngineTests.swift in Sources */,
+				B1000034 /* CompensationEngineTests.swift in Sources */,
+				B1000035 /* TransformerEngineTests.swift in Sources */,
+				B1000036 /* GroundingEngineTests.swift in Sources */,
+				B1000037 /* UnitConverterEngineTests.swift in Sources */,
+				B1000050 /* ShortCircuitEngineTests.swift in Sources */,
+				B1000051 /* MotorCalcEngineTests.swift in Sources */,
+				B1000052 /* LightingEngineTests.swift in Sources */,
+				B1000053 /* EnergyConsumptionEngineTests.swift in Sources */,
+				B1000068 /* CableAmpacityEngineTests.swift in Sources */,
+				B1000069 /* BreakerSelectionEngineTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		T1000041 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1B2C3D400000050 /* ElecCalc */;
+			targetProxy = T1000040 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A1B2C3D4000000A0 /* Debug */ = {
@@ -812,6 +812,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5V9A3GUJ32;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -834,6 +835,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = ElecCalc;
 				SDKROOT = iphoneos;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
@@ -877,6 +879,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5V9A3GUJ32;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -892,6 +895,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = ElecCalc;
 				SDKROOT = iphoneos;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -907,14 +911,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MyApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 5V9A3GUJ32;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = ElecCalc;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Osman Seven";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -939,7 +942,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MyApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 5V9A3GUJ32;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = ElecCalc;
@@ -969,7 +971,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5V9A3GUJ32;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
@@ -978,7 +979,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ElecCalc.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ElecCalc";
 			};
 			name = Debug;
 		};
@@ -988,7 +989,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5V9A3GUJ32;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
@@ -997,14 +997,14 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MyApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ElecCalc.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ElecCalc";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A1B2C3D400000070 /* Build configuration list for PBXNativeTarget "MyApp" */ = {
+		A1B2C3D400000070 /* Build configuration list for PBXNativeTarget "ElecCalc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A1B2C3D4000000B0 /* Debug */,

@@ -15,8 +15,10 @@ struct PaywallView: View {
                     headerSection
                     featuresSection
                     productsSection
+                    subscriptionDisclosure
                     purchaseButton
                     restoreButton
+                    legalLinks
                 }
                 .padding()
                 .frame(maxWidth: 600)
@@ -182,6 +184,29 @@ struct PaywallView: View {
                 .font(.footnote)
                 .foregroundStyle(.secondary)
         }
+    }
+
+    // MARK: - Subscription Disclosure
+
+    private var subscriptionDisclosure: some View {
+        Text(String(localized: "paywall.disclosure"))
+            .font(.caption2)
+            .foregroundStyle(.secondary)
+            .multilineTextAlignment(.center)
+            .padding(.horizontal)
+    }
+
+    // MARK: - Legal Links
+
+    private var legalLinks: some View {
+        HStack(spacing: AppTheme.Spacing.large) {
+            Link(String(localized: "paywall.termsOfUse"), destination: URL(string: "https://saevaexe.github.io/eleccalc/terms.html")!)
+            Text("·").foregroundStyle(.secondary)
+            Link(String(localized: "paywall.privacyPolicy"), destination: URL(string: "https://saevaexe.github.io/eleccalc/privacy-policy.html")!)
+        }
+        .font(.caption)
+        .foregroundStyle(.secondary)
+        .padding(.bottom, AppTheme.Spacing.regular)
     }
 
     // MARK: - Actions
