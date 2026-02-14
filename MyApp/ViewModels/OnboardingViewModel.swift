@@ -3,7 +3,8 @@ import Foundation
 @Observable
 final class OnboardingViewModel {
     var currentPage: Int = 0
-    let totalPages: Int = 3
+    let totalPages: Int = 5
+    var showPaywall: Bool = false
 
     static let hasCompletedKey = "hasCompletedOnboarding"
 
@@ -18,5 +19,9 @@ final class OnboardingViewModel {
 
     func complete() {
         hasCompletedOnboarding = true
+    }
+
+    func startTrial() {
+        showPaywall = true
     }
 }
