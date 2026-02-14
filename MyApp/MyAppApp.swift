@@ -15,6 +15,7 @@ struct MyAppApp: App {
                     OnboardingView(viewModel: onboardingVM) {
                         showOnboarding = false
                     }
+                    .environment(subscriptionManager)
                 }
                 .task {
                     await subscriptionManager.loadProducts()
