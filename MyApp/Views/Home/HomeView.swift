@@ -64,17 +64,6 @@ struct HomeView: View {
     private var subscriptionBanner: some View {
         if subscriptionManager.isSubscribed {
             // Abone — banner gösterme
-        } else if subscriptionManager.isTrialActive {
-            HStack {
-                Image(systemName: "clock.fill")
-                Text(String(localized: "subscription.trial.banner \(subscriptionManager.trialDaysRemaining)"))
-                    .font(.subheadline.bold())
-                Spacer()
-            }
-            .foregroundStyle(.white)
-            .padding()
-            .background(.blue.gradient, in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.medium))
-            .padding(.horizontal)
         } else {
             Button {
                 showPaywall = true

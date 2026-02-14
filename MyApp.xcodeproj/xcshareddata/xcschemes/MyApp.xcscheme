@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1600"
+   LastUpgradeVersion = "2620"
    version = "1.8">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A1B2C3D400000050"
-               BuildableName = "MyApp.app"
-               BlueprintName = "MyApp"
+               BuildableName = "ElecCalc.app"
+               BlueprintName = "ElecCalc"
                ReferencedContainer = "container:MyApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -57,8 +57,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A1B2C3D400000050"
-            BuildableName = "MyApp.app"
-            BlueprintName = "MyApp"
+            BuildableName = "ElecCalc.app"
+            BlueprintName = "ElecCalc"
             ReferencedContainer = "container:MyApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -74,8 +74,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A1B2C3D400000050"
-            BuildableName = "MyApp.app"
-            BlueprintName = "MyApp"
+            BuildableName = "ElecCalc.app"
+            BlueprintName = "ElecCalc"
             ReferencedContainer = "container:MyApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

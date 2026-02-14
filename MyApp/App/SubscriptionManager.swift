@@ -10,35 +10,17 @@ final class SubscriptionManager {
     var isLoading: Bool = false
 
     var isSubscribed: Bool { !purchasedProductIDs.isEmpty }
-
-    var isTrialActive: Bool {
-        guard !isSubscribed else { return false }
-        guard let installDate = installDate else { return false }
-        return Date().timeIntervalSince(installDate) < 7 * 24 * 3600
-    }
-
-    var hasFullAccess: Bool { isSubscribed || isTrialActive }
-
-    var trialDaysRemaining: Int {
-        guard let installDate = installDate else { return 0 }
-        let elapsed = Date().timeIntervalSince(installDate)
-        let remaining = 7 - Int(elapsed / 86400)
-        return max(0, remaining)
-    }
-
-    private static let installDateKey = "appInstallDate"
-
-    private var installDate: Date? {
-        get { UserDefaults.standard.object(forKey: Self.installDateKey) as? Date }
-        set { UserDefaults.standard.set(newValue, forKey: Self.installDateKey) }
-    }
+    var hasFullAccess: Bool { isSubscribed }
 
     private var transactionListener: Task<Void, Never>?
 
-    private init() {
-        if installDate == nil {
-            installDate = Date()
-        }
+    private init() { }
+
+    // MARK: - Introductory Offer
+
+    func isEligibleForIntroOffer(_ product: Product) async -> Bool {
+        guard let subscription = product.subscription else { return false }
+        return await subscription.isEligibleForIntroOffer
     }
 
     // MARK: - Product Loading

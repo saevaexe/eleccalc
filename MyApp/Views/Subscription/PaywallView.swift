@@ -7,6 +7,7 @@ struct PaywallView: View {
     @State private var selectedProduct: Product?
     @State private var isPurchasing = false
     @State private var errorMessage: String?
+    @State private var introEligible = false
 
     var body: some View {
         NavigationStack {
@@ -43,6 +44,19 @@ struct PaywallView: View {
                 Button("OK") { errorMessage = nil }
             } message: {
                 if let msg = errorMessage { Text(msg) }
+            }
+            .task {
+                if subscriptionManager.products.isEmpty {
+                    await subscriptionManager.loadProducts()
+                }
+                autoSelectProductIfNeeded()
+                await checkIntroEligibility()
+            }
+            .onChange(of: subscriptionManager.products.map(\.id)) { _, _ in
+                autoSelectProductIfNeeded()
+            }
+            .onChange(of: selectedProduct?.id) { _, _ in
+                Task { await checkIntroEligibility() }
             }
         }
     }
@@ -153,7 +167,7 @@ struct PaywallView: View {
                     ProgressView()
                         .tint(.white)
                 } else {
-                    Text(subscriptionManager.isTrialActive
+                    Text(introEligible
                          ? String(localized: "paywall.startTrial")
                          : String(localized: "paywall.subscribe"))
                 }
@@ -224,5 +238,18 @@ struct PaywallView: View {
         } catch {
             errorMessage = error.localizedDescription
         }
+    }
+
+    private func autoSelectProductIfNeeded() {
+        guard selectedProduct == nil else { return }
+        selectedProduct = subscriptionManager.products.first
+    }
+
+    private func checkIntroEligibility() async {
+        guard let product = selectedProduct else {
+            introEligible = false
+            return
+        }
+        introEligible = await subscriptionManager.isEligibleForIntroOffer(product)
     }
 }

@@ -91,10 +91,6 @@ struct SettingsView: View {
                     .padding(.horizontal, 10)
                     .padding(.vertical, 4)
                     .background(.green.gradient, in: Capsule())
-            } else if subscriptionManager.isTrialActive {
-                Text(String(localized: "settings.status.trial \(subscriptionManager.trialDaysRemaining)"))
-                    .font(.subheadline)
-                    .foregroundStyle(.blue)
             } else {
                 Text(String(localized: "settings.status.free"))
                     .font(.subheadline)
