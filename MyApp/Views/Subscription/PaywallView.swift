@@ -16,10 +16,10 @@ struct PaywallView: View {
                     headerSection
                     featuresSection
                     productsSection
-                    subscriptionDisclosure
                     purchaseButton
                     restoreButton
                     legalLinks
+                    subscriptionDisclosure
                 }
                 .padding()
                 .frame(maxWidth: 600)
@@ -113,6 +113,7 @@ struct PaywallView: View {
                 productCard(product)
             }
         }
+        .frame(maxWidth: .infinity)
     }
 
     private func productCard(_ product: Product) -> some View {
@@ -123,15 +124,6 @@ struct PaywallView: View {
             selectedProduct = product
         } label: {
             VStack(spacing: AppTheme.Spacing.medium) {
-                if isYearly {
-                    Text(String(localized: "paywall.savings"))
-                        .font(.caption2.bold())
-                        .foregroundStyle(.white)
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 3)
-                        .background(.green.gradient, in: Capsule())
-                }
-
                 Text(isYearly ? String(localized: "paywall.yearly") : String(localized: "paywall.monthly"))
                     .font(.headline)
 
@@ -142,7 +134,7 @@ struct PaywallView: View {
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
-            .frame(maxWidth: .infinity)
+            .frame(maxWidth: .infinity, minHeight: 120)
             .padding()
             .background(
                 isSelected ? Color.orange.opacity(0.15) : Color(.secondarySystemBackground),
@@ -152,8 +144,25 @@ struct PaywallView: View {
                 RoundedRectangle(cornerRadius: AppTheme.CornerRadius.medium)
                     .stroke(isSelected ? .orange : .clear, lineWidth: 2)
             )
+            .overlay(alignment: .top) {
+                if isYearly, let savingsPercent {
+                    Text(String(
+                        format: String(localized: "paywall.savings %lld"),
+                        Int64(savingsPercent)
+                    ))
+                    .font(.caption2.weight(.bold))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.85)
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 4)
+                    .background(.green.gradient, in: Capsule())
+                    .offset(y: -10)
+                }
+            }
         }
         .buttonStyle(.plain)
+        .frame(maxWidth: .infinity)
     }
 
     // MARK: - Purchase Button
@@ -162,25 +171,35 @@ struct PaywallView: View {
         Button {
             Task { await performPurchase() }
         } label: {
-            Group {
-                if isPurchasing {
-                    ProgressView()
-                        .tint(.white)
-                } else {
-                    Text(introEligible
-                         ? String(localized: "paywall.startTrial")
-                         : String(localized: "paywall.subscribe"))
+            VStack(spacing: AppTheme.Spacing.small) {
+                Group {
+                    if isPurchasing {
+                        ProgressView()
+                            .tint(.white)
+                    } else {
+                        Text(introEligible
+                             ? String(localized: "paywall.startTrial")
+                             : String(localized: "paywall.subscribe"))
+                    }
+                }
+                .font(.headline)
+                .frame(maxWidth: .infinity)
+
+                if !isPurchasing, let trialAfterIntroText {
+                    Text(trialAfterIntroText)
+                        .font(.caption)
+                        .foregroundStyle(.white.opacity(0.92))
+                        .multilineTextAlignment(.center)
                 }
             }
-            .font(.headline)
             .frame(maxWidth: .infinity)
             .padding()
             .background(.orange.gradient)
             .foregroundStyle(.white)
             .clipShape(RoundedRectangle(cornerRadius: AppTheme.CornerRadius.medium))
         }
-        .disabled(selectedProduct == nil || isPurchasing)
-        .opacity(selectedProduct == nil ? 0.6 : 1.0)
+        .disabled(subscriptionManager.products.isEmpty || isPurchasing)
+        .opacity(subscriptionManager.products.isEmpty ? 0.6 : 1.0)
     }
 
     // MARK: - Restore
@@ -205,9 +224,43 @@ struct PaywallView: View {
     private var subscriptionDisclosure: some View {
         Text(String(localized: "paywall.disclosure"))
             .font(.caption2)
-            .foregroundStyle(.secondary)
+            .foregroundStyle(.secondary.opacity(0.75))
             .multilineTextAlignment(.center)
+            .lineSpacing(1)
             .padding(.horizontal)
+    }
+
+    private var savingsPercent: Int? {
+        guard
+            let monthlyProduct = subscriptionManager.products.first(where: { $0.id == AppConstants.Subscription.monthlyProductID }),
+            let yearlyProduct = subscriptionManager.products.first(where: { $0.id == AppConstants.Subscription.yearlyProductID })
+        else {
+            return nil
+        }
+
+        let monthlyPrice = NSDecimalNumber(decimal: monthlyProduct.price).doubleValue
+        let yearlyPrice = NSDecimalNumber(decimal: yearlyProduct.price).doubleValue
+        guard monthlyPrice > 0 else { return nil }
+
+        let annualMonthlyCost = monthlyPrice * 12
+        let savings = ((annualMonthlyCost - yearlyPrice) / annualMonthlyCost) * 100
+        let roundedSavings = Int(savings.rounded())
+        return roundedSavings > 0 ? roundedSavings : nil
+    }
+
+    private var trialAfterIntroText: String? {
+        guard
+            introEligible,
+            let product = selectedProduct ?? subscriptionManager.products.first
+        else {
+            return nil
+        }
+
+        let localizedFormat = product.id == AppConstants.Subscription.yearlyProductID
+            ? String(localized: "paywall.trialAfterIntro.yearly %@")
+            : String(localized: "paywall.trialAfterIntro.monthly %@")
+
+        return String(format: localizedFormat, product.displayPrice)
     }
 
     // MARK: - Legal Links
@@ -226,7 +279,7 @@ struct PaywallView: View {
     // MARK: - Actions
 
     private func performPurchase() async {
-        guard let product = selectedProduct else { return }
+        guard let product = selectedProduct ?? subscriptionManager.products.first else { return }
         isPurchasing = true
         defer { isPurchasing = false }
 

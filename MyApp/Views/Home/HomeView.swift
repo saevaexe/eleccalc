@@ -24,7 +24,8 @@ struct HomeView: View {
 
                 LazyVGrid(columns: columns, spacing: AppTheme.Spacing.large) {
                     ForEach(Array(viewModel.filteredCategories.enumerated()), id: \.element.id) { index, category in
-                        let needsPaywall = category.isPremium && !subscriptionManager.hasFullAccess
+                        let needsPaywall = category.isPremium && !subscriptionManager.hasFullAccess && subscriptionManager.hasUsedProTrial
+                        let showProBadge = category.isPremium && !subscriptionManager.hasFullAccess
 
                         if needsPaywall {
                             Button {
@@ -33,7 +34,7 @@ struct HomeView: View {
                                 CategoryCardView(
                                     category: category,
                                     animationDelay: Double(index) * 0.05,
-                                    showProBadge: true
+                                    showProBadge: showProBadge
                                 )
                             }
                             .buttonStyle(.plain)
@@ -41,10 +42,16 @@ struct HomeView: View {
                             NavigationLink(value: category) {
                                 CategoryCardView(
                                     category: category,
-                                    animationDelay: Double(index) * 0.05
+                                    animationDelay: Double(index) * 0.05,
+                                    showProBadge: showProBadge
                                 )
                             }
                             .buttonStyle(.plain)
+                            .simultaneousGesture(
+                                TapGesture().onEnded {
+                                    subscriptionManager.consumeProTrialIfNeeded(for: category)
+                                }
+                            )
                         }
                     }
                 }

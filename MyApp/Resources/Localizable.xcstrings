@@ -4022,6 +4022,23 @@
         }
       }
     },
+    "paywall.savings %lld" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save %lld%%"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%%%lld Tasarruf"
+          }
+        }
+      }
+    },
     "paywall.startTrial" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4035,6 +4052,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "7 Gün Ücretsiz Dene"
+          }
+        }
+      }
+    },
+    "paywall.trialAfterIntro.monthly %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7-day free trial, then %@ per month. Auto-renews unless cancelled."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7 gün ücretsiz deneme, ardından aylık %@. İptal edilmedikçe otomatik yenilenir."
+          }
+        }
+      }
+    },
+    "paywall.trialAfterIntro.yearly %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7-day free trial, then %@ per year. Auto-renews unless cancelled."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7 gün ücretsiz deneme, ardından yıllık %@. İptal edilmedikçe otomatik yenilenir."
           }
         }
       }
