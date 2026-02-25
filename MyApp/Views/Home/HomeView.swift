@@ -24,7 +24,7 @@ struct HomeView: View {
 
                 LazyVGrid(columns: columns, spacing: AppTheme.Spacing.large) {
                     ForEach(Array(viewModel.filteredCategories.enumerated()), id: \.element.id) { index, category in
-                        let needsPaywall = category.isPremium && !subscriptionManager.hasFullAccess && subscriptionManager.hasUsedProTrial
+                        let needsPaywall = category.isPremium && !subscriptionManager.hasFullAccess
                         let showProBadge = category.isPremium && !subscriptionManager.hasFullAccess
 
                         if needsPaywall {
@@ -47,11 +47,6 @@ struct HomeView: View {
                                 )
                             }
                             .buttonStyle(.plain)
-                            .simultaneousGesture(
-                                TapGesture().onEnded {
-                                    subscriptionManager.consumeProTrialIfNeeded(for: category)
-                                }
-                            )
                         }
                     }
                 }
@@ -60,7 +55,7 @@ struct HomeView: View {
             .padding(.vertical)
         }
         .navigationTitle(String(localized: "app.title"))
-        .sheet(isPresented: $showPaywall) {
+        .fullScreenCover(isPresented: $showPaywall) {
             PaywallView()
         }
     }
