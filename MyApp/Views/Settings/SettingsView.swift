@@ -72,7 +72,7 @@ struct SettingsView: View {
             }
         }
         .navigationTitle(String(localized: "tab.settings"))
-        .sheet(isPresented: $showPaywall) {
+        .fullScreenCover(isPresented: $showPaywall) {
             PaywallView()
         }
     }
