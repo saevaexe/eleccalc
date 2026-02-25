@@ -5,21 +5,17 @@ import StoreKit
 @Observable
 final class SubscriptionManager {
     static let shared = SubscriptionManager()
-    private static let hasUsedProTrialKey = "subscription.hasUsedProTrial"
 
     var products: [Product] = []
     var purchasedProductIDs: Set<String> = []
     var isLoading: Bool = false
-    var hasUsedProTrial: Bool
 
     var isSubscribed: Bool { !purchasedProductIDs.isEmpty }
     var hasFullAccess: Bool { isSubscribed }
 
     private var transactionListener: Task<Void, Never>?
 
-    private init() {
-        hasUsedProTrial = UserDefaults.standard.bool(forKey: Self.hasUsedProTrialKey)
-    }
+    private init() {}
 
     // MARK: - Introductory Offer
 
@@ -66,14 +62,6 @@ final class SubscriptionManager {
         @unknown default:
             return false
         }
-    }
-
-    // MARK: - One-Time Pro Trial
-
-    func consumeProTrialIfNeeded(for category: CalculationCategory) {
-        guard category.isPremium, !isSubscribed, !hasUsedProTrial else { return }
-        hasUsedProTrial = true
-        UserDefaults.standard.set(true, forKey: Self.hasUsedProTrialKey)
     }
 
     // MARK: - Restore

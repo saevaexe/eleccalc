@@ -36,6 +36,7 @@ enum AppConstants {
     }
 
     enum Subscription {
+        static let groupID = "E2FC8D4C-5678-4A5B-9E6F-ABCDEF654321"
         static let monthlyProductID = "com.eleccalc.pro.monthly"
         static let yearlyProductID = "com.eleccalc.pro.yearly"
     }

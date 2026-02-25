@@ -108,12 +108,39 @@ struct PaywallView: View {
     // MARK: - Products
 
     private var productsSection: some View {
-        HStack(spacing: AppTheme.Spacing.regular) {
-            ForEach(subscriptionManager.products) { product in
-                productCard(product)
+        Group {
+            if subscriptionManager.isLoading {
+                ProgressView()
+                    .frame(height: 120)
+            } else if subscriptionManager.products.isEmpty {
+                VStack(spacing: AppTheme.Spacing.regular) {
+                    Image(systemName: "exclamationmark.triangle")
+                        .font(.title)
+                        .foregroundStyle(.secondary)
+                    Text(String(localized: "paywall.productsUnavailable"))
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                    Button(String(localized: "paywall.retry")) {
+                        Task { await subscriptionManager.loadProducts() }
+                    }
+                    .font(.subheadline.weight(.medium))
+                }
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(
+                    Color(.secondarySystemBackground),
+                    in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.medium)
+                )
+            } else {
+                HStack(spacing: AppTheme.Spacing.regular) {
+                    ForEach(subscriptionManager.products) { product in
+                        productCard(product)
+                    }
+                }
+                .frame(maxWidth: .infinity)
             }
         }
-        .frame(maxWidth: .infinity)
     }
 
     private func productCard(_ product: Product) -> some View {
