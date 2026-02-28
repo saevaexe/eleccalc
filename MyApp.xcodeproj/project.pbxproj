@@ -111,7 +111,7 @@
 		A1B2C3D400000011 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A1B2C3D400000012 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1B2C3D400000013 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A1B2C3D400000020 /* .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = .app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B2C3D400000020 /* ElecCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElecCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1000001 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		C1000002 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		C1000003 /* ElectricalUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricalUnit.swift; sourceTree = "<group>"; };
@@ -249,7 +249,7 @@
 		A1B2C3D400000042 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A1B2C3D400000020 /* .app */,
+				A1B2C3D400000020 /* ElecCalc.app */,
 				T1000001 /* MyAppTests.xctest */,
 			);
 			name = Products;
@@ -586,7 +586,7 @@
 			);
 			name = ElecCalc;
 			productName = MyApp;
-			productReference = A1B2C3D400000020 /* .app */;
+			productReference = A1B2C3D400000020 /* ElecCalc.app */;
 			productType = "com.apple.product-type.application";
 		};
 		T1000010 /* MyAppTests */ = {
@@ -909,12 +909,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"MyApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = ElecCalc;
-				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Osman Seven";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -941,12 +940,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"MyApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = ElecCalc;
-				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Osman Seven";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
