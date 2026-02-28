@@ -57,7 +57,7 @@
               "locale" : "tr"
             }
           ],
-          "productID" : "com.eleccalc.pro.monthly",
+          "productID" : "com.eleccalc.pro.monthly.v2",
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "Monthly",
           "subscriptionGroupID" : "E2FC8D4C-5678-4A5B-9E6F-ABCDEF654321",
@@ -95,7 +95,7 @@
               "locale" : "tr"
             }
           ],
-          "productID" : "com.eleccalc.pro.yearly",
+          "productID" : "com.eleccalc.pro.yearly.v2",
           "recurringSubscriptionPeriod" : "P1Y",
           "referenceName" : "Yearly",
           "subscriptionGroupID" : "E2FC8D4C-5678-4A5B-9E6F-ABCDEF654321",
