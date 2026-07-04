@@ -12,7 +12,7 @@ struct PaywallView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(spacing: AppTheme.Spacing.extraLarge) {
+                VStack(spacing: 20) {
                     headerSection
                     featuresSection
                     productsSection
@@ -25,6 +25,7 @@ struct PaywallView: View {
                 .frame(maxWidth: 600)
                 .frame(maxWidth: .infinity)
             }
+            .background(Color(.systemGroupedBackground))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -64,44 +65,110 @@ struct PaywallView: View {
     // MARK: - Header
 
     private var headerSection: some View {
-        VStack(spacing: AppTheme.Spacing.regular) {
-            Image(systemName: "bolt.circle.fill")
-                .font(.system(size: 64))
-                .foregroundStyle(.orange.gradient)
+        VStack(alignment: .leading, spacing: AppTheme.Spacing.large) {
+            HStack(spacing: AppTheme.Spacing.regular) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: AppTheme.CornerRadius.large)
+                        .fill(.accent.gradient)
+                    Image(systemName: "bolt.fill")
+                        .font(.title2.weight(.bold))
+                        .foregroundStyle(.white)
+                }
+                .frame(width: 52, height: 52)
 
-            Text(String(localized: "paywall.title"))
-                .font(.title.bold())
-                .multilineTextAlignment(.center)
+                VStack(alignment: .leading, spacing: AppTheme.Spacing.small) {
+                    Text(String(localized: "paywall.badge"))
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(.secondary)
+                        .textCase(.uppercase)
 
-            Text(String(localized: "paywall.subtitle"))
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
-                .multilineTextAlignment(.center)
+                    Text("ElecCalc PRO")
+                        .font(.title3.bold())
+                }
+
+                Spacer()
+            }
+
+            VStack(alignment: .leading, spacing: AppTheme.Spacing.medium) {
+                Text(String(localized: "paywall.title"))
+                    .font(.largeTitle.bold())
+                    .lineLimit(3)
+                    .minimumScaleFactor(0.82)
+
+                Text(String(localized: "paywall.subtitle"))
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+
+            HStack(spacing: AppTheme.Spacing.medium) {
+                metricPill("checkmark.seal.fill", String(localized: "paywall.metric1"))
+                metricPill("square.grid.2x2.fill", String(localized: "paywall.metric2"))
+                metricPill("clock.arrow.circlepath", String(localized: "paywall.metric3"))
+            }
         }
-        .padding(.top, AppTheme.Spacing.large)
+        .padding(20)
+        .background(
+            LinearGradient(
+                colors: [Color.accentColor.opacity(0.16), Color.orange.opacity(0.10)],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            ),
+            in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.large)
+        )
+    }
+
+    private func metricPill(_ systemImage: String, _ text: String) -> some View {
+        VStack(spacing: AppTheme.Spacing.small) {
+            Image(systemName: systemImage)
+                .font(.headline)
+                .foregroundStyle(.accent)
+
+            Text(text)
+                .font(.caption2.weight(.semibold))
+                .foregroundStyle(.primary)
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+                .minimumScaleFactor(0.75)
+        }
+        .frame(maxWidth: .infinity, minHeight: 70)
+        .padding(.horizontal, AppTheme.Spacing.small)
+        .background(.background.opacity(0.72), in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.medium))
     }
 
     // MARK: - Features
 
     private var featuresSection: some View {
-        VStack(alignment: .leading, spacing: AppTheme.Spacing.regular) {
-            featureRow(String(localized: "paywall.feature1"))
-            featureRow(String(localized: "paywall.feature2"))
-            featureRow(String(localized: "paywall.feature3"))
+        VStack(alignment: .leading, spacing: AppTheme.Spacing.large) {
+            Text(String(localized: "paywall.includedTitle"))
+                .font(.headline)
+
+            VStack(spacing: AppTheme.Spacing.regular) {
+                featureRow("ruler.fill", String(localized: "paywall.feature1"), color: .green)
+                featureRow("bolt.horizontal.circle.fill", String(localized: "paywall.feature2"), color: .orange)
+                featureRow("shield.checkered", String(localized: "paywall.feature3"), color: .blue)
+                featureRow("tray.full.fill", String(localized: "paywall.feature4"), color: .purple)
+            }
         }
-        .padding()
+        .padding(20)
         .background(
-            Color(.secondarySystemBackground),
+            Color(.secondarySystemGroupedBackground),
             in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.medium)
         )
     }
 
-    private func featureRow(_ text: String) -> some View {
+    private func featureRow(_ systemImage: String, _ text: String, color: Color) -> some View {
         HStack(spacing: AppTheme.Spacing.regular) {
-            Image(systemName: "checkmark.circle.fill")
-                .foregroundStyle(.green)
+            Image(systemName: systemImage)
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(color)
+                .frame(width: 24)
+
             Text(text)
                 .font(.subheadline)
+                .fixedSize(horizontal: false, vertical: true)
+
+            Spacer(minLength: 0)
         }
     }
 
@@ -133,8 +200,8 @@ struct PaywallView: View {
                     in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.medium)
                 )
             } else {
-                HStack(spacing: AppTheme.Spacing.regular) {
-                    ForEach(subscriptionManager.products) { product in
+                VStack(spacing: AppTheme.Spacing.regular) {
+                    ForEach(orderedProducts) { product in
                         productCard(product)
                     }
                 }
@@ -150,43 +217,63 @@ struct PaywallView: View {
         return Button {
             selectedProduct = product
         } label: {
-            VStack(spacing: AppTheme.Spacing.medium) {
-                Text(isYearly ? String(localized: "paywall.yearly") : String(localized: "paywall.monthly"))
-                    .font(.headline)
+            HStack(spacing: AppTheme.Spacing.regular) {
+                VStack(alignment: .leading, spacing: AppTheme.Spacing.medium) {
+                    HStack(spacing: AppTheme.Spacing.medium) {
+                        Text(isYearly ? String(localized: "paywall.yearly") : String(localized: "paywall.monthly"))
+                            .font(.headline)
 
-                Text(product.displayPrice)
-                    .font(.title2.bold())
+                        if isYearly {
+                            Text(String(localized: "paywall.bestValue"))
+                                .font(.caption2.weight(.bold))
+                                .foregroundStyle(.white)
+                                .padding(.horizontal, AppTheme.Spacing.medium)
+                                .padding(.vertical, AppTheme.Spacing.small)
+                                .background(.green.gradient, in: Capsule())
+                        }
+                    }
 
-                Text(isYearly ? String(localized: "paywall.perYear") : String(localized: "paywall.perMonth"))
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                    Text(isYearly ? String(localized: "paywall.plan.yearlySubtitle") : String(localized: "paywall.plan.monthlySubtitle"))
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.leading)
+                }
+
+                Spacer(minLength: AppTheme.Spacing.regular)
+
+                VStack(alignment: .trailing, spacing: AppTheme.Spacing.small) {
+                    Text(product.displayPrice)
+                        .font(.title3.bold())
+                        .monospacedDigit()
+
+                    Text(isYearly ? String(localized: "paywall.perYear") : String(localized: "paywall.perMonth"))
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+
+                    if isYearly, let savingsPercent {
+                        Text(String(
+                            format: String(localized: "paywall.savings %lld"),
+                            Int64(savingsPercent)
+                        ))
+                        .font(.caption2.weight(.semibold))
+                        .foregroundStyle(.green)
+                    }
+                }
+
+                Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
+                    .font(.title3)
+                    .foregroundStyle(isSelected ? Color.accentColor : .secondary.opacity(0.45))
             }
-            .frame(maxWidth: .infinity, minHeight: 120)
-            .padding()
+            .frame(maxWidth: .infinity, minHeight: 92)
+            .padding(16)
             .background(
-                isSelected ? Color.orange.opacity(0.15) : Color(.secondarySystemBackground),
+                isSelected ? Color.accentColor.opacity(0.12) : Color(.secondarySystemGroupedBackground),
                 in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.medium)
             )
             .overlay(
                 RoundedRectangle(cornerRadius: AppTheme.CornerRadius.medium)
-                    .stroke(isSelected ? .orange : .clear, lineWidth: 2)
+                    .stroke(isSelected ? Color.accentColor : Color(.separator).opacity(0.35), lineWidth: isSelected ? 2 : 1)
             )
-            .overlay(alignment: .top) {
-                if isYearly, let savingsPercent {
-                    Text(String(
-                        format: String(localized: "paywall.savings %lld"),
-                        Int64(savingsPercent)
-                    ))
-                    .font(.caption2.weight(.bold))
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.85)
-                    .foregroundStyle(.white)
-                    .padding(.horizontal, 10)
-                    .padding(.vertical, 4)
-                    .background(.green.gradient, in: Capsule())
-                    .offset(y: -10)
-                }
-            }
         }
         .buttonStyle(.plain)
         .frame(maxWidth: .infinity)
@@ -221,9 +308,10 @@ struct PaywallView: View {
             }
             .frame(maxWidth: .infinity)
             .padding()
-            .background(.orange.gradient)
+            .background(.accent.gradient)
             .foregroundStyle(.white)
             .clipShape(RoundedRectangle(cornerRadius: AppTheme.CornerRadius.medium))
+            .shadow(color: Color.accentColor.opacity(0.26), radius: 14, y: 8)
         }
         .disabled(subscriptionManager.products.isEmpty || isPurchasing)
         .opacity(subscriptionManager.products.isEmpty ? 0.6 : 1.0)
@@ -242,7 +330,7 @@ struct PaywallView: View {
         } label: {
             Text(String(localized: "paywall.restore"))
                 .font(.footnote)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(.accent)
         }
     }
 
@@ -305,6 +393,23 @@ struct PaywallView: View {
 
     // MARK: - Actions
 
+    private var orderedProducts: [Product] {
+        subscriptionManager.products.sorted { lhs, rhs in
+            productPriority(lhs) < productPriority(rhs)
+        }
+    }
+
+    private func productPriority(_ product: Product) -> Int {
+        switch product.id {
+        case AppConstants.Subscription.yearlyProductID:
+            return 0
+        case AppConstants.Subscription.monthlyProductID:
+            return 1
+        default:
+            return 2
+        }
+    }
+
     private func performPurchase() async {
         guard let product = selectedProduct ?? subscriptionManager.products.first else { return }
         isPurchasing = true
@@ -322,7 +427,8 @@ struct PaywallView: View {
 
     private func autoSelectProductIfNeeded() {
         guard selectedProduct == nil else { return }
-        selectedProduct = subscriptionManager.products.first
+        selectedProduct = subscriptionManager.products.first(where: { $0.id == AppConstants.Subscription.yearlyProductID })
+            ?? subscriptionManager.products.first
     }
 
     private func checkIntroEligibility() async {
