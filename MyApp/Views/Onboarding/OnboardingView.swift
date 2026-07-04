@@ -1,6 +1,8 @@
 import SwiftUI
-import StoreKit
 
+/// 3 ekranlık activation-odaklı onboarding: değer → araçlar → ilk hesap.
+/// Satışı paywall ve premium gate yapar; buradaki tek hedef kullanıcıyı
+/// en hızlı şekilde ilk başarılı hesaplamaya ulaştırmaktır.
 struct OnboardingView: View {
     @Bindable var viewModel: OnboardingViewModel
     var onComplete: () -> Void
@@ -18,153 +20,30 @@ struct OnboardingView: View {
             )
             .ignoresSafeArea()
 
-            VStack(spacing: AppTheme.Spacing.extraLarge) {
-                // Skip button
+            VStack(spacing: AppTheme.Spacing.large) {
+                // Skip — görünür ama baskın değil
                 HStack {
                     Spacer()
-                    if !isLastPage {
-                        Button(String(localized: "onboarding.button.skip")) {
-                            viewModel.complete()
-                            onComplete()
-                        }
-                        .font(.subheadline.bold())
-                        .foregroundStyle(.secondary)
+                    Button(String(localized: "onboarding.button.skip")) {
+                        viewModel.complete()
+                        onComplete()
                     }
+                    .font(.footnote)
+                    .foregroundStyle(.tertiary)
+                    .opacity(isLastPage ? 0 : 1)
                 }
+                .frame(height: 20)
 
                 TabView(selection: $viewModel.currentPage) {
-                    // Page 1: Identity
-                    OnboardingPageView(
-                        icon: "bolt.circle.fill",
-                        title: String(localized: "onboarding.identity.title"),
-                        subtitle: String(localized: "onboarding.identity.subtitle"),
-                        highlights: [
-                            String(localized: "onboarding.identity.highlight1"),
-                            String(localized: "onboarding.identity.highlight2"),
-                            String(localized: "onboarding.identity.highlight3")
-                        ]
-                    )
-                    .tag(0)
-
-                    // Page 2: Trust / Standards
-                    OnboardingPageView(
-                        icon: "checkmark.shield.fill",
-                        title: String(localized: "onboarding.trust.title"),
-                        subtitle: String(localized: "onboarding.trust.subtitle"),
-                        highlights: [
-                            String(localized: "onboarding.trust.highlight1"),
-                            String(localized: "onboarding.trust.highlight2"),
-                            String(localized: "onboarding.trust.highlight3")
-                        ]
-                    )
-                    .tag(1)
-
-                    // Page 3: Value
-                    OnboardingPageView(
-                        icon: "chart.bar.doc.horizontal.fill",
-                        title: String(localized: "onboarding.value.title"),
-                        subtitle: String(localized: "onboarding.value.subtitle"),
-                        highlights: [
-                            String(localized: "onboarding.value.highlight1"),
-                            String(localized: "onboarding.value.highlight2"),
-                            String(localized: "onboarding.value.highlight3")
-                        ]
-                    )
-                    .tag(2)
-
-                    // Page 4: Get Started
-                    OnboardingPageView(
-                        icon: "play.circle.fill",
-                        title: String(localized: "onboarding.start.title"),
-                        subtitle: String(localized: "onboarding.start.subtitle"),
-                        highlights: [
-                            String(localized: "onboarding.start.highlight1"),
-                            String(localized: "onboarding.start.highlight2"),
-                            String(localized: "onboarding.start.highlight3")
-                        ]
-                    )
-                    .tag(3)
-
-                    // Page 5: Trial CTA
-                    OnboardingPageView(
-                        icon: "crown.fill",
-                        title: String(localized: "onboarding.trial.title"),
-                        subtitle: String(localized: "onboarding.trial.subtitle"),
-                        highlights: [
-                            String(localized: "onboarding.trial.highlight1"),
-                            String(localized: "onboarding.trial.highlight2"),
-                            String(localized: "onboarding.trial.highlight3")
-                        ]
-                    )
-                    .tag(4)
+                    valuePage.tag(0)
+                    toolsPage.tag(1)
+                    startPage.tag(2)
                 }
                 .tabViewStyle(.page(indexDisplayMode: .always))
                 .indexViewStyle(.page(backgroundDisplayMode: .always))
                 .animation(.easeInOut(duration: 0.3), value: viewModel.currentPage)
 
-                // Bottom buttons
-                VStack(spacing: AppTheme.Spacing.medium) {
-                    if viewModel.currentPage == 4 {
-                        // Trial CTA page
-                        Button {
-                            viewModel.startTrial()
-                        } label: {
-                            Text(String(localized: "onboarding.trial.startButton"))
-                                .font(.headline)
-                                .frame(maxWidth: .infinity)
-                                .padding(.vertical, AppTheme.Spacing.large)
-                                .background(.accent.gradient, in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.large))
-                                .foregroundStyle(.white)
-                        }
-                        .buttonStyle(.plain)
-
-                        Button {
-                            viewModel.complete()
-                            onComplete()
-                        } label: {
-                            Text(String(localized: "onboarding.trial.maybeLater"))
-                                .font(.subheadline)
-                                .foregroundStyle(.secondary)
-                        }
-                        .buttonStyle(.plain)
-
-                        Text(String(localized: "onboarding.trial.disclosure"))
-                            .font(.caption2)
-                            .foregroundStyle(.tertiary)
-                            .multilineTextAlignment(.center)
-
-                    } else if viewModel.currentPage == 3 {
-                        // Get Started page
-                        Button {
-                            viewModel.complete()
-                            onComplete()
-                        } label: {
-                            Text(String(localized: "onboarding.button.getStarted"))
-                                .font(.headline)
-                                .frame(maxWidth: .infinity)
-                                .padding(.vertical, AppTheme.Spacing.large)
-                                .background(.accent.gradient, in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.large))
-                                .foregroundStyle(.white)
-                        }
-                        .buttonStyle(.plain)
-
-                    } else {
-                        // Pages 0-2: Next button
-                        Button {
-                            withAnimation(.easeInOut(duration: 0.3)) {
-                                viewModel.currentPage += 1
-                            }
-                        } label: {
-                            Text(String(localized: "onboarding.button.next"))
-                                .font(.headline)
-                                .frame(maxWidth: .infinity)
-                                .padding(.vertical, AppTheme.Spacing.large)
-                                .background(.accent.gradient, in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.large))
-                                .foregroundStyle(.white)
-                        }
-                        .buttonStyle(.plain)
-                    }
-                }
+                bottomControls
             }
             .padding(.horizontal, AppTheme.Spacing.extraLarge)
             .padding(.vertical, AppTheme.Spacing.extraLarge)
@@ -173,50 +52,180 @@ struct OnboardingView: View {
             PaywallView()
         }
     }
-}
 
-// MARK: - Page View
+    // MARK: - Page 1: Value
 
-private struct OnboardingPageView: View {
-    let icon: String
-    let title: String
-    let subtitle: String
-    let highlights: [String]
-
-    var body: some View {
+    private var valuePage: some View {
         VStack(spacing: AppTheme.Spacing.extraLarge) {
-            Image(systemName: icon)
-                .font(.system(size: 64, weight: .semibold))
-                .foregroundStyle(.accent)
-                .padding(.top, AppTheme.Spacing.extraLarge)
+            pageHeader(
+                title: String(localized: "onboarding.value.title"),
+                subtitle: String(localized: "onboarding.value.subtitle")
+            )
 
-            VStack(spacing: AppTheme.Spacing.medium) {
-                Text(title)
-                    .font(.title2.bold())
-                    .multilineTextAlignment(.center)
-
-                Text(subtitle)
-                    .font(.body)
-                    .foregroundStyle(.secondary)
-                    .multilineTextAlignment(.center)
+            LazyVGrid(
+                columns: [GridItem(.flexible(), spacing: AppTheme.Spacing.regular), GridItem(.flexible())],
+                spacing: AppTheme.Spacing.regular
+            ) {
+                miniModuleCard(.cableSection)
+                miniModuleCard(.power)
+                miniModuleCard(.transformer)
+                miniModuleCard(.shortCircuit)
             }
-
-            VStack(alignment: .leading, spacing: AppTheme.Spacing.regular) {
-                ForEach(highlights, id: \.self) { item in
-                    HStack(spacing: AppTheme.Spacing.medium) {
-                        Image(systemName: "checkmark.circle.fill")
-                            .foregroundStyle(.green)
-                        Text(item)
-                            .font(.subheadline)
-                            .foregroundStyle(.primary)
-                    }
-                }
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(AppTheme.Spacing.large)
-            .background(.thinMaterial, in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.large))
         }
-        .frame(maxWidth: 600)
+        .frame(maxWidth: 480)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+    }
+
+    private func miniModuleCard(_ category: CalculationCategory) -> some View {
+        VStack(spacing: AppTheme.Spacing.medium) {
+            Image(systemName: category.iconName)
+                .font(.title2)
+                .foregroundStyle(category.color)
+            Text(category.title)
+                .font(.subheadline.weight(.semibold))
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+                .minimumScaleFactor(0.8)
+        }
+        .frame(maxWidth: .infinity, minHeight: 88)
+        .padding(AppTheme.Spacing.regular)
+        .background(
+            category.color.opacity(0.12),
+            in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.medium)
+        )
+        .accessibilityElement(children: .combine)
+    }
+
+    // MARK: - Page 2: Core Tools
+
+    private var toolsPage: some View {
+        VStack(spacing: AppTheme.Spacing.extraLarge) {
+            pageHeader(
+                title: String(localized: "onboarding.tools.title"),
+                subtitle: String(localized: "onboarding.tools.subtitle")
+            )
+
+            // Gerçek uygulama UI'ı: hesap sonucu kartı örneği
+            ResultCardView(
+                title: String(localized: "result.recommendedSection"),
+                value: "10",
+                unit: "mm²",
+                formula: "S = (ρ × L × I × k) / ΔU"
+            )
+
+            HStack(spacing: AppTheme.Spacing.medium) {
+                Image(systemName: "checkmark.seal.fill")
+                    .foregroundStyle(.accent)
+                Text(String(localized: "onboarding.tools.iecBadge"))
+                    .font(.footnote.weight(.semibold))
+            }
+            .padding(.horizontal, AppTheme.Spacing.large)
+            .padding(.vertical, AppTheme.Spacing.medium)
+            .background(.thinMaterial, in: Capsule())
+        }
+        .frame(maxWidth: 480)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+    }
+
+    // MARK: - Page 3: Start
+
+    private var startPage: some View {
+        VStack(spacing: AppTheme.Spacing.extraLarge) {
+            ZStack {
+                RoundedRectangle(cornerRadius: AppTheme.CornerRadius.large)
+                    .fill(.accent.gradient)
+                Image(systemName: "bolt.fill")
+                    .font(.system(size: 32, weight: .bold))
+                    .foregroundStyle(.white)
+            }
+            .frame(width: 72, height: 72)
+            .padding(.top, AppTheme.Spacing.large)
+
+            pageHeader(
+                title: String(localized: "onboarding.start.title"),
+                subtitle: String(localized: "onboarding.start.subtitle")
+            )
+
+            HStack(spacing: AppTheme.Spacing.medium) {
+                freeChip(.ohmLaw)
+                freeChip(.power)
+                freeChip(.cableSection)
+            }
+        }
+        .frame(maxWidth: 480)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+    }
+
+    private func freeChip(_ category: CalculationCategory) -> some View {
+        Text(category.title)
+            .font(.caption.weight(.semibold))
+            .lineLimit(1)
+            .minimumScaleFactor(0.75)
+            .padding(.horizontal, AppTheme.Spacing.regular)
+            .padding(.vertical, AppTheme.Spacing.medium)
+            .background(category.color.opacity(0.12), in: Capsule())
+            .foregroundStyle(category.color)
+    }
+
+    // MARK: - Shared
+
+    private func pageHeader(title: String, subtitle: String) -> some View {
+        VStack(spacing: AppTheme.Spacing.medium) {
+            Text(title)
+                .font(.title2.bold())
+                .multilineTextAlignment(.center)
+                .minimumScaleFactor(0.85)
+
+            Text(subtitle)
+                .font(.body)
+                .foregroundStyle(.secondary)
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+    }
+
+    private var bottomControls: some View {
+        VStack(spacing: AppTheme.Spacing.medium) {
+            if isLastPage {
+                // Primary: onboarding'i bitir, Home'a git — activation hedefi
+                Button {
+                    viewModel.complete()
+                    onComplete()
+                } label: {
+                    Text(String(localized: "onboarding.button.startCalculating"))
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, AppTheme.Spacing.large)
+                        .background(.accent.gradient, in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.large))
+                        .foregroundStyle(.white)
+                }
+                .buttonStyle(.plain)
+
+                // Secondary: opsiyonel paywall — zorunlu değil
+                Button {
+                    viewModel.presentPaywall()
+                } label: {
+                    Text(String(localized: "onboarding.button.viewPro"))
+                        .font(.subheadline.weight(.medium))
+                        .foregroundStyle(.accent)
+                }
+                .buttonStyle(.plain)
+            } else {
+                Button {
+                    withAnimation(.easeInOut(duration: 0.3)) {
+                        viewModel.currentPage += 1
+                    }
+                } label: {
+                    Text(String(localized: "onboarding.button.next"))
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, AppTheme.Spacing.large)
+                        .background(.accent.gradient, in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.large))
+                        .foregroundStyle(.white)
+                }
+                .buttonStyle(.plain)
+            }
+        }
+        .frame(maxWidth: 480)
     }
 }
