@@ -55,7 +55,7 @@ struct SettingsView: View {
             }
 
             // MARK: - Hakkında
-            Section(String(localized: "settings.about")) {
+            Section {
                 HStack {
                     Text(String(localized: "settings.version"))
                     Spacer()
@@ -69,6 +69,10 @@ struct SettingsView: View {
                     Text("15")
                         .foregroundStyle(.secondary)
                 }
+            } header: {
+                Text(String(localized: "settings.about"))
+            } footer: {
+                Text(String(localized: "settings.disclaimer"))
             }
         }
         .navigationTitle(String(localized: "tab.settings"))

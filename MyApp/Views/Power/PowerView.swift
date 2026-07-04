@@ -21,10 +21,8 @@ struct PowerView: View {
                     .pickerStyle(.menu)
                 }
 
-                if viewModel.solveFor != .fromKVA {
-                    Toggle(String(localized: "phase.threePhase"), isOn: $viewModel.isThreePhase)
-                        .padding(.horizontal)
-                }
+                Toggle(String(localized: "phase.threePhase"), isOn: $viewModel.isThreePhase)
+                    .padding(.horizontal)
 
                 VStack(spacing: AppTheme.Spacing.large) {
                     if viewModel.solveFor == .fromKVA {
@@ -83,7 +81,7 @@ struct PowerView: View {
                             title: String(localized: "field.current"),
                             value: i.formatted2,
                             unit: "A",
-                            formula: "I = S / (√3 × V)"
+                            formula: viewModel.isThreePhase ? "I = S / (√3 × V)" : "I = S / V"
                         )
                     }
                 } else if let result = viewModel.result {

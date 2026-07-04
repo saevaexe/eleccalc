@@ -93,6 +93,8 @@ struct ShortCircuitView: View {
                         )
                     }
                 }
+
+                AssumptionNoteView(text: String(localized: "assumption.shortCircuit"))
             }
             .padding()
             .frame(maxWidth: 600)

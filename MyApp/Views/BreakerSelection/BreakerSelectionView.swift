@@ -75,7 +75,7 @@ struct BreakerSelectionView: View {
                             value: ib.formatted2,
                             unit: "A",
                             formula: viewModel.inputMode == .fromPower
-                                ? "Ib = P / (√3 × U × cosφ)"
+                                ? (viewModel.isThreePhase ? "Ib = P / (√3 × U × cosφ)" : "Ib = P / (U × cosφ)")
                                 : ""
                         )
                     }
@@ -115,7 +115,18 @@ struct BreakerSelectionView: View {
                             formula: "Ib ≤ In ≤ Iz"
                         )
                     }
+
+                    if let fuseOk = viewModel.fuseProtectionOk {
+                        ResultCardView(
+                            title: String(localized: fuseOk ? "result.fuseProtectionOk" : "result.fuseProtectionFail"),
+                            value: fuseOk ? "✓" : "✗",
+                            unit: "",
+                            formula: "Ib ≤ In, 1.6×In ≤ 1.45×Iz"
+                        )
+                    }
                 }
+
+                AssumptionNoteView(text: String(localized: "assumption.breakerSelection"))
             }
             .padding()
             .frame(maxWidth: 600)

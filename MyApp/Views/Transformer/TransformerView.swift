@@ -63,7 +63,7 @@ struct TransformerView: View {
                             title: String(localized: "result.loadingRate"),
                             value: rate.formatted2,
                             unit: "%",
-                            formula: "Yüklenme = (S_yük / S_trafo) × 100"
+                            formula: "n = (P / cosφ) / Sₙ × 100"
                         )
                     }
 
@@ -81,7 +81,7 @@ struct TransformerView: View {
                             title: String(localized: "result.efficiency"),
                             value: eff.formatted2,
                             unit: "%",
-                            formula: "η = P / (P + P_kayıp) × 100"
+                            formula: "η = P / (P + Pᵥ) × 100"
                         )
                     }
 
@@ -90,10 +90,12 @@ struct TransformerView: View {
                             title: String(localized: "result.totalLoss"),
                             value: tLoss.formatted2,
                             unit: "kW",
-                            formula: "P_kayıp = P_fe + P_cu × (Yüklenme/100)²"
+                            formula: "Pᵥ = P₀ + Pₖ × (n/100)²"
                         )
                     }
                 }
+
+                AssumptionNoteView(text: String(localized: "assumption.transformer"))
             }
             .padding()
             .frame(maxWidth: 600)

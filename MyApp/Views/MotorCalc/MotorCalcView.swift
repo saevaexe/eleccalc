@@ -114,6 +114,8 @@ struct MotorCalcView: View {
                         )
                     }
                 }
+
+                AssumptionNoteView(text: String(localized: "assumption.motorCalc"))
             }
             .padding()
             .frame(maxWidth: 600)

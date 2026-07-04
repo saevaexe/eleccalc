@@ -24,6 +24,14 @@ struct FormulaReferenceView: View {
                     Label(group.title, systemImage: group.icon)
                 }
             }
+
+            Section {
+                Text(String(localized: "formula.standardsNote"))
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            } header: {
+                Label(String(localized: "formula.standardsTitle"), systemImage: "checkmark.seal")
+            }
         }
         .searchable(text: $viewModel.searchText, prompt: String(localized: "formula.searchPrompt"))
         .navigationTitle(String(localized: "category.formulaReference"))

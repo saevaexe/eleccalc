@@ -49,6 +49,8 @@ struct CableSectionView: View {
                         )
                     }
                 }
+
+                AssumptionNoteView(text: String(localized: "assumption.cableSection"))
             }
             .padding()
             .frame(maxWidth: 600)

@@ -31,3 +31,25 @@ struct ResultCardView: View {
         .accessibilityHint(formula)
     }
 }
+
+/// Hesaplayıcı ekranlarının altında gösterilen standart/varsayım notu.
+/// Riskli hesaplarda (kablo, kısa devre, kesici, trafo...) hangi kabullerle
+/// çalışıldığını görünür kılar — sonuçlar mühendislik kontrolünün yerine geçmez.
+struct AssumptionNoteView: View {
+    let text: String
+
+    var body: some View {
+        HStack(alignment: .top, spacing: AppTheme.Spacing.medium) {
+            Image(systemName: "info.circle")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+            Text(text)
+                .font(.caption2)
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, AppTheme.Spacing.small)
+        .accessibilityElement(children: .combine)
+    }
+}

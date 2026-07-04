@@ -44,6 +44,8 @@ struct GroundingView: View {
                         formula: viewModel.formulaUsed
                     )
                 }
+
+                AssumptionNoteView(text: String(localized: "assumption.grounding"))
             }
             .padding()
             .frame(maxWidth: 600)

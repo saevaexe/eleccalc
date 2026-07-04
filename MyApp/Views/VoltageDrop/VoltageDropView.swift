@@ -59,6 +59,8 @@ struct VoltageDropView: View {
                         .background(.regularMaterial, in: RoundedRectangle(cornerRadius: AppTheme.CornerRadius.medium))
                     }
                 }
+
+                AssumptionNoteView(text: String(localized: "assumption.voltageDrop"))
             }
             .padding()
             .frame(maxWidth: 600)

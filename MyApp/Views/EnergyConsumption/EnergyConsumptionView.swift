@@ -28,7 +28,7 @@ struct EnergyConsumptionView: View {
                     InputFieldView(
                         label: String(localized: "field.unitPrice"),
                         text: $viewModel.unitPriceText,
-                        unit: "TL/kWh"
+                        unit: String(localized: "unit.currencyPerKWh")
                     )
                 }
 
@@ -99,7 +99,7 @@ struct EnergyConsumptionView: View {
                     .foregroundStyle(.secondary)
             }
             Spacer()
-            Text("\(cost.formatted2) TL")
+            Text("\(cost.formatted2) \(String(localized: "unit.currency"))")
                 .font(.title3.bold())
                 .foregroundStyle(.primary)
         }

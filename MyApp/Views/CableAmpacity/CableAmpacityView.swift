@@ -121,6 +121,8 @@ struct CableAmpacityView: View {
                         )
                     }
                 }
+
+                AssumptionNoteView(text: String(localized: "assumption.cableAmpacity"))
             }
             .padding()
             .frame(maxWidth: 600)
