@@ -56,4 +56,21 @@ final class BreakerSelectionEngineTests: XCTestCase {
         // Ib=45, In=63, Iz=57 → 63 > 57 → false
         XCTAssertFalse(BreakerSelectionEngine.checkProtection(loadCurrent: 45, breakerRating: 63, cableAmpacity: 57))
     }
+
+    func testFuseProtection_ok() {
+        // Ib=40, In=50, Iz=60 → 1.6×50=80 ≤ 1.45×60=87 → true
+        XCTAssertTrue(BreakerSelectionEngine.checkFuseProtection(loadCurrent: 40, fuseRating: 50, cableAmpacity: 60))
+    }
+
+    func testFuseProtection_fail_thermalCondition() {
+        // Ib=40, In=50, Iz=50: MCB için uygun olurdu ama sigortada
+        // 1.6×50=80 > 1.45×50=72.5 → false (I₂ ≤ 1.45×Iz sağlanmaz)
+        XCTAssertFalse(BreakerSelectionEngine.checkFuseProtection(loadCurrent: 40, fuseRating: 50, cableAmpacity: 50))
+        XCTAssertTrue(BreakerSelectionEngine.checkProtection(loadCurrent: 40, breakerRating: 50, cableAmpacity: 50))
+    }
+
+    func testFuseProtection_fail_overload() {
+        // Ib=55 > In=50 → false
+        XCTAssertFalse(BreakerSelectionEngine.checkFuseProtection(loadCurrent: 55, fuseRating: 50, cableAmpacity: 100))
+    }
 }

@@ -21,6 +21,7 @@ final class BreakerSelectionViewModel {
                 recommendedMCCB = nil
                 recommendedFuse = nil
                 protectionOk = nil
+                fuseProtectionOk = nil
                 hasCalculated = false
             }
         }
@@ -38,6 +39,7 @@ final class BreakerSelectionViewModel {
     var recommendedMCCB: Double?
     var recommendedFuse: Double?
     var protectionOk: Bool?
+    var fuseProtectionOk: Bool?
     var hasCalculated: Bool = false
 
     var canCalculate: Bool {
@@ -78,6 +80,15 @@ final class BreakerSelectionViewModel {
             protectionOk = nil
         }
 
+        // gG sigorta koruma kontrolü: I₂ = 1.6×In şartı devre kesiciden farklıdır
+        if let iz = parseDouble(cableAmpacityText), let fuseRating = recommendedFuse {
+            fuseProtectionOk = BreakerSelectionEngine.checkFuseProtection(
+                loadCurrent: ib, fuseRating: fuseRating, cableAmpacity: iz
+            )
+        } else {
+            fuseProtectionOk = nil
+        }
+
         hasCalculated = true
     }
 
@@ -105,6 +116,7 @@ final class BreakerSelectionViewModel {
         recommendedMCCB = nil
         recommendedFuse = nil
         protectionOk = nil
+        fuseProtectionOk = nil
         hasCalculated = false
     }
 

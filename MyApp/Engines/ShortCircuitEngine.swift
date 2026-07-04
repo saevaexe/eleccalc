@@ -28,6 +28,17 @@ struct ShortCircuitEngine {
         (ukPercent / 100.0) * (secondaryVoltage * secondaryVoltage) / nominalPowerVA
     }
 
+    /// Trafo + kablo toplam empedansı (kompleks toplam):
+    /// Zk = √(Rc² + (Zt + Xc)²), Rc = R/km × L/1000, Xc = X/km × L/1000
+    /// Dağıtım trafolarında X/R oranı yüksek olduğundan Zt ≈ Xt kabul edilir;
+    /// büyüklükleri skaler toplamak Isc'yi olduğundan küçük gösterir (güvensiz yön).
+    static func combinedImpedance(transformerImpedance: Double, resistancePerKm: Double, reactancePerKm: Double, lengthM: Double) -> Double {
+        let rc = resistancePerKm * lengthM / 1000.0
+        let xc = reactancePerKm * lengthM / 1000.0
+        let x = transformerImpedance + xc
+        return sqrt(rc * rc + x * x)
+    }
+
     /// Darbe kısa devre akımı: ip = κ × √2 × Isc
     static func peakShortCircuitCurrent(rmsCurrent: Double, kappa: Double) -> Double {
         kappa * sqrt(2.0) * rmsCurrent

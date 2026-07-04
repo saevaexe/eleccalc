@@ -4,18 +4,15 @@ import XCTest
 final class GroundingEngineTests: XCTestCase {
 
     func testRodResistance() {
-        // R = ρ / (2πL) × ln(4L/d)
-        // ρ=100, L=2.4, d=0.02
-        let expected = (100.0 / (2.0 * .pi * 2.4)) * log(4.0 * 2.4 / 0.02)
+        // R = ρ / (2πL) × ln(4L/d) = 100/(2π×2.4) × ln(480) = 40.9412 Ω
         let result = GroundingEngine.rodResistance(soilResistivity: 100, length: 2.4, diameter: 0.02)
-        XCTAssertEqual(result, expected, accuracy: 1e-6)
+        XCTAssertEqual(result, 40.9412, accuracy: 1e-3)
     }
 
     func testRodResistance_differentValues() {
-        // ρ=50, L=3.0, d=0.016
-        let expected = (50.0 / (2.0 * .pi * 3.0)) * log(4.0 * 3.0 / 0.016)
+        // R = 50/(2π×3.0) × ln(750) = 17.5603 Ω
         let result = GroundingEngine.rodResistance(soilResistivity: 50, length: 3.0, diameter: 0.016)
-        XCTAssertEqual(result, expected, accuracy: 1e-6)
+        XCTAssertEqual(result, 17.5603, accuracy: 1e-3)
     }
 
     func testPlateResistance() {
@@ -26,29 +23,26 @@ final class GroundingEngineTests: XCTestCase {
     }
 
     func testProtectiveConductorSection_copper() {
-        // S = I × √t / k = 10000 × √0.4 / 176
-        let expected = (10000.0 * sqrt(0.4)) / 176.0
+        // S = I × √t / k = 10000 × √0.4 / 176 = 35.935 mm²
         let result = GroundingEngine.protectiveConductorSection(
             faultCurrent: 10000, clearingTime: 0.4, material: .copper
         )
-        XCTAssertEqual(result, expected, accuracy: 1e-6)
+        XCTAssertEqual(result, 35.935, accuracy: 1e-2)
     }
 
     func testProtectiveConductorSection_aluminum() {
-        // S = 5000 × √0.5 / 116
-        let expected = (5000.0 * sqrt(0.5)) / 116.0
+        // S = 5000 × √0.5 / 116 = 30.479 mm²
         let result = GroundingEngine.protectiveConductorSection(
             faultCurrent: 5000, clearingTime: 0.5, material: .aluminum
         )
-        XCTAssertEqual(result, expected, accuracy: 1e-6)
+        XCTAssertEqual(result, 30.479, accuracy: 1e-2)
     }
 
     func testProtectiveConductorSection_steel() {
-        // S = 8000 × √0.2 / 78
-        let expected = (8000.0 * sqrt(0.2)) / 78.0
+        // S = 8000 × √0.2 / 78 = 45.868 mm²
         let result = GroundingEngine.protectiveConductorSection(
             faultCurrent: 8000, clearingTime: 0.2, material: .steel
         )
-        XCTAssertEqual(result, expected, accuracy: 1e-6)
+        XCTAssertEqual(result, 45.868, accuracy: 1e-2)
     }
 }

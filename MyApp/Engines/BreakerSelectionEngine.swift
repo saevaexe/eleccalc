@@ -41,8 +41,15 @@ struct BreakerSelectionEngine {
         fuseRatings.first { $0 >= loadCurrent }
     }
 
-    /// Koruma kontrolü: Ib ≤ In ≤ Iz (IEC 60364-4-43)
+    /// Koruma kontrolü (MCB/MCCB): Ib ≤ In ≤ Iz (IEC 60364-4-43 §433.1)
+    /// Devre kesicilerde I₂ ≤ 1.45×In olduğundan ikinci koşul kendiliğinden sağlanır.
     static func checkProtection(loadCurrent: Double, breakerRating: Double, cableAmpacity: Double) -> Bool {
         loadCurrent <= breakerRating && breakerRating <= cableAmpacity
+    }
+
+    /// Koruma kontrolü (gG sigorta): Ib ≤ In ve I₂ ≤ 1.45×Iz
+    /// gG sigortada I₂ = 1.6×In → In ≤ (1.45/1.6)×Iz ≈ 0.906×Iz (IEC 60364-4-43 §433.1)
+    static func checkFuseProtection(loadCurrent: Double, fuseRating: Double, cableAmpacity: Double) -> Bool {
+        loadCurrent <= fuseRating && fuseRating * 1.6 <= 1.45 * cableAmpacity
     }
 }

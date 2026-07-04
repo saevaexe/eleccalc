@@ -4,11 +4,9 @@ import XCTest
 final class MotorCalcEngineTests: XCTestCase {
 
     func testNominalCurrent() {
-        // In = P(kW)×1000 / (√3 × U × cosφ × η)
-        // P=11kW, U=400V, cosφ=0.85, η=0.9
-        let expected = 11.0 * 1000.0 / (sqrt(3.0) * 400.0 * 0.85 * 0.9)
+        // In = 11000 / (√3 × 400 × 0.85 × 0.9) = 20.7544 A
         let result = MotorCalcEngine.nominalCurrent(powerKW: 11, voltage: 400, powerFactor: 0.85, efficiency: 0.9)
-        XCTAssertEqual(result, expected, accuracy: 1e-6)
+        XCTAssertEqual(result, 20.7544, accuracy: 1e-3)
     }
 
     func testStartingCurrent() {
@@ -17,17 +15,15 @@ final class MotorCalcEngineTests: XCTestCase {
     }
 
     func testTorque() {
-        // T = (P × 1000) / (2π × n/60) = (11 × 1000) / (2π × 1500/60)
-        let expected = (11.0 * 1000.0) / (2.0 * .pi * 1500.0 / 60.0)
+        // T = 11000 / (2π × 1500/60) = 70.0282 Nm
         let result = MotorCalcEngine.torque(powerKW: 11, rpm: 1500)
-        XCTAssertEqual(result, expected, accuracy: 1e-6)
+        XCTAssertEqual(result, 70.0282, accuracy: 1e-3)
     }
 
-    func testActivePower() {
-        // P(kW) = √3 × U × I × cosφ × η / 1000
-        let expected = (sqrt(3.0) * 400.0 * 20.0 * 0.85 * 0.9) / 1000.0
-        let result = MotorCalcEngine.activePower(voltage: 400, current: 20, powerFactor: 0.85, efficiency: 0.9)
-        XCTAssertEqual(result, expected, accuracy: 1e-6)
+    func testShaftPower() {
+        // Pmil = √3 × 400 × 20 × 0.85 × 0.9 / 1000 = 10.6002 kW
+        let result = MotorCalcEngine.shaftPower(voltage: 400, current: 20, powerFactor: 0.85, efficiency: 0.9)
+        XCTAssertEqual(result, 10.6002, accuracy: 1e-3)
     }
 
     func testStandardPowersNotEmpty() {
@@ -35,17 +31,42 @@ final class MotorCalcEngineTests: XCTestCase {
         XCTAssertEqual(MotorCalcEngine.standardPowers.first, 0.37)
     }
 
-    // MARK: - IEC Efficiency Table
+    // MARK: - IEC 60034-30-1:2014 Verim Tablosu (4 kutup, 50 Hz)
+    // Referans: ABB Technical note 9AKK107319
 
     func testIECEfficiencyLookup() {
-        // 11 kW + IE3 → 0.912
+        // 11 kW + IE3 (4 kutup) → 0.914
         let eff = MotorCalcEngine.iecEfficiency(powerKW: 11, ieClass: .ie3)
-        XCTAssertEqual(eff, 0.912, accuracy: 1e-6)
+        XCTAssertEqual(eff, 0.914, accuracy: 1e-6)
     }
 
     func testIECEfficiencyNearestPower() {
-        // 10 kW → en yakın 11 kW satırı, IE3 = 0.912
+        // 10 kW → en yakın 11 kW satırı, IE3 = 0.914
         let eff = MotorCalcEngine.iecEfficiency(powerKW: 10, ieClass: .ie3)
-        XCTAssertEqual(eff, 0.912, accuracy: 1e-6)
+        XCTAssertEqual(eff, 0.914, accuracy: 1e-6)
+    }
+
+    func testIECEfficiency_075kW_referenceValues() {
+        // IEC 60034-30-1, 0.75 kW 4 kutup: IE1=72.1, IE2=79.6, IE3=82.5, IE4=85.7
+        XCTAssertEqual(MotorCalcEngine.iecEfficiency(powerKW: 0.75, ieClass: .ie1), 0.721, accuracy: 1e-6)
+        XCTAssertEqual(MotorCalcEngine.iecEfficiency(powerKW: 0.75, ieClass: .ie2), 0.796, accuracy: 1e-6)
+        XCTAssertEqual(MotorCalcEngine.iecEfficiency(powerKW: 0.75, ieClass: .ie3), 0.825, accuracy: 1e-6)
+        XCTAssertEqual(MotorCalcEngine.iecEfficiency(powerKW: 0.75, ieClass: .ie4), 0.857, accuracy: 1e-6)
+    }
+
+    func testIECEfficiency_75kW_referenceValues() {
+        // IEC 60034-30-1, 75 kW 4 kutup: IE2=94.0, IE3=95.0, IE4=96.0
+        XCTAssertEqual(MotorCalcEngine.iecEfficiency(powerKW: 75, ieClass: .ie2), 0.940, accuracy: 1e-6)
+        XCTAssertEqual(MotorCalcEngine.iecEfficiency(powerKW: 75, ieClass: .ie3), 0.950, accuracy: 1e-6)
+        XCTAssertEqual(MotorCalcEngine.iecEfficiency(powerKW: 75, ieClass: .ie4), 0.960, accuracy: 1e-6)
+    }
+
+    func testIECEfficiencyMonotonicAcrossClasses() {
+        // Her güçte IE1 < IE2 < IE3 < IE4 olmalı
+        for entry in MotorCalcEngine.iecEfficiencyTable {
+            XCTAssertLessThan(entry.ie1, entry.ie2, "IE1 < IE2 fail @ \(entry.powerKW) kW")
+            XCTAssertLessThan(entry.ie2, entry.ie3, "IE2 < IE3 fail @ \(entry.powerKW) kW")
+            XCTAssertLessThan(entry.ie3, entry.ie4, "IE3 < IE4 fail @ \(entry.powerKW) kW")
+        }
     }
 }

@@ -18,15 +18,16 @@ final class ShortCircuitViewModel {
     var hasCalculated: Bool = false
 
     var canCalculate: Bool {
-        parseDouble(systemVoltageText) != nil &&
-        parseDouble(transformerPowerText) != nil &&
-        parseDouble(ukPercentText) != nil
+        guard let v = parseDouble(systemVoltageText), v > 0,
+              let s = parseDouble(transformerPowerText), s > 0,
+              let uk = parseDouble(ukPercentText), uk > 0 else { return false }
+        return true
     }
 
     func calculate() {
-        guard let voltage = parseDouble(systemVoltageText),
-              let trafoPowerKVA = parseDouble(transformerPowerText),
-              let uk = parseDouble(ukPercentText) else { return }
+        guard let voltage = parseDouble(systemVoltageText), voltage > 0,
+              let trafoPowerKVA = parseDouble(transformerPowerText), trafoPowerKVA > 0,
+              let uk = parseDouble(ukPercentText), uk > 0 else { return }
 
         let trafoPowerVA = trafoPowerKVA * 1000.0
         var zt = ShortCircuitEngine.transformerImpedance(
@@ -36,10 +37,10 @@ final class ShortCircuitViewModel {
         if let rPerKm = parseDouble(cableResistancePerKmText),
            let xPerKm = parseDouble(cableReactancePerKmText),
            let length = parseDouble(cableLengthText), length > 0 {
-            let zCable = ShortCircuitEngine.cableImpedance(
+            zt = ShortCircuitEngine.combinedImpedance(
+                transformerImpedance: zt,
                 resistancePerKm: rPerKm, reactancePerKm: xPerKm, lengthM: length
             )
-            zt += zCable
         }
 
         totalImpedance = zt
@@ -65,7 +66,7 @@ final class ShortCircuitViewModel {
             category: .shortCircuit,
             title: String(localized: "category.shortCircuit"),
             inputSummary: "U=\(systemVoltageText)V, S=\(transformerPowerText)kVA, Uk=\(ukPercentText)%",
-            resultSummary: "Isc = \(isc.formatted2) kA"
+            resultSummary: "Isc = \((isc / 1000.0).formatted2) kA"
         )
         modelContext.insert(record)
     }

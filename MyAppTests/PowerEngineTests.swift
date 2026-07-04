@@ -14,9 +14,8 @@ final class PowerEngineTests: XCTestCase {
     }
 
     func testReactivePower() {
-        // Q = S × sin(acos(0.8)) = 1000 × 0.6 = 600 VAR
-        let expected = 1000.0 * sin(acos(0.8))
-        XCTAssertEqual(PowerEngine.reactivePower(apparentPower: 1000.0, powerFactor: 0.8), expected, accuracy: 1e-6)
+        // Q = S × sinφ, cosφ=0.8 → sinφ=0.6 → Q = 1000 × 0.6 = 600 VAR
+        XCTAssertEqual(PowerEngine.reactivePower(apparentPower: 1000.0, powerFactor: 0.8), 600.0, accuracy: 1e-6)
     }
 
     func testPowerFactor() {
@@ -30,14 +29,24 @@ final class PowerEngineTests: XCTestCase {
     }
 
     func testThreePhaseApparentPower() {
-        // S = √3 × V × I = √3 × 400 × 10 = 6928.2 VA
-        let expected = sqrt(3.0) * 400.0 * 10.0
-        XCTAssertEqual(PowerEngine.threePhaseApparentPower(lineVoltage: 400.0, lineCurrent: 10.0), expected, accuracy: 1e-6)
+        // S = √3 × 400 × 10 = 6928.203 VA
+        XCTAssertEqual(PowerEngine.threePhaseApparentPower(lineVoltage: 400.0, lineCurrent: 10.0), 6928.203, accuracy: 1e-2)
     }
 
     func testThreePhaseActivePower() {
-        // P = √3 × V × I × cosφ
-        let expected = sqrt(3.0) * 400.0 * 10.0 * 0.85
-        XCTAssertEqual(PowerEngine.threePhaseActivePower(lineVoltage: 400.0, lineCurrent: 10.0, powerFactor: 0.85), expected, accuracy: 1e-6)
+        // P = √3 × 400 × 10 × 0.85 = 5888.973 W
+        XCTAssertEqual(PowerEngine.threePhaseActivePower(lineVoltage: 400.0, lineCurrent: 10.0, powerFactor: 0.85), 5888.973, accuracy: 1e-2)
+    }
+
+    func testCurrentFromApparentPower_threePhase() {
+        // I = S / (√3 × U) = 100000 / (√3 × 400) = 144.338 A
+        let result = PowerEngine.currentFromApparentPower(apparentPower: 100_000, voltage: 400, isThreePhase: true)
+        XCTAssertEqual(result, 144.338, accuracy: 1e-2)
+    }
+
+    func testCurrentFromApparentPower_singlePhase() {
+        // I = S / U = 10000 / 230 = 43.478 A
+        let result = PowerEngine.currentFromApparentPower(apparentPower: 10_000, voltage: 230, isThreePhase: false)
+        XCTAssertEqual(result, 43.478, accuracy: 1e-2)
     }
 }

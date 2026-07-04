@@ -2,8 +2,13 @@ import Foundation
 
 enum AppConstants {
     enum Material {
-        static let copperResistivity: Double = 0.0175    // Ω·mm²/m at 20°C
-        static let aluminumResistivity: Double = 0.028   // Ω·mm²/m at 20°C
+        static let copperResistivity20C: Double = 0.0175   // Ω·mm²/m at 20°C (referans)
+        static let aluminumResistivity20C: Double = 0.028  // Ω·mm²/m at 20°C (referans)
+
+        // Gerilim düşümü/kesit hesabı iletken işletme sıcaklığında yapılır (PVC ~70°C).
+        // ρ70 = ρ20 × (1 + α × 50), α(Cu)=0.00393, α(Al)=0.00403 → 20°C değeriyle hesap ~%20 iyimser kalır.
+        static let copperResistivity: Double = 0.0210    // Ω·mm²/m at 70°C
+        static let aluminumResistivity: Double = 0.0336  // Ω·mm²/m at 70°C
     }
 
     enum StandardCableSections {

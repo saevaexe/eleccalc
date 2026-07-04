@@ -111,8 +111,12 @@ final class PowerViewModel {
             let sVA = sKVA * 1000.0
             kvaActivePower = PowerEngine.activePower(apparentPower: sVA, powerFactor: pf) / 1000.0  // kW
             kvaReactivePower = PowerEngine.reactivePower(apparentPower: sVA, powerFactor: pf) / 1000.0  // kVAR
-            kvaCurrent = v > 0 ? sVA / (sqrt(3.0) * v) : nil  // 3 faz akım
-            formulaUsed = "P = S × cosφ, Q = S × sinφ, I = S / (√3 × V)"
+            kvaCurrent = v > 0
+                ? PowerEngine.currentFromApparentPower(apparentPower: sVA, voltage: v, isThreePhase: isThreePhase)
+                : nil
+            formulaUsed = isThreePhase
+                ? "P = S × cosφ, Q = S × sinφ, I = S / (√3 × V)"
+                : "P = S × cosφ, Q = S × sinφ, I = S / V"
         }
         hasCalculated = true
     }

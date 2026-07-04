@@ -4,13 +4,12 @@ import XCTest
 final class CompensationEngineTests: XCTestCase {
 
     func testRequiredReactivePower() {
-        // Qc = P × (tanφ₁ - tanφ₂)
-        // cosφ₁=0.7, cosφ₂=0.95
-        let expected = 100.0 * (tan(acos(0.7)) - tan(acos(0.95)))
+        // Qc = P × (tanφ₁ - tanφ₂), cosφ₁=0.7 → tanφ₁=1.0202, cosφ₂=0.95 → tanφ₂=0.3287
+        // Qc = 100 × 0.69152 = 69.152 kVAR
         let result = CompensationEngine.requiredReactivePower(
             activePower: 100, currentCosPhi: 0.7, targetCosPhi: 0.95
         )
-        XCTAssertEqual(result, expected, accuracy: 1e-6)
+        XCTAssertEqual(result, 69.152, accuracy: 1e-2)
     }
 
     func testRecommendedCapacitor() {
@@ -32,16 +31,9 @@ final class CompensationEngineTests: XCTestCase {
     }
 
     func testNewCosPhi_exactCalculation() {
-        // Doğrulama: P=100, cosφ₁=0.8, Q₁=P×tan(acos(0.8))=75, kVAR=30
-        // newQ=75-30=45, S=√(100²+45²)=√(12025)=109.66
-        // newCosφ=100/109.66=0.9119
-        let p = 100.0
-        let phi1 = acos(0.8)
-        let q1 = p * tan(phi1)
-        let newQ = q1 - 30.0
-        let s = sqrt(p * p + newQ * newQ)
-        let expected = p / s
-        let result = CompensationEngine.newCosPhi(activePower: p, currentCosPhi: 0.8, installedKVAR: 30)
-        XCTAssertEqual(result, expected, accuracy: 1e-6)
+        // P=100, cosφ₁=0.8 → Q₁=75, kVAR=30 → newQ=45
+        // S=√(100²+45²)=109.6586 → newCosφ = 100/109.6586 = 0.91192
+        let result = CompensationEngine.newCosPhi(activePower: 100, currentCosPhi: 0.8, installedKVAR: 30)
+        XCTAssertEqual(result, 0.91192, accuracy: 1e-4)
     }
 }

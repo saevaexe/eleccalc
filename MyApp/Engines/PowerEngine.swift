@@ -28,4 +28,11 @@ struct PowerEngine {
     static func threePhaseActivePower(lineVoltage: Double, lineCurrent: Double, powerFactor: Double) -> Double {
         sqrt(3.0) * lineVoltage * lineCurrent * powerFactor
     }
+
+    /// Görünür güçten akım: 3 faz I = S / (√3 × U), 1 faz I = S / U
+    static func currentFromApparentPower(apparentPower: Double, voltage: Double, isThreePhase: Bool) -> Double {
+        isThreePhase
+            ? apparentPower / (sqrt(3.0) * voltage)
+            : apparentPower / voltage
+    }
 }

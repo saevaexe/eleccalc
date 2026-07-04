@@ -15,17 +15,18 @@ final class CableSectionViewModel {
     var hasCalculated: Bool = false
 
     var canCalculate: Bool {
-        parseDouble(currentText) != nil &&
-        parseDouble(lengthText) != nil &&
-        parseDouble(voltageText) != nil &&
-        parseDouble(maxDropPercentText) != nil
+        guard let i = parseDouble(currentText), i > 0,
+              let l = parseDouble(lengthText), l > 0,
+              let v = parseDouble(voltageText), v > 0,
+              let d = parseDouble(maxDropPercentText), d > 0 else { return false }
+        return true
     }
 
     func calculate() {
-        guard let current = parseDouble(currentText),
-              let length = parseDouble(lengthText),
-              let voltage = parseDouble(voltageText),
-              let maxDrop = parseDouble(maxDropPercentText) else { return }
+        guard let current = parseDouble(currentText), current > 0,
+              let length = parseDouble(lengthText), length > 0,
+              let voltage = parseDouble(voltageText), voltage > 0,
+              let maxDrop = parseDouble(maxDropPercentText), maxDrop > 0 else { return }
 
         minimumSection = CableSectionEngine.minimumCrossSection(
             current: current, length: length, material: material,
