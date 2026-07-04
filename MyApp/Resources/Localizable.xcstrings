@@ -40,6 +40,12 @@
             "state": "needs_review",
             "value": "-"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "-"
+          }
         }
       }
     },
@@ -78,6 +84,12 @@
         "ja": {
           "stringUnit": {
             "state": "needs_review",
+            "value": "·"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
             "value": "·"
           }
         }
@@ -128,6 +140,12 @@
             "state": "needs_review",
             "value": "%1$@ %2$@"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ %2$@"
+          }
         }
       }
     },
@@ -170,6 +188,12 @@
             "state": "needs_review",
             "value": "%@ kWh"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ kWh"
+          }
         }
       }
     },
@@ -210,6 +234,12 @@
         "ja": {
           "stringUnit": {
             "state": "needs_review",
+            "value": "%@ mm²"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
             "value": "%@ mm²"
           }
         }
@@ -260,6 +290,12 @@
             "state": "needs_review",
             "value": "%1$@: %2$@ %3$@"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@: %2$@ %3$@"
+          }
         }
       }
     },
@@ -308,6 +344,12 @@
             "state": "needs_review",
             "value": "%1$@. %2$@"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@. %2$@"
+          }
         }
       }
     },
@@ -350,6 +392,12 @@
             "state": "needs_review",
             "value": "%%%@"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%%%@"
+          }
         }
       }
     },
@@ -390,6 +438,12 @@
         "ja": {
           "stringUnit": {
             "state": "needs_review",
+            "value": "15"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
             "value": "15"
           }
         }
@@ -3135,6 +3189,12 @@
         "ja": {
           "stringUnit": {
             "state": "needs_review",
+            "value": "ElecCalc PRO"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
             "value": "ElecCalc PRO"
           }
         }
@@ -10811,6 +10871,12 @@
             "state": "needs_review",
             "value": "kW"
           }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kW"
+          }
         }
       }
     },
@@ -11222,6 +11288,12 @@
         "ja": {
           "stringUnit": {
             "state": "needs_review",
+            "value": "OK"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
             "value": "OK"
           }
         }
@@ -13967,6 +14039,12 @@
         "ja": {
           "stringUnit": {
             "state": "needs_review",
+            "value": "PRO"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
             "value": "PRO"
           }
         }
