@@ -1,10 +1,25 @@
 import SwiftUI
+import SwiftData
 
 struct HomeView: View {
     @State private var viewModel = HomeViewModel()
     @Environment(\.horizontalSizeClass) private var sizeClass
     @Environment(SubscriptionManager.self) private var subscriptionManager
+    @Query(sort: \CalculationRecord.timestamp, order: .reverse) private var records: [CalculationRecord]
     @State private var showPaywall = false
+
+    /// En son kullanılan 4 farklı hesaplayıcı — sahada aynı hesaplar tekrar tekrar açılır
+    private var recentCategories: [CalculationCategory] {
+        var seen = Set<CalculationCategory>()
+        var result: [CalculationCategory] = []
+        for record in records {
+            guard let category = record.calculationCategory, !seen.contains(category) else { continue }
+            seen.insert(category)
+            result.append(category)
+            if result.count == 4 { break }
+        }
+        return result
+    }
 
     private var columns: [GridItem] {
         let count = sizeClass == .regular ? 3 : 2
@@ -21,6 +36,8 @@ struct HomeView: View {
                 .padding(.horizontal)
 
                 subscriptionBanner
+
+                recentsSection
 
                 LazyVGrid(columns: columns, spacing: AppTheme.Spacing.large) {
                     ForEach(Array(viewModel.filteredCategories.enumerated()), id: \.element.id) { index, category in
@@ -57,6 +74,51 @@ struct HomeView: View {
         .navigationTitle(String(localized: "app.title"))
         .fullScreenCover(isPresented: $showPaywall) {
             PaywallView()
+        }
+    }
+
+    // MARK: - Recents
+
+    @ViewBuilder
+    private var recentsSection: some View {
+        if !recentCategories.isEmpty && viewModel.searchText.isEmpty {
+            VStack(alignment: .leading, spacing: AppTheme.Spacing.medium) {
+                Text(String(localized: "home.recents"))
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.secondary)
+
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: AppTheme.Spacing.medium) {
+                        ForEach(recentCategories) { category in
+                            recentChip(category)
+                        }
+                    }
+                }
+            }
+            .padding(.horizontal)
+        }
+    }
+
+    @ViewBuilder
+    private func recentChip(_ category: CalculationCategory) -> some View {
+        let chipLabel = HStack(spacing: AppTheme.Spacing.small) {
+            Image(systemName: category.iconName)
+                .font(.caption)
+            Text(category.title)
+                .font(.caption.weight(.semibold))
+                .lineLimit(1)
+        }
+        .padding(.horizontal, AppTheme.Spacing.regular)
+        .padding(.vertical, AppTheme.Spacing.medium)
+        .background(category.color.opacity(0.12), in: Capsule())
+        .foregroundStyle(category.color)
+
+        if category.isPremium && !subscriptionManager.hasFullAccess {
+            Button { showPaywall = true } label: { chipLabel }
+                .buttonStyle(.plain)
+        } else {
+            NavigationLink(value: category) { chipLabel }
+                .buttonStyle(.plain)
         }
     }
 

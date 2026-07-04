@@ -3277,6 +3277,23 @@
         }
       }
     },
+    "home.recents" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recent"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Son Kullanılanlar"
+          }
+        }
+      }
+    },
     "input.fromCurrent" : {
       "extractionState" : "manual",
       "localizations" : {

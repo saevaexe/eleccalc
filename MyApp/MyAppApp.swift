@@ -6,17 +6,21 @@ struct MyAppApp: App {
     @State private var onboardingVM = OnboardingViewModel()
     @State private var showOnboarding: Bool = false
     @State private var showSplash: Bool = true
+    @State private var pendingCategory: CalculationCategory?
     @State private var subscriptionManager = SubscriptionManager.shared
 
     var body: some Scene {
         WindowGroup {
             ZStack {
-                ContentView()
+                ContentView(pendingCategory: $pendingCategory)
                     .environment(subscriptionManager)
                     .fullScreenCover(isPresented: $showOnboarding) {
-                        OnboardingView(viewModel: onboardingVM) {
+                        OnboardingView(viewModel: onboardingVM, onComplete: {
                             showOnboarding = false
-                        }
+                        }, onOpenCategory: { category in
+                            showOnboarding = false
+                            pendingCategory = category
+                        })
                         .environment(subscriptionManager)
                     }
                     .task {
@@ -33,12 +37,13 @@ struct MyAppApp: App {
                 }
             }
             .task {
-                try? await Task.sleep(for: .seconds(1.2))
-                withAnimation(.easeOut(duration: 0.35)) {
+                SpotlightIndexer.indexAll()
+                try? await Task.sleep(for: .seconds(0.9))
+                withAnimation(.easeOut(duration: 0.3)) {
                     showSplash = false
                 }
                 // Onboarding, splash fade'i bittikten sonra sunulmalı — cover splash'in üstüne binmesin
-                try? await Task.sleep(for: .seconds(0.4))
+                try? await Task.sleep(for: .seconds(0.35))
                 showOnboarding = !UserDefaults.standard.bool(forKey: OnboardingViewModel.hasCompletedKey)
             }
         }

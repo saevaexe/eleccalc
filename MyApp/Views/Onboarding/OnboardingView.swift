@@ -6,6 +6,9 @@ import SwiftUI
 struct OnboardingView: View {
     @Bindable var viewModel: OnboardingViewModel
     var onComplete: () -> Void
+    /// Ücretsiz çip dokunuşu: onboarding'i bitir ve doğrudan o hesaplayıcıyı aç —
+    /// ilk hesaba giden en kısa yol
+    var onOpenCategory: (CalculationCategory) -> Void = { _ in }
 
     private var isLastPage: Bool {
         viewModel.currentPage == viewModel.totalPages - 1
@@ -157,14 +160,24 @@ struct OnboardingView: View {
     }
 
     private func freeChip(_ category: CalculationCategory) -> some View {
-        Text(category.title)
-            .font(.caption.weight(.semibold))
-            .lineLimit(1)
-            .minimumScaleFactor(0.75)
+        Button {
+            viewModel.complete()
+            onOpenCategory(category)
+        } label: {
+            HStack(spacing: AppTheme.Spacing.small) {
+                Image(systemName: category.iconName)
+                    .font(.caption)
+                Text(category.title)
+                    .font(.caption.weight(.semibold))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.75)
+            }
             .padding(.horizontal, AppTheme.Spacing.regular)
             .padding(.vertical, AppTheme.Spacing.medium)
             .background(category.color.opacity(0.12), in: Capsule())
             .foregroundStyle(category.color)
+        }
+        .buttonStyle(.plain)
     }
 
     // MARK: - Shared
