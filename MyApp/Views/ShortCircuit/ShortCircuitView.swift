@@ -89,7 +89,7 @@ struct ShortCircuitView: View {
                             title: String(localized: "result.totalImpedance"),
                             value: (z * 1000.0).formatted2,
                             unit: "mΩ",
-                            formula: "Zk = Zt + Zc"
+                            formula: "Zk = √(Rc² + (Xt + Xc)²)"
                         )
                     }
                 }

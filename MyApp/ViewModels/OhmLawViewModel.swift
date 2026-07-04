@@ -48,8 +48,8 @@ final class OhmLawViewModel {
     var canCalculate: Bool {
         switch solveFor {
         case .voltage:    return parseDouble(currentText) != nil && parseDouble(resistanceText) != nil
-        case .current:    return parseDouble(voltageText) != nil && parseDouble(resistanceText) != nil
-        case .resistance: return parseDouble(voltageText) != nil && parseDouble(currentText) != nil
+        case .current:    return parseDouble(voltageText) != nil && (parseDouble(resistanceText) ?? 0) > 0
+        case .resistance: return parseDouble(voltageText) != nil && (parseDouble(currentText) ?? 0) > 0
         case .power:      return parseDouble(voltageText) != nil && parseDouble(currentText) != nil
         }
     }

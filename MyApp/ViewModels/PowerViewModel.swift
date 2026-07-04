@@ -63,8 +63,15 @@ final class PowerViewModel {
         case .apparentPower:  return parseDouble(voltageText) != nil && parseDouble(currentText) != nil
         case .activePower:    return parseDouble(voltageText) != nil && parseDouble(currentText) != nil && parseDouble(powerFactorText) != nil
         case .reactivePower:  return parseDouble(voltageText) != nil && parseDouble(currentText) != nil && parseDouble(powerFactorText) != nil
-        case .powerFactor:    return parseDouble(activePowerText) != nil && parseDouble(voltageText) != nil && parseDouble(currentText) != nil
-        case .fromKVA:        return parseDouble(apparentPowerText) != nil && parseDouble(voltageText) != nil && parseDouble(powerFactorText) != nil
+        case .powerFactor:
+            // S > 0 gerekli (cosφ = P/S) — 0 volt/amper hesapsız dönerdi ama buton aktif kalırdı
+            guard let v = parseDouble(voltageText), v > 0,
+                  let i = parseDouble(currentText), i > 0 else { return false }
+            return parseDouble(activePowerText) != nil
+        case .fromKVA:
+            // V > 0 gerekli (I = S / (√3 × V))
+            guard let v = parseDouble(voltageText), v > 0 else { return false }
+            return parseDouble(apparentPowerText) != nil && parseDouble(powerFactorText) != nil
         }
     }
 

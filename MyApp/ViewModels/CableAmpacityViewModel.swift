@@ -17,7 +17,14 @@ final class CableAmpacityViewModel {
     var hasCalculated: Bool = false
 
     var canCalculate: Bool {
-        selectedSection != nil
+        // Tablo kontrolü: 1.5 mm² alüminyum gibi IEC tablosunda olmayan kombinasyonlarda buton kapalı kalmalı
+        guard let section = selectedSection else { return false }
+        return CableAmpacityEngine.baseAmpacity(
+            crossSection: section,
+            material: material,
+            insulation: insulation,
+            method: installMethod
+        ) != nil
     }
 
     func calculate() {

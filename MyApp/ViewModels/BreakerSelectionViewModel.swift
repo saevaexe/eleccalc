@@ -47,7 +47,7 @@ final class BreakerSelectionViewModel {
         case .fromCurrent:
             return parseDouble(loadCurrentText) != nil
         case .fromPower:
-            return parseDouble(powerText) != nil && parseDouble(voltageText) != nil && parseDouble(cosPhiText) != nil
+            return parseDouble(powerText) != nil && (parseDouble(voltageText) ?? 0) > 0 && (parseDouble(cosPhiText) ?? 0) > 0
         }
     }
 
