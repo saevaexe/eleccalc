@@ -1,89 +1,82 @@
 # App Store Metadata — ElecCalc
 
-## App Name (30 karakter max)
-**EN:** ElecCalc - Electrical Tools
-**TR:** ElecCalc - Elektrik Araçları
+> **Source of truth:** `~/app-localization-factory/apps/eleccalc_metadata.yaml` → generated fastlane tree at
+> `~/app-localization-factory/output/ElecCalc/fastlane/metadata/<locale>/`. That tree is what is **live on App Store
+> Connect** (v1.1.0, 8 locales). Edit the yaml + regenerate; this file is a human-readable snapshot, not the pipeline input.
+> _Last synced: 2026-07-05._
 
-## Subtitle (30 karakter max)
-**EN:** Pro Electrical Calculator
-**TR:** Profesyonel Elektrik Hesap
+## Locales (8)
+`en-US, tr, de-DE, es-ES, fr-FR, it, ja, pt-BR`
+
+## App Name (30 max) · appInfoLocalizations.name
+| Locale | Value | Len |
+|---|---|---|
+| en-US | `Electrical Calculator ElecCalc` | 30/30 |
+| tr | `Elektrik Hesaplayıcı ElecCalc` | 29/30 |
+| de-DE | `Elektro Rechner ElecCalc` | 24/30 |
+| es-ES | `Calculadora Eléctrica ElecCalc` | 30/30 |
+| fr-FR | `Calcul Électrique ElecCalc` | 26/30 |
+| it | `Calcolo Elettrico ElecCalc` | 26/30 |
+| ja | `電気計算・電圧降下 ElecCalc` | 18/30 |
+| pt-BR | `Cálculo Elétrico ElecCalc` | 25/30 |
+
+## Subtitle (30 max) · appInfoLocalizations.subtitle
+| Locale | Value | Len |
+|---|---|---|
+| en-US | `Wire Size, NEC & Cable` | 22/30 |
+| tr | `Kablo ve Gerilim Düşümü` | 23/30 |
+| de-DE | `Kabel, VDE & Spannungsfall` | 26/30 |
+| es-ES | `Cable y Caída de Tensión` | 24/30 |
+| fr-FR | `Câble & Chute de Tension` | 24/30 |
+| it | `Cavi, CEI e Caduta Tensione` | 27/30 |
+| ja | `電圧降下とケーブル計算` | 11/30 |
+| pt-BR | `Cabos e Queda de Tensão` | 23/30 |
 
 ## Category
 Utilities / Productivity
 
-## Keywords (100 karakter max, virgülle ayrılmış)
-**EN:** electrical,calculator,ohm,voltage,cable,ampacity,breaker,transformer,grounding,power,engineering
-**TR:** elektrik,hesaplayıcı,ohm,gerilim,kablo,ampere,sigorta,trafo,topraklama,güç,mühendislik
+## Keywords (100 max) · appStoreVersionLocalizations.keywords
+_Not: başlık/altbaşlıkta geçen kelimeler tekrarlanmadı; literal çeviri değil, pazara özel terimler (US=NEC/AWG, DE=VDE/Verlegeart, FR=NF C 15-100, IT=CEI/rifasamento, BR=NBR, JP=JIS/保護協調)._
+| Locale | Value | Len |
+|---|---|---|
+| en-US | `voltage,drop,ampacity,breaker,transformer,grounding,power,factor,ohm,awg,motor,short,circuit,iec` | 96/100 |
+| tr | `akım,kesit,sigorta,trafo,topraklama,güç,faktör,ohm,iec,kompanzasyon,kısa,devre` | 78/100 |
+| de-DE | `strombelastbarkeit,querschnitt,leitung,sicherung,trafo,erdung,leistung,faktor,ohm,iec,verlegeart` | 96/100 |
+| es-ES | `sección,corriente,protección,transformador,tierra,potencia,factor,ohm,iec,amperaje,cortocircuito` | 96/100 |
+| fr-FR | `section,courant,disjoncteur,transformateur,terre,puissance,facteur,ohm,iec,nfc,ampérage` | 87/100 |
+| it | `sezione,corrente,protezione,trasformatore,terra,potenza,fattore,ohm,iec,rifasamento,corto` | 89/100 |
+| ja | `許容電流,遮断器,変圧器,接地,力率,オーム,短絡電流,電力,iec,jis,配線,保護協調` | 46/100 |
+| pt-BR | `corrente,disjuntor,transformador,aterramento,potência,fator,ohm,iec,nbr,ampacidade,curto` | 88/100 |
 
-## Description (4000 karakter max)
+## Promotional Text (170 max)
+| Locale | Value |
+|---|---|
+| en-US | Fast electrical calculations for wire size, voltage drop, breakers, transformers, grounding, and power factor. Built for field work. |
+| tr | Kablo kesiti, gerilim düşümü, sigorta, trafo, topraklama ve güç faktörü için hızlı elektrik hesapları. |
+| de-DE | Elektroberechnungen für Kabelquerschnitt, Spannungsfall, Sicherungen, Trafo, Erdung und Leistungsfaktor. Für Praxis und Büro. |
+| es-ES | Cálculos eléctricos para sección de cable, caída de tensión, protecciones, transformador, tierra y factor de potencia. |
+| fr-FR | Calculs électriques rapides pour section de câble, chute de tension, disjoncteurs, transformateur, terre et facteur de puissance. |
+| it | Calcoli elettrici rapidi per sezione cavo, caduta di tensione, protezioni, trasformatore, terra e fattore di potenza. |
+| ja | 電圧降下、ケーブルサイズ、遮断器、変圧器、接地、力率をすばやく確認できる電気計算ツールです。 |
+| pt-BR | Cálculos elétricos rápidos para cabos, queda de tensão, disjuntores, transformador, aterramento e fator de potência. |
 
-### EN
-ElecCalc is the essential electrical engineering calculator for professionals, technicians, and students. Perform quick, accurate calculations on the job site or in the classroom with 15 specialized tools.
+## What's New / Release Notes
+| Locale | Value |
+|---|---|
+| en-US | Improved onboarding, clearer calculation assumptions, updated IEC-based tables, and paywall refinements. |
+| tr | Onboarding iyileştirildi, hesaplama varsayımları netleştirildi, IEC tabanlı tablolar ve paywall düzenlendi. |
+| de-DE | Verbessertes Onboarding, klarere Berechnungsannahmen, aktualisierte IEC-Tabellen und optimierte Paywall. |
+| es-ES | Onboarding mejorado, supuestos de cálculo más claros, tablas IEC actualizadas y ajustes del paywall. |
+| fr-FR | Onboarding amélioré, hypothèses de calcul plus claires, tableaux IEC mis à jour et ajustements du paywall. |
+| it | Onboarding migliorato, ipotesi di calcolo più chiare, tabelle IEC aggiornate e ottimizzazioni del paywall. |
+| ja | オンボーディング、計算前提の表示、IECベースの表、ペイウォールまわりを改善しました。 |
+| pt-BR | Onboarding melhorado, premissas de cálculo mais claras, tabelas IEC atualizadas e ajustes no paywall. |
 
-CALCULATORS INCLUDED:
-• Ohm's Law — Calculate voltage, current, resistance, and power
-• Power Calculator — Apparent, active, reactive power and power factor
-• Cable Section — Minimum cross-section based on voltage drop limits
-• Voltage Drop — Calculate drop percentage for any cable run
-• Reactive Compensation — Capacitor bank sizing for power factor correction
-• Transformer — Loading rate, losses, and efficiency
-• Grounding — Rod/plate electrode resistance and PE conductor sizing
-• Short Circuit — Fault current, transformer impedance, peak current
-• Motor Calculator — Nominal/starting current, torque, IEC 60034-30-1 efficiency
-• Lighting — Fixture count and power density (lumen method)
-• Energy Consumption — kWh, cost, and CO₂ emission estimates
-• Cable Ampacity — Current carrying capacity per IEC 60364-5-52
-• Breaker Selection — MCB, MCCB, and fuse sizing with protection check
-• Unit Converter — Convert V, A, W, Ω, F between SI prefixes
-• Formula Reference — Quick-access formula library
+## Description (4000 max)
+Full localized descriptions live one-file-per-locale in the fastlane tree — **not duplicated here** to avoid drift:
+`~/app-localization-factory/output/ElecCalc/fastlane/metadata/<locale>/description.txt`
 
-KEY FEATURES:
-• 7-day free trial with full access
-• Calculation history with favorites
-• IEC standard-based calculations
-• Turkish and English language support
-• Dark mode support
-• Clean, intuitive interface
-
-Built for electrical engineers who need reliable results fast. All calculations follow IEC standards including IEC 60364-5-52 for cable ampacity, IEC 60364-4-43 for protection coordination, and IEC 60034-30-1 for motor efficiency.
-
-### TR
-ElecCalc, profesyonel elektrik mühendisleri, teknisyenler ve öğrenciler için vazgeçilmez hesaplama aracıdır. Sahada veya sınıfta 15 özel araçla hızlı ve doğru hesaplamalar yapın.
-
-HESAPLAYICILAR:
-• Ohm Yasası — Gerilim, akım, direnç ve güç hesabı
-• Güç Hesabı — Görünür, aktif, reaktif güç ve güç faktörü
-• Kablo Kesiti — Gerilim düşümü sınırına göre minimum kesit
-• Gerilim Düşümü — Herhangi bir kablo hattı için düşüm yüzdesi
-• Reaktif Kompanzasyon — Güç faktörü düzeltme için kondansatör boyutlandırma
-• Trafo — Yüklenme oranı, kayıplar ve verim
-• Topraklama — Çubuk/levha elektrot direnci ve PE iletken boyutlandırma
-• Kısa Devre — Arıza akımı, trafo empedansı, tepe akımı
-• Motor Hesabı — Nominal/kalkış akımı, tork, IEC 60034-30-1 verim tablosu
-• Aydınlatma — Armatür sayısı ve güç yoğunluğu (lümen yöntemi)
-• Enerji Tüketimi — kWh, maliyet ve CO₂ emisyon tahmini
-• Kablo Ampasitesi — IEC 60364-5-52'ye göre akım taşıma kapasitesi
-• Kesici Seçimi — MCB, MCCB ve sigorta boyutlandırma, koruma kontrolü
-• Birim Dönüştürücü — V, A, W, Ω, F birimlerini SI önekleri arasında dönüştürme
-• Formül Referansı — Hızlı erişimli formül kütüphanesi
-
-ÖNE ÇIKAN ÖZELLİKLER:
-• 7 gün ücretsiz tam erişim denemesi
-• Favori özellikli hesaplama geçmişi
-• IEC standartlarına dayalı hesaplamalar
-• Türkçe ve İngilizce dil desteği
-• Karanlık mod desteği
-• Temiz, sezgisel arayüz
-
-Güvenilir sonuçlara hızla ihtiyaç duyan elektrik mühendisleri için tasarlandı. Tüm hesaplamalar; kablo ampasitesi için IEC 60364-5-52, koruma koordinasyonu için IEC 60364-4-43 ve motor verimi için IEC 60034-30-1 dahil olmak üzere IEC standartlarına uygundur.
-
-## Promotional Text (170 karakter max)
-**EN:** 15 professional electrical calculators in one app. Ohm's law, cable sizing, breaker selection, and more — built for engineers.
-**TR:** 15 profesyonel elektrik hesaplayıcısı tek uygulamada. Ohm yasası, kablo boyutlandırma, kesici seçimi ve dahası.
-
-## What's New (Version 1.0)
-**EN:** Initial release with 15 electrical calculators, subscription system, calculation history, and formula reference.
-**TR:** 15 elektrik hesaplayıcısı, abonelik sistemi, hesaplama geçmişi ve formül referansı ile ilk sürüm.
+Per-locale structure: hook (ASO "Description Hook") → **WHY ELECCALC** bullets → **CALCULATORS INCLUDED** → Support / Privacy / Terms footer. All 8 within the 4000-char limit (~700–1250 chars each).
 
 ## Privacy Policy URL
 https://saevaexe.github.io/eleccalc/privacy-policy.html

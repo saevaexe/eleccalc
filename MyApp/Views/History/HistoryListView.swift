@@ -34,7 +34,7 @@ struct HistoryListView: View {
                         )
                     } else {
                         List {
-                            ForEach(filtered) { record in
+                            ForEach(filtered, id: \.persistentModelID) { record in
                                 HistoryRowView(record: record) {
                                     viewModel.toggleFavorite(record)
                                 }

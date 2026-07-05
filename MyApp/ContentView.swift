@@ -9,6 +9,18 @@ struct ContentView: View {
     @State private var path: [CalculationCategory] = []
     @State private var showPaywall = false
 
+    init(
+        pendingCategory: Binding<CalculationCategory?>,
+        initialTab: Int = 0,
+        initialPath: [CalculationCategory] = [],
+        initialShowPaywall: Bool = false
+    ) {
+        self._pendingCategory = pendingCategory
+        self._selectedTab = State(initialValue: initialTab)
+        self._path = State(initialValue: initialPath)
+        self._showPaywall = State(initialValue: initialShowPaywall)
+    }
+
     var body: some View {
         TabView(selection: $selectedTab) {
             NavigationStack(path: $path) {

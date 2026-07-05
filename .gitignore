@@ -30,3 +30,6 @@ fastlane/test_output
 
 # Screenshots
 Screenshots/
+
+# Editor/tool backups
+*.bak
